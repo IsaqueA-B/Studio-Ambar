@@ -109,6 +109,11 @@
     align-items: center;
 }
 
+.logo-container img {
+    max-height: 50px;
+    width: auto;
+}
+
 .logo-texto {
     font-family: 'Cinzel', cursive;
     font-size: 2rem;

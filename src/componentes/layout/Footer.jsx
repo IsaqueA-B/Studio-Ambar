@@ -7,8 +7,8 @@ const Footer = () => {
       <div className="footer-grid">
         <div className="footer-coluna">
           <h4>Responsável</h4>
-          <p>Nome do Responsável</p>
-          <p>Telefone: (11) 99999-9999</p>
+          <p>Gabriel golin</p>
+          <p>Telefone: (+55) 8437-8450</p>
         </div>
         <div className="footer-coluna">
           <h4>Empresa / Desenvolvedora</h4>
