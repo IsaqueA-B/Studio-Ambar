@@ -1,0 +1,120 @@
+.navbar {
+    width: 100%;
+    background: var(--bg-secondary);
+    border-bottom: 2px solid var(--brand-ambar);
+    padding: 10px 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 2;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.nav-list li {
+    margin: 0 20px;
+}
+
+.nav-list a {
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 6px 0;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.nav-list a::after {
+    background: var(--brand-ambar);
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.user-nome {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.btn-sair {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: transparent;
+    color: var(--brand-ambar);
+    border: 2px solid var(--brand-ambar);
+    box-shadow: none;
+}
+
+.btn-sair:hover {
+    background: var(--brand-ambar);
+    color: var(--bg-main);
+}
+
+.btn-sair-icone {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-list {
+        position: static;
+        transform: none;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* ===Logo=== */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-texto {
+    font-family: 'Cinzel', cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #fff, var(--brand-ambar));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}

@@ -1,0 +1,39 @@
+:root {
+    /* Cores da Marca */
+    --brand-ambar: #e0a458;
+    --brand-ambar-dark: #c68b3a;
+    --brand-creme: #f7e6c4;
+    --brand-navy: #0f1b2e;
+    --brand-gray: #5c6b73;
+    --brand-dark: #1f2326;
+
+    /* === TEMA ESCURO === */
+    --bg-main: #0b0f13;
+    /* fundo quase preto */
+    --bg-secondary: #131920;
+    /* painéis, cards, seções */
+    --bg-elevated: #1a2129;
+    /* elementos sobre o fundo secundário */
+
+    --text-main: #e4e7eb;
+    /* texto principal claro */
+    --text-muted: #8b95a1;
+    /* texto secundário (cinza azulado) */
+    --text-header: #ffffff;
+    /* títulos brancos */
+
+    --primary-color: var(--brand-ambar);
+    --primary-hover: var(--brand-ambar-dark);
+
+    --border-color: rgba(92, 107, 115, 0.25);
+    --border-light: rgba(255, 255, 255, 0.06);
+
+    /* Sombras (escuras, sutis) */
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+    /* Estrutura */
+    --radius-sm: 8px;
+    --radius: 16px;
+    --transition: 0.3s ease;
+}
