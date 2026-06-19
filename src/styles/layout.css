@@ -6,6 +6,10 @@ body,
     padding: 0;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 #root {
     display: flex;
     flex-direction: row;
