@@ -1,14 +1,19 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './componentes/layout/Navbar';
-import Footer from './componentes/layout/Footer';
 import { UserProvider } from './componentes/users/UserContext';
 import { PrivateRoute } from './componentes/users/PrivateRoute';
 
+//===PAGINAS===
+import Admin from './pages/Admin';
+import Sobre from './pages/Sobre';
+import Servicos from './pages/Servicos';
+import Portfolio from './pages/Portfolio';
+import Cases from './pages/Cases';
+import Blog from './pages/Blog';
+import Contato from './pages/Contato';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Teste from './pages/Teste';
-import Projeto from './pages/Projeto';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -19,15 +24,19 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/teste" element={<Teste />} />
-        <Route path="/projeto" element={
+        <Route path="/servicos" element={<Servicos />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/cases" element={<Cases />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contato" element={<Contato />} />
+        <Route path="/sobre" element={<Sobre />} />
+        <Route path="/Admin" element={
           <PrivateRoute>
-            <Projeto />
+            <Admin />
           </PrivateRoute>
         } />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
     </UserProvider>
   );
 }

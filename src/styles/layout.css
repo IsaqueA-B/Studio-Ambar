@@ -2,19 +2,34 @@ html,
 body,
 #root {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #root {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     min-height: 100vh;
     background: var(--bg-main);
 }
 
 main {
-    flex: 1 0 auto;
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 20px;
+    flex: 1;
+    margin-left: 160px;
+    margin-right: 10px;
+    padding: 30px;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+/* Em mobile, sidebar vira barra superior */
+@media (max-width: 768px) {
+    #root {
+        flex-direction: column;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 20px;
+    }
 }

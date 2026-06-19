@@ -12,16 +12,16 @@ function Home() {
             </section>
 
             <div className="grid-3x3 mb-20">
-                <Link to="/teste" className="btn-card">
+                <Link to="/" className="btn-card">
                     <div className="card">
                         <h3>Exemplos de UI</h3>
                         <p>Cards, botões, grids e muito mais.</p>
                     </div>
                 </Link>
-                <Link to="/Projeto" className="btn-card">
+                <Link to="/admin" className="btn-card">
                     <div className="card">
-                        <h3>Projeto</h3>
-                        <p>Página vazia para seu conteúdo.</p>
+                        <h3>ADM TESTE</h3>
+                        <p>O adm vai ser uma rota privada</p>
                     </div>
                 </Link>
                 <div className="card">
