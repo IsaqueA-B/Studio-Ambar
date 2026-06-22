@@ -2,7 +2,7 @@ import React from 'react';
 
 function Sobre() {
     return (
-        <div className="sobre-container animacao-entrada">
+        <main className="sobre-container animacao-entrada">
             
             {/* 1. HERO / BANNER INTERNO */}
             <section className="sobre-hero">
@@ -138,7 +138,7 @@ function Sobre() {
                 </div>
             </section>
 
-        </div>
+        </main>
     );
 }
 
