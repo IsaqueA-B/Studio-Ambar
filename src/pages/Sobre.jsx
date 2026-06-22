@@ -34,7 +34,7 @@ function Sobre() {
                     <div className="sobre-imagem-bloco">
                         <div className="moldura-logo-elo">
                             <img 
-                                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop" 
+                                src="/web3.png" 
                                 alt="Arte conceitual Studio Âmbar" 
                                 className="sobre-img"
                             />
