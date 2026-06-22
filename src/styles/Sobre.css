@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================
+   VARIÁVEIS DE CORES RECONFIGURADAS 
+   ========================================== */
+:root {
+  --preto-grafite-principal: #101213; /* Cor de fundo predominante em todo o site */
+  --preto-cards: #15181A;             /* Variação ainda mais escura para destacar os cards */
+  --dourado-ambar: #E0A458;           /* Detalhes, tags, bordas e slogan */
+  --off-white: #F7E6C4;               /* Texto de destaque e títulos secundários */
+  --cinza-slate: #5C6B73;             /* Textos de apoio e linhas divisórias */
+  --cinza-claro-leitura: #D1D5DB;     /* Texto legível sobre o fundo escuro */
+  
+  --fonte-titulo: 'Cinzel', serif;
+  --fonte-apoio: 'Manrope', sans-serif;
+}
+
+/* ==========================================
+   ESTRUTURA GERAL E LAYOUT
+   ========================================== */
+.sobre-container {
+  width: 100%;
+  font-family: var(--fonte-apoio);
+  color: #ffffff;
+  background-color: var(--preto-grafite-principal);
+  overflow-x: hidden;
+}
+
+.sobre-alinhamento {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sobre-secao {
+  padding: 90px 0;
+}
+
+.sobre-tag {
+  display: inline-block;
+  color: var(--dourado-ambar);
+  font-family: var(--fonte-apoio);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.sobre-tag.centralizado {
+  display: block;
+  text-align: center;
+}
+
+
+.titulo-secao-central {
+  font-family: var(--fonte-titulo);
+  font-size: 2.4rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.titulo-secao-central::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--dourado-ambar);
+}
+
+/* ==========================================
+   1. HERO SECTION 
+   ========================================== */
+.sobre-hero {
+  position: relative;
+  padding: 120px 20px;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(224, 164, 88, 0.1);
+}
+
+
+.sobre-hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -10%;
+  width: 130%;
+  height: 180%;
+  background: radial-gradient(circle at bottom right, rgba(224, 164, 88, 0.05), transparent 55%),
+              radial-gradient(circle at top left, var(--preto-grafite-principal), transparent 60%);
+  pointer-events: none;
+  transform: rotate(-10deg);
+}
+
+.sobre-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.sobre-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.sobre-subtitulo {
+  font-family: var(--fonte-apoio);
+  font-size: 1.1rem;
+  color: var(--off-white);
+  opacity: 0.8;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.sobre-slogan-box {
+  display: inline-block;
+  border-top: 1px solid rgba(247, 230, 196, 0.2);
+  border-bottom: 1px solid rgba(247, 230, 196, 0.2);
+  padding: 12px 30px;
+}
+
+.sobre-slogan {
+  font-family: var(--fonte-titulo);
+  font-size: 1.2rem;
+  color: var(--dourado-ambar);
+  letter-spacing: 1px;
+}
+
+/* ==========================================
+   2. HISTÓRIA DA EMPRESA
+   ========================================== */
+.sobre-conteudo-flex {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.sobre-texto-bloco {
+  flex: 1.2;
+}
+
+.sobre-texto-bloco h2 {
+  font-family: var(--fonte-titulo);
+  font-size: 2.6rem;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+.sobre-texto-bloco p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--cinza-claro-leitura);
+  margin-bottom: 20px;
+}
+
+.sobre-texto-bloco .sobre-destaque-texto {
+  font-size: 1.2rem;
+  color: var(--off-white);
+  font-weight: 500;
+  border-left: 3px solid var(--dourado-ambar);
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.sobre-imagem-bloco {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.moldura-logo-elo {
+  padding: 12px;
+  background-color: var(--preto-cards);
+  border: 1px solid rgba(224, 164, 88, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.moldura-logo-elo:hover {
+  transform: scale(1.02);
+}
+
+.sobre-img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  filter: grayscale(15%) contrast(1.05);
+}
+
+/* ==========================================
+   3. MISSÃO, VISÃO E VALORES(propósito)
+   ========================================== */
+.sobre-mvv-bg {
+  background-color: var(--preto-grafite-principal);
+}
+
+.sobre-grid-tres {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.sobre-card-mvv {
+  background: var(--preto-cards);
+  padding: 45px 35px;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid rgba(247, 230, 196, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.sobre-card-mvv:hover {
+  transform: translateY(-5px);
+  border-color: rgba(224, 164, 88, 0.3);
+}
+
+.sobre-card-mvv h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  color: var(--off-white);
+  margin-bottom: 15px;
+}
+
+.sobre-card-mvv p {
+  color: var(--cinza-claro-leitura);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ==========================================
+   4. EQUIPE
+   ========================================== */
+.sobre-grid-equipe {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.card-equipe {
+  background: var(--preto-cards);
+  border: 1px solid rgba(247, 230, 196, 0.05);
+  border-radius: 4px;
+  padding: 35px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.card-equipe:hover {
+  border-color: var(--dourado-ambar);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.foto-wrapper {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--dourado-ambar);
+  padding: 4px;
+  background: var(--preto-grafite-principal);
+}
+
+.foto-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-equipe h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.card-equipe .cargo {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--dourado-ambar);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.card-equipe p {
+  font-size: 0.9rem;
+  color: var(--cinza-claro-leitura);
+  line-height: 1.5;
+}
+
+/* ==========================================
+   5. DIFERENCIAIS
+   ========================================== */
+.sobre-diferenciais-bg {
+  background-color: var(--preto-grafite-principal);
+}
+
+.card-diferencial {
+  background: var(--preto-cards);
+  border: 1px solid rgba(247, 230, 196, 0.05);
+  padding: 40px 30px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.card-diferencial:hover {
+  border-color: rgba(224, 164, 88, 0.2);
+  transform: translateY(-5px);
+}
+
+.card-diferencial h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  color: var(--off-white);
+  margin-bottom: 15px;
+}
+
+.card-diferencial p {
+  color: var(--cinza-claro-leitura);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   ANIMAÇÕES DE ENTRADA
+   ========================================== */
+.animacao-entrada {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   RESPONSIVIDADE 
+   ========================================== */
