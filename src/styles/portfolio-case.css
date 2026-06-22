@@ -1,0 +1,74 @@
+.btn-voltar {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--brand-ambar);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.portfolio-case-hero {
+    padding: 32px;
+    border-radius: var(--radius);
+}
+
+.portfolio-case-tag {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 8px 14px;
+    background: rgba(255, 183, 77, 0.15);
+    color: var(--brand-ambar);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.portfolio-case-highlight {
+    margin-top: 16px;
+    color: var(--text-muted);
+}
+
+.portfolio-case-panel {
+    min-height: 180px;
+}
+
+.portfolio-case-gallery .card {
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.image-placeholder {
+    background: linear-gradient(135deg, rgba(255, 224, 178, 0.9), rgba(255, 196, 77, 0.85));
+}
+
+@media (max-width: 768px) {
+    .portfolio-case-gallery .card,
+    .portfolio-case-panel {
+        min-height: auto;
+    }
+}
+
+/* Tech / Branding theme */
+.tech-theme .portfolio-case-hero {
+    background: linear-gradient(180deg, rgba(18, 32, 72, 0.9), rgba(32, 58, 102, 0.85));
+    color: #ffffff;
+}
+
+.tech-theme .portfolio-case-tag {
+    background: rgba(99, 102, 241, 0.12);
+    color: #6366f1;
+}
+
+.tech-theme .image-placeholder {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.9), rgba(99, 102, 241, 0.85));
+    color: rgba(255,255,255,0.95);
+}
+
+.portfolio-tech-hero h1 {
+    margin-top: 8px;
+    color: inherit;
+}
