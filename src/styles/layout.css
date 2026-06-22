@@ -1,7 +1,6 @@
 html,
 body,
 #root {
-    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -20,7 +19,6 @@ html {
 main {
     flex: 1;
     margin-left: 160px;
-    margin-right: 10px;
     padding: 30px;
     max-width: none;
     box-sizing: border-box;
