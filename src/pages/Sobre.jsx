@@ -1,9 +1,8 @@
 import React from 'react';
-import '../styles/sobre.css';
 
 function Sobre() {
     return (
-        <main className="sobre-container animacao-entrada">
+        <div className="sobre-container animacao-entrada">
             
             {/* 1. HERO / BANNER INTERNO */}
             <section className="sobre-hero">
@@ -20,7 +19,6 @@ function Sobre() {
             <section className="sobre-secao sobre-historia">
                 <div className="sobre-conteudo-flex">
                     <div className="sobre-texto-bloco">
-                        <span className="sobre-tag">Quem Somos</span>
                         <h2>Histórico da Empresa</h2>
                         <p>
                             A Studio Âmbar é um estúdio criativo fictício, especializado em 
@@ -140,7 +138,7 @@ function Sobre() {
                 </div>
             </section>
 
-        </main>
+        </div>
     );
 }
 

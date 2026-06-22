@@ -23,7 +23,6 @@
   font-family: var(--fonte-apoio);
   color: #ffffff;
   background-color: var(--preto-grafite-principal);
-  overflow-x: hidden;
 }
 
 .sobre-alinhamento {
