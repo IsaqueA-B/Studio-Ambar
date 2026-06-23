@@ -78,7 +78,6 @@ h2.centralizado,
     color: var(--text-header);
     /* opcional: substitui gradiente por branco */
     background: none;
-    -webkit-background-clip: unset;
     -webkit-text-fill-color: currentColor;
 }
 
