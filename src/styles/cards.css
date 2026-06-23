@@ -25,6 +25,11 @@
     cursor: pointer;
 }
 
+/* Variação de padding para cards maiores */
+.card-lg {
+    padding: 45px 35px;
+}
+
 /* Grids */
 .grid-3x3 {
     display: grid;
@@ -35,6 +40,12 @@
 .grid-4x4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
 }
 
