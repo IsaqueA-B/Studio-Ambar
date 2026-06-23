@@ -33,10 +33,6 @@ function Servicos() {
                     </div>
                 ))}
             </div>
-
-            <div className="text-center">
-                <p><em>Seção de FAQ opcional no futuro.</em></p>
-            </div>
         </main>
     );
 }

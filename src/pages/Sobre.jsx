@@ -35,7 +35,7 @@ function Sobre() {
                     <div className="sobre-imagem-bloco">
                         <div className="moldura-logo-elo">
                             <img
-                                src="/web3.png"
+                                src="web3.png"
                                 alt="Arte conceitual Studio Âmbar"
                                 className="sobre-img"
                             />
