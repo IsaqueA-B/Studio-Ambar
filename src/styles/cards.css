@@ -37,6 +37,14 @@
     gap: 24px;
 }
 
+/* Ensure cards in grids have uniform height so filtered views look consistent */
+.grid-3x3 .card {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .grid-4x4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
