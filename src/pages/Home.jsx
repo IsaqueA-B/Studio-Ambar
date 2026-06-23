@@ -5,7 +5,7 @@ function Home() {
     return (
         <main className="p-20 animacao-entrada">
             <section className="text-center mb-20">
-                <h1>Studio Âmbar</h1>
+                <h1 className="WordMark">Studio Âmbar</h1>
                 <p style={{ maxWidth: '600px', margin: '0 auto' }}>
                     Transformamos ideias em marcas que conectam. Conheça nossos serviços e portfólio.
                 </p>
