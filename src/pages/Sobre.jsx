@@ -11,7 +11,7 @@ function Sobre() {
             <section className="sobre-hero text-center">
                 <div className="sobre-hero-content">
                     <h1 className="sobre-titulo">Sobre o Studio Âmbar</h1>
-                    <p className="sobre-subtitulo">Design • Branding • Conteúdo Digital</p>
+                    <p className="sobre-subtitulo">Criar • Conectar • Transformar</p>
                     <div className="sobre-slogan-box">
                         <span className="sobre-slogan fonte-titulo">"Sua marca, nossa essência"</span>
                     </div>
