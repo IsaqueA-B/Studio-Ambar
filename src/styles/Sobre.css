@@ -150,12 +150,15 @@
 }
 
 /* ========== CARDS ESPECÍFICOS (apenas variações do .card global) ========== */
+
 .card-titulo {
   /* Remove o estilo padrão do h3 global */
   border-left: none;
   padding-left: 0;
   color: var(--brand-creme);
   font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
   /* pode ser sobrescrito se necessário */
 }
 
