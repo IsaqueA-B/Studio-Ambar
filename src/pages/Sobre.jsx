@@ -1,5 +1,8 @@
 import React from 'react';
 
+import daniel from '../assets/images/pessoas/Daniel.jpeg';
+
+
 function Sobre() {
     return (
         <main className="sobre-container animacao-entrada"> {/* animacao-entrada global */}
@@ -65,7 +68,6 @@ function Sobre() {
             {/* 4. EQUIPE */}
             <section className="sobre-secao">
                 <div className="sobre-alinhamento">
-                    <span className="sobre-tag centralizado">Mentes Criativas</span>
                     <h2 className="h2-central titulo-secao-central">Nossa Equipe</h2>
 
                     <div className="grid-auto"> {/* mesmo grid, com minmax menor? ajustaremos no CSS */}
@@ -73,7 +75,7 @@ function Sobre() {
                             <div className="foto-wrapper">
                                 <img src="https://via.placeholder.com/150" alt="Isaque Emanuel" />
                             </div>
-                            <h3 className="card-titulo">Isaque Emanuel A. Bastos</h3>
+                            <h3 className="card-titulo">Isaque E. A. Bastos</h3>
                             <span className="cargo">Líder / Organizador</span>
                             <p>Organização do GitHub, cronograma, integração geral e suporte à equipe.</p>
                         </div>
@@ -82,7 +84,7 @@ function Sobre() {
                             <div className="foto-wrapper">
                                 <img src="https://via.placeholder.com/150" alt="Emanuel" />
                             </div>
-                            <h3 className="card-titulo">Emanuel</h3>
+                            <h3 className="card-titulo">Emanuel A. S. Hubner</h3>
                             <span className="cargo">Banco de Dados</span>
                             <p>Modelagem e implementação do MySQL e desenvolvimento de APIs.</p>
                         </div>
@@ -91,7 +93,7 @@ function Sobre() {
                             <div className="foto-wrapper">
                                 <img src="https://via.placeholder.com/150" alt="Cássio" />
                             </div>
-                            <h3 className="card-titulo">Cássio</h3>
+                            <h3 className="card-titulo">Cássio R. Schultz</h3>
                             <span className="cargo">Desenvolvedor Front-end</span>
                             <p>Responsável pelo desenvolvimento e estruturação da página Sobre e Serviços.</p>
                         </div>
@@ -100,7 +102,7 @@ function Sobre() {
                             <div className="foto-wrapper">
                                 <img src="https://via.placeholder.com/150" alt="Leonardo" />
                             </div>
-                            <h3 className="card-titulo">Leonardo</h3>
+                            <h3 className="card-titulo">Leonardo A. Hemmilla</h3>
                             <span className="cargo">Front-end & Portfolio</span>
                             <p>Desenvolvimento das seções de Portfólio e detalhamento de Cases de sucesso.</p>
                         </div>
@@ -109,9 +111,17 @@ function Sobre() {
                             <div className="foto-wrapper">
                                 <img src="https://via.placeholder.com/150" alt="Guilherme" />
                             </div>
-                            <h3 className="card-titulo">Guilherme</h3>
+                            <h3 className="card-titulo">Guilherme Z. Thomas</h3>
                             <span className="cargo">Dev Blog & Contato</span>
                             <p>Responsável pela área de publicações do Blog e formulários de atendimento.</p>
+                        </div>
+                        <div className="card card-equipe text-center">
+                            <div className="foto-wrapper">
+                                <img src={daniel} alt="Daniel" />
+                            </div>
+                            <h3 className="card-titulo">Daniel</h3>
+                            <span className="cargo">Patrão da Empresa</span>
+                            <p>Aquele que manda e nos da nota.</p>
                         </div>
                     </div>
                 </div>
