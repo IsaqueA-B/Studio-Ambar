@@ -2,3 +2,60 @@
     font-size: 5rem;
     color: var(--brand-ambar)
 }
+
+/* ========== SEÇÃO 1 (flex com linha divisória) ========== */
+.home-secao1 {
+    display: flex;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.home-lado {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.home-lado .btn {
+    margin-top: auto;
+}
+
+.home-esquerda {
+    text-align: left;
+}
+
+.home-direita {
+    text-align: left;
+}
+
+/* Linha vertical âmbar */
+.home-linha {
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--brand-ambar), transparent);
+    flex-shrink: 0;
+    margin: 20px 0;
+}
+
+.home-titulo-esquerda,
+.home-titulo-direita {
+    font-size: 2rem;
+    color: var(--text-header);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.home-titulo-esquerda::after,
+.home-titulo-direita::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--brand-ambar);
+    margin-top: 10px;
+}
