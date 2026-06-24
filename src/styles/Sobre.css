@@ -1,0 +1,208 @@
+/* ========== CONTAINER E SEÇÕES ========== */
+.sobre-container {
+  width: 100%;
+  background-color: var(--bg-main);
+}
+
+.sobre-alinhamento {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sobre-secao {
+  padding: 40px 0;
+}
+
+/* ========== TAGS ========== */
+.sobre-tag {
+  display: inline-block;
+  color: var(--brand-ambar);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.sobre-tag.centralizado {
+  display: block;
+  text-align: center;
+}
+
+/* ========== HERO ========== */
+.sobre-hero {
+  position: relative;
+  padding: 120px 20px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(224, 164, 88, 0.1);
+}
+
+.sobre-hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -10%;
+  width: 130%;
+  height: 180%;
+  background: radial-gradient(circle at bottom right, rgba(224, 164, 88, 0.05), transparent 55%),
+    radial-gradient(circle at top left, var(--bg-main), transparent 60%);
+  pointer-events: none;
+  transform: rotate(-10deg);
+}
+
+.sobre-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.sobre-titulo {
+  font-size: 3.4rem;
+  color: var(--brand-ambar);
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.sobre-subtitulo {
+  font-size: 1.1rem;
+  color: var(--brand-creme);
+  opacity: 0.8;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.sobre-slogan-box {
+  display: inline-block;
+  border-top: 1px solid rgba(247, 230, 196, 0.2);
+  border-bottom: 1px solid rgba(247, 230, 196, 0.2);
+  padding: 12px 30px;
+}
+
+.sobre-slogan {
+  font-size: 1.2rem;
+  color: var(--brand-ambar);
+  letter-spacing: 1px;
+}
+
+/* ========== HISTÓRIA ========== */
+.sobre-conteudo-flex {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.sobre-texto-bloco {
+  flex: 1.2;
+}
+
+.sobre-texto-bloco h2 {
+  font-size: 2.6rem;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+.sobre-texto-bloco p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.sobre-destaque-texto {
+  font-size: 1.2rem;
+  color: var(--brand-creme);
+  font-weight: 500;
+  border-left: 3px solid var(--brand-ambar);
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.sobre-imagem-bloco {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.moldura-logo-elo {
+  padding: 12px;
+  background-color: var(--bg-secondary);
+  border: 1px solid rgba(224, 164, 88, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.moldura-logo-elo:hover {
+  transform: scale(1.02);
+}
+
+.sobre-img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  filter: grayscale(15%) contrast(1.05);
+}
+
+/* ========== CARDS ESPECÍFICOS (apenas variações do .card global) ========== */
+
+.card-titulo {
+  /* Remove o estilo padrão do h3 global */
+  border-left: none;
+  padding-left: 0;
+  color: var(--brand-creme);
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  /* pode ser sobrescrito se necessário */
+}
+
+/* Pequenas variações por tipo de card */
+.card-equipe {
+  /* Mantém a base do .card e ajusta apenas o necessário */
+  padding: 35px 20px;
+  /* diferente do card-lg */
+}
+
+.card-equipe .card-titulo {
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+
+.card-equipe .cargo {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--brand-ambar);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.card-diferencial .card-titulo {
+  font-size: 1.3rem;
+}
+
+/* ========== FOTO DA EQUIPE ========== */
+.foto-wrapper {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--brand-ambar);
+  padding: 4px;
+  background: var(--bg-main);
+}
+
+.foto-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}

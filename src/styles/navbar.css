@@ -1,0 +1,156 @@
+/* ========== SIDEBAR ========== */
+.sidebar {
+    width: 150px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    border-right: 2px solid var(--brand-ambar);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    /* fixa no layout */
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo */
+.sidebar-logo {
+    display: block;
+    padding: 20px 15px 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-logo img {
+    max-height: 55px;
+    width: auto;
+    transition: opacity 0.3s;
+}
+
+.sidebar-logo:hover img {
+    opacity: 0.8;
+}
+
+/* Navegação */
+.sidebar-nav {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.sidebar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-links li {
+    margin: 4px 0;
+}
+
+.sidebar-links a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.25s;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-links a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--brand-ambar);
+    color: var(--brand-ambar);
+}
+
+.sidebar-links a:hover .sidebar-icon {
+    filter: brightness(0) saturate(100%) invert(64%) sepia(80%) saturate(2000%) hue-rotate(5deg);
+    /* tom âmbar */
+}
+
+/* Ícone */
+.sidebar-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    /* ícones brancos */
+    transition: filter 0.25s;
+}
+
+/* Rodapé do usuário */
+.sidebar-user {
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-nome {
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Botão sair / entrar */
+.btn-sair {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: transparent;
+    color: var(--brand-ambar);
+    border: 2px solid var(--brand-ambar);
+    white-space: nowrap;
+}
+
+.btn-sair:hover {
+    background: var(--brand-ambar);
+    color: var(--bg-main);
+}
+
+.btn-sair-icone {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .sidebar-logo {
+        border-bottom: none;
+        padding: 10px;
+    }
+
+    .sidebar-nav {
+        display: none;
+        /* Esconde links em mobile – pode virar menu hamburguer depois */
+    }
+
+    .sidebar-user {
+        border-top: none;
+        flex-direction: row;
+    }
+}
