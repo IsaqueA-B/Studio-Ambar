@@ -13,7 +13,6 @@ const servicosEstaticos = [
     { nome: 'Criação de Banners', desc: 'Banners digitais para sites, campanhas e anúncios.', valor: 'R$ 150' },
     { nome: 'Consultoria de Branding', desc: 'Estratégias para fortalecer posicionamento e presença da marca.', valor: 'R$ 700' },
 
-
 ];
 
 function Servicos() {
@@ -32,6 +31,10 @@ function Servicos() {
                         <h3><strong>A partir de {servico.valor}</strong></h3>
                     </div>
                 ))}
+            </div>
+
+            <div className="text-center">
+                <p><em>Seção de FAQ opcional no futuro.</em></p>
             </div>
         </main>
     );

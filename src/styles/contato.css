@@ -1,0 +1,158 @@
+/* Container principal */
+.contato-container {
+    background-color: #0a0d14;
+    color: #ffffff;
+    padding: 30px 20px;
+    font-family: sans-serif;
+    max-width: 1060px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Cabeçalho */
+.contato-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contato-title {
+    font-size: 2.4rem;
+    letter-spacing: 4px;
+    color: #f3e5d8;
+    margin: 0 0 8px 0;
+}
+
+.contato-subtitle {
+    color: #8a8f98;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Grid principal (formulário + informações) */
+.contato-main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+/* Cartão padrão */
+.contato-card {
+    background-color: #161b26;
+    border-radius: 12px;
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+.contato-card-content {
+    padding: 28px 30px;
+    box-sizing: border-box;
+}
+
+/* Título com barra laranja */
+.contato-title-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.contato-orange-bar {
+    width: 4px;
+    height: 22px;
+    background-color: #ff7a00;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+.contato-card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
+    color: #ffffff;
+}
+
+/* Formulário */
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contato-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contato-label {
+    font-size: 0.88rem;
+    color: #a0a5b0;
+    font-weight: 500;
+}
+
+.contato-input,
+.contato-select,
+.contato-textarea {
+    background-color: #0a0d14;
+    border: 1px solid #2a3142;
+    border-radius: 6px;
+    padding: 11px 13px;
+    color: #ffffff;
+    font-size: 0.92rem;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.contato-select {
+    cursor: pointer;
+}
+
+.contato-textarea {
+    min-height: 105px;
+    resize: none;
+    font-family: sans-serif;
+}
+
+.contato-button {
+    background-color: #ff7a00;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 22px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    align-self: flex-start;
+}
+
+/* Lista de informações */
+.contato-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contato-info-item {
+    background-color: #0a0d14;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border-left: 4px solid #ff7a00;
+}
+
+.contato-info-label {
+    font-size: 0.78rem;
+    color: #8a8f98;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.contato-info-value {
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 0;
+}

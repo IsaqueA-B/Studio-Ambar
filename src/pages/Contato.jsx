@@ -1,48 +1,94 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function Contato() {
-    const [enviado, setEnviado] = useState(false);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Apenas simula envio
-        setEnviado(true);
-    };
-
+export default function Contato() {
     return (
-        <main className="p-20 animacao-entrada">
-            <section className="text-center mb-20">
-                <h1>Contato</h1>
-                <p>Vamos conversar sobre seu projeto.</p>
-            </section>
+        <div className="contato-container">
+            {/* Cabeçalho de Contato */}
+            <header className="contato-header">
+                <h1 className="contato-title">CONTATO</h1>
+                <p className="contato-subtitle">Vamos conversar sobre seu projeto.</p>
+            </header>
 
-            <div className="grid-3x3 mb-20">
-                <div className="card">
-                    <h3>Formulário</h3>
-                    <form onSubmit={handleSubmit}>
-                        <input placeholder="Nome" required /><br />
-                        <input type="email" placeholder="E-mail" required /><br />
-                        <input placeholder="Telefone" /><br />
-                        <select>
-                            <option>Orçamento</option>
-                            <option>Dúvida</option>
-                            <option>Outros</option>
-                        </select><br />
-                        <textarea placeholder="Mensagem" required></textarea><br />
-                        <button type="submit">Enviar</button>
-                    </form>
-                    {enviado && <p style={{ color: 'green' }}>Mensagem enviada (simulação)!</p>}
-                </div>
-                <div className="card">
-                    <h3>Informações de contato</h3>
-                    <p>Endereço fictício<br />
-                        E-mail: contato@studioambar.com<br />
-                        Telefone: (11) 99999-9999<br />
-                        Redes sociais: ícones</p>
-                </div>
+            {/* Grid que coloca Formulário e Informações lado a lado */}
+            <div className="contato-main-grid">
+
+                {/* LADO ESQUERDO: Formulário */}
+                <section className="contato-card">
+                    <div className="contato-card-content">
+                        <div className="contato-title-wrapper">
+                            <div className="contato-orange-bar"></div>
+                            <h2 className="contato-card-title">Formulário</h2>
+                        </div>
+
+                        <form className="contato-form" onSubmit={(e) => e.preventDefault()}>
+                            <div className="contato-input-group">
+                                <label className="contato-label">Nome</label>
+                                <input type="text" className="contato-input" placeholder="Digite seu nome completo" />
+                            </div>
+
+                            <div className="contato-input-group">
+                                <label className="contato-label">E-mail</label>
+                                <input type="email" className="contato-input" placeholder="seuemail@exemplo.com" />
+                            </div>
+
+                            <div className="contato-input-group">
+                                <label className="contato-label">Telefone</label>
+                                <input type="tel" className="contato-input" placeholder="(55) 99999-9999" />
+                            </div>
+
+                            <div className="contato-input-group">
+                                <label className="contato-label">Tipo de Projeto</label>
+                                <select className="contato-select">
+                                    <option>Selecione uma opção</option>
+                                    <option>Criação de Site</option>
+                                    <option>Identidade Visual</option>
+                                    <option>Outros serviços</option>
+                                </select>
+                            </div>
+
+                            <div className="contato-input-group">
+                                <label className="contato-label">Mensagem</label>
+                                <textarea className="contato-textarea" placeholder="Conte sua ideia..."></textarea>
+                            </div>
+
+                            <button type="submit" className="contato-button">Enviar Mensagem →</button>
+                        </form>
+                    </div>
+                </section>
+
+                {/* LADO DIREITO: Informações de Contato */}
+                <section className="contato-card">
+                    <div className="contato-card-content">
+                        <div className="contato-title-wrapper">
+                            <div className="contato-orange-bar"></div>
+                            <h2 className="contato-card-title">Informações</h2>
+                        </div>
+
+                        <div className="contato-info-list">
+                            <div className="contato-info-item">
+                                <span className="contato-info-label">Localização</span>
+                                <p className="contato-info-value">Santa Rosa - RS</p>
+                            </div>
+
+                            <div className="contato-info-item">
+                                <span className="contato-info-label">E-mail profissional</span>
+                                <p className="contato-info-value">contato@studio.ambar</p>
+                            </div>
+
+                            <div className="contato-info-item">
+                                <span className="contato-info-label">Telefone / WhatsApp</span>
+                                <p className="contato-info-value">(55) 99999-9999</p> {/* Sugestão de número */}
+                            </div>
+
+                            <div className="contato-info-item">
+                                <span className="contato-info-label">Redes Sociais</span>
+                                <p className="contato-info-value">@studio.ambar</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
-        </main>
+        </div>
     );
 }
-
-export default Contato;

@@ -1,0 +1,100 @@
+/* Container principal com fundo escuro e centralização */
+.blog-container {
+    background-color: #0a0d14;
+    color: #ffffff;
+    padding: 30px 20px;
+    font-family: sans-serif;
+    max-width: 1060px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Cabeçalho do blog */
+.blog-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.blog-title {
+    font-size: 2.4rem;
+    letter-spacing: 4px;
+    color: #f3e5d8;
+    margin: 0 0 8px 0;
+}
+
+.blog-subtitle {
+    color: #8a8f98;
+    font-size: 1rem;
+    margin: 0 0 12px 0;
+}
+
+.blog-highlight {
+    color: #ff7a00;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Seções */
+.blog-section-row {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.blog-section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+/* Cartões (manchete principal e cards laterais) */
+.blog-card {
+    background-color: #161b26;
+    border-radius: 12px;
+    border-left: 4px solid #ff7a00;
+    box-sizing: border-box;
+}
+
+.blog-card-content {
+    padding: 28px 30px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+/* Tipografia interna dos cartões */
+.blog-date {
+    color: #5c6370;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.blog-main-title {
+    font-size: 1.35rem;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.blog-card-title {
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.blog-description {
+    color: #a0a5b0;
+    line-height: 1.5;
+    font-size: 0.92rem;
+    margin: 0 0 12px 0;
+}
+
+.blog-read-more {
+    color: #ff7a00;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+}
