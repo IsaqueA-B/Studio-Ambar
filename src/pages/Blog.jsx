@@ -37,7 +37,7 @@ export default function Blog() {
 
         <div style={styles.card}>
           <div style={styles.cardContent}>
-            <span style={styles.date}>01/06/2026</span>
+            <span style={styles.date}>01/06/20266</span>
             <h3 style={styles.cardTitle}>Por que sua empresa precisa de um site profissional</h3>
             <p style={styles.cardDescription}>Entenda como o desenvolvimento web sob medida constrói autoridade e ajuda nos empreendimentos das empresas no Google.</p>
             <span style={styles.readMore}>Ler artigo →</span>

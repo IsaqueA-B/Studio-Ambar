@@ -76,7 +76,7 @@ export default function Contato() {
               </div>
 
               <div style={styles.infoItem}>
-                <span style={styles.infoLabel}>Telefone / WhatsApp</span>
+                <span style={styles.infoLabel}>Telefoneee / WhatsApp</span>
                 <p style={styles.infoValue}></p>
               </div>
 
