@@ -9,7 +9,6 @@ import Sobre from './pages/Sobre';
 import Servicos from './pages/Servicos';
 import Portfolio from './pages/Portfolio';
 import PortfolioCase from './pages/PortfolioCase';
-import Cases from './pages/Cases';
 import Blog from './pages/Blog';
 import Contato from './pages/Contato';
 import Home from './pages/Home';
@@ -28,7 +27,6 @@ function App() {
         <Route path="/servicos" element={<Servicos />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:id" element={<PortfolioCase />} />
-        <Route path="/cases" element={<Cases />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/sobre" element={<Sobre />} />

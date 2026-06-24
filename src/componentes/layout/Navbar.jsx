@@ -50,12 +50,6 @@ function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/cases">
-                            <img src={iconCases} alt="" className="sidebar-icon" />
-                            <span>Cases</span>
-                        </Link>
-                    </li>
-                    <li>
                         <Link to="/blog">
                             <img src={iconBlog} alt="" className="sidebar-icon" />
                             <span>Blog</span>
