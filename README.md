@@ -8,12 +8,15 @@ Nosso trabalho atual é a criação das paginas requisitas (um total de 8: Home,
 A empresa Studio Âmbar atua no ramo de Design Digital, oferecendo Suporte na criação de identidade visual no mercado além de soluções para seus clientes.
 
 ## Objetivo do sistema
-O sistema tem como objetivo criar toda a estrutura para a empresa ter o funcionamento. Ele permitirá que os usuários possam ______, ______ e ______.
+O sistema tem como objetivo criar toda a estrutura para a empresa ter o funcionamento. Ele permitirá que os usuários possam ver tudo sobre o site, junto com seus serviços / projetos, também permitindo que entrem em contato e assim tendo potenciais clientes.
 
-## Integrantes
-- Nome do aluno 1
-- Nome do aluno 2
-- Nome do aluno 3
+## Integrantes (e Git)
+- Isaque E. A. Bastos (IsaqueA-B)
+- Emanuel A. S. Hubner (emanohubner-ui)
+- Cássio R. Shultz (quagmire77)
+- Leonardo A. Hemmilla (leeoo999)
+- Guilherme Z. Thomas (guilhermethomas14-a11y)
+
 ## Tecnologias utilizadas
 - React
 - Vite
@@ -22,32 +25,41 @@ O sistema tem como objetivo criar toda a estrutura para a empresa ter o funciona
 - MySQL
 - mysql2
 - GitHub
+
 ## Como instalar e executar
 Clone o repositório:
-git clone LINK_DO_REPOSITORIO
+git clone [LINK_DO_REPOSITORIO](https://github.com/IsaqueA-B/Studio-Ambar.git)
+
 Acesse a pasta do projeto:
-cd NOME_DA_PASTA
+cd [Nome-Da-Pasta] (Studio-Ambar)
+
 Instale as dependências:
 npm install
+
 Execute o projeto:
 npm run dev
-Caso tenha backend:
+
+Backend (Ainda em desenvolvimento):
 cd backend
 npm install
 npm start
+
 ## Variáveis de ambiente
 Crie um arquivo .env com base no .env.example.
+
 Exemplo de .env.example:
 DB_HOST=
 DB_PORT=
 DB_NAME=
 DB_USER=
 DB_PASSWORD=
+
 ## Entidades principais
 - Cliente: __________________________________________
 - Produto/Serviço: _________________________________
 - Pedido/Orçamento: ________________________________
 - Usuário: _________________________________________
+
 ## Endpoints planejados
 | Método | Rota | Descrição |
 |---|---|---|
@@ -55,8 +67,14 @@ DB_PASSWORD=
 | POST | /clientes | Cadastrar cliente |
 | PUT | /clientes/:id | Editar cliente |
 | DELETE | /clientes/:id | Excluir cliente |
+
 ## Prints do projeto
-Adicionar imagens, telas, logo ou protótipos do sistema.
-Exemplo: ![Tela inicial](docs/imagens/tela-inicial.png)
+
+![Home](src/assets/images/SiteExemplo/Home.png)
+![Sobre1](src/assets/images/SiteExemplo/Sobre1.png)
+![Sobre2](src/assets/images/SiteExemplo/Sobre2.png)
+![Portfólio1](src/assets/images/SiteExemplo/Portfolio1.png)
+![Portfólio2](src/assets/images/SiteExemplo/Portfolio2.png)
+
 ## Status do projeto
 Projeto em desenvolvimento.
