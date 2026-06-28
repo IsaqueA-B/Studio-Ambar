@@ -1,16 +1,56 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Nome do Projeto
+Breve descrição do sistema desenvolvido pelo grupo.
+## Sobre a empresa
+A empresa ______ atua no ramo de ______, oferecendo ______ para seus clientes.
+## Objetivo do sistema
+O sistema tem como objetivo ______. Ele permitirá que os usuários possam ______, ______ e ______.
+## Integrantes
+- Nome do aluno 1
+- Nome do aluno 2
+- Nome do aluno 3
+## Tecnologias utilizadas
+- React
+- Vite
+- Node.js
+- Express
+- MySQL
+- mysql2
+- GitHub
+## Como instalar e executar
+Clone o repositório:
+git clone LINK_DO_REPOSITORIO
+Acesse a pasta do projeto:
+cd NOME_DA_PASTA
+Instale as dependências:
+npm install
+Execute o projeto:
+npm run dev
+Caso tenha backend:
+cd backend
+npm install
+npm start
+## Variáveis de ambiente
+Crie um arquivo .env com base no .env.example.
+Exemplo de .env.example:
+DB_HOST=
+DB_PORT=
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+## Entidades principais
+- Cliente: __________________________________________
+- Produto/Serviço: _________________________________
+- Pedido/Orçamento: ________________________________
+- Usuário: _________________________________________
+## Endpoints planejados
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | /clientes | Listar clientes |
+| POST | /clientes | Cadastrar cliente |
+| PUT | /clientes/:id | Editar cliente |
+| DELETE | /clientes/:id | Excluir cliente |
+## Prints do projeto
+Adicionar imagens, telas, logo ou protótipos do sistema.
+Exemplo: ![Tela inicial](docs/imagens/tela-inicial.png)
+## Status do projeto
+Projeto em desenvolvimento.
