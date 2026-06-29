@@ -64,19 +64,19 @@ DB_PASSWORD=
 
 ## Endpoints planejados
 
-# Clientes (/clientes)
+### Clientes (/clientes)
 - GET /clientes → Lista todos.
 - POST /clientes → Cadastra um novo.
 - PUT /clientes/:id → Atualiza dados.
 - DELETE /clientes/:id → Remove do sistema.
 
-# Serviços (/servicos)
+### Serviços (/servicos)
 - GET /servicos → Lista os serviços.
 - POST /servicos → Cria novo serviço.
 - PUT /servicos/:id → Edita preço/prazo.
 - DELETE /servicos/:id → Deleta o serviço.
 
-# Projetos e Portfólio
+### Projetos e Portfólio
 - GET /projetos → Lista projetos ativos.
 - POST /projetos → Cria um novo projeto.
 - GET /portfolio → Lista itens públicos do portfólio.
