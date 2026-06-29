@@ -77,4 +77,6 @@ DB_PASSWORD=
 ![Portfólio2](src/assets/images/SiteExemplo/Portfolio2.png)
 
 ## Status do projeto
-Projeto em desenvolvimento.
+Toda a base ja esta bem estruturada, com o sistema de navegação correta, paginas criadas e varias funções ja atribuidas, agora precisamos adicionar os ultimos detalhes (como a anexação do banco de dados) e personalizar ainda mais o site deixando realmente profissional e estilizado.
+
+Todas as paginas ja tem toda a gama de informação necessaria, apenas vamos organizar melhor daqui para a frente dando mais identidade visual para o Studio Âmbar.
