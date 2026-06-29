@@ -73,8 +73,8 @@ DB_PASSWORD=
 ![Home](src/assets/images/SiteExemplo/Home.png)
 ![Sobre1](src/assets/images/SiteExemplo/Sobre1.png)
 ![Sobre2](src/assets/images/SiteExemplo/Sobre2.png)
-![Portfólio1](src/assets/images/SiteExemplo/Portfolio1.png)
-![Portfólio2](src/assets/images/SiteExemplo/Portfolio2.png)
+![Portfolio1](src/assets/images/SiteExemplo/Portfolio1.png)
+![Portfolio2](src/assets/images/SiteExemplo/Portfolio2.png)
 
 ## Status do projeto
 Toda a base ja esta bem estruturada, com o sistema de navegação correta, paginas criadas e varias funções ja atribuidas, agora precisamos adicionar os ultimos detalhes (como a anexação do banco de dados) e personalizar ainda mais o site deixando realmente profissional e estilizado.
