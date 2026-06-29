@@ -80,3 +80,44 @@ DB_PASSWORD=
 Toda a base ja esta bem estruturada, com o sistema de navegação correta, paginas criadas e varias funções ja atribuidas, agora precisamos adicionar os ultimos detalhes (como a anexação do banco de dados) e personalizar ainda mais o site deixando realmente profissional e estilizado.
 
 Todas as paginas ja tem toda a gama de informação necessaria, apenas vamos organizar melhor daqui para a frente dando mais identidade visual para o Studio Âmbar.
+
+Aqui está um resumo bem direto para você colocar no README.md do seu GitHub e matar a atividade:
+
+ Entidades (Tabelas do Banco)
+Clientes: Dados de contato e identificação de clientes/empresas.
+
+Serviços: Catálogo de serviços com preço e prazo.
+
+Projetos: Vincula um cliente a um serviço, com data de início e fim.
+
+Portfólio: Projetos finalizados expostos para o público.
+
+Contatos: Mensagens enviadas por potenciais clientes.
+
+Usuários: Contas com níveis de acesso para gerenciar o sistema.
+
+ Rotas da API (Endpoints)
+Clientes (/clientes)
+GET /clientes → Lista todos.
+
+POST /clientes → Cadastra um novo.
+
+PUT /clientes/:id → Atualiza dados.
+
+DELETE /clientes/:id → Remove do sistema.
+
+Serviços (/servicos)
+GET /servicos → Lista os serviços.
+
+POST /servicos → Cria novo serviço.
+
+PUT /servicos/:id → Edita preço/prazo.
+
+DELETE /servicos/:id → Deleta o serviço.
+
+Projetos e Portfólio
+GET /projetos → Lista projetos ativos.
+
+POST /projetos → Cria um novo projeto.
+
+GET /portfolio → Lista itens públicos do portfólio.
