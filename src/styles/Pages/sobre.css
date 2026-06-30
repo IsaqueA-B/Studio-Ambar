@@ -206,3 +206,22 @@
   object-fit: cover;
   border-radius: 50%;
 }
+
+/* ÍCONES */
+
+.icon-card {
+  width: 85px;
+  height: 85px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.icon-card img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+filter: invert(73%) sepia(39%) saturate(741%) hue-rotate(352deg) brightness(94%) contrast(88%);
+}

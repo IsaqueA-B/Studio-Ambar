@@ -29,6 +29,53 @@
 .card-lg {
     padding: 45px 35px;
 }
+/* MISSÃO E VISÃO */
+
+.card-lg p {
+font-size: 1.2rem;
+line-height: 1.8;
+max-width: 90%;
+margin: 0 auto;
+text-align: left;
+}
+.card-valores {
+text-align: left;
+display: flex;
+flex-direction: column;
+
+justify-content: flex-start;
+align-items: flex-start;
+}
+
+.card-valores h3 {
+margin-bottom: 20px;
+}
+
+.lista-valores {
+display: flex;
+flex-direction: column;
+
+gap: 22px;
+
+width: 100%;
+}
+
+.lista-valores p {
+margin: 0;
+
+line-height: 1.2;
+
+text-align: left;
+}
+
+.lista-valores strong {
+display: inline-block;
+
+margin-bottom: 5px;
+
+color: #ffffff;
+}
+
 
 /* Grids */
 .grid-3x3 {
@@ -74,3 +121,5 @@
         grid-template-columns: 1fr;
     }
 }
+
+

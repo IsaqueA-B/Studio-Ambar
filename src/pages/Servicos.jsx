@@ -3,7 +3,7 @@ import React from "react";
 const categoriasServicos = [
   {
     categoria: "Branding e Identidade",
-    servicos: [
+    servicos: [  
       {
         nome: "Identidade Visual",
         desc: "Criação de logo, paleta de cores e tipografia.",
