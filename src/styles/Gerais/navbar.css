@@ -154,3 +154,10 @@
         flex-direction: row;
     }
 }
+
+.nav-link.active .sidebar-icon {
+    filter: brightness(0) saturate(100%) invert(64%) sepia(80%) saturate(2000%) hue-rotate(5deg);
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--brand-ambar);
+    color: var(--brand-ambar);
+}

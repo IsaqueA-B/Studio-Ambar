@@ -1,9 +1,10 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { useUser } from '../users/UserContext';
 import logo1 from '../../assets/images/Especificos/Logo1.png';
 import iconeSair from '../../assets/images/Icons/btn-sair.png';
 
 // -------------------- ÍCONES DA SIDEBAR --------------------
+import iconHome from '../../assets/images/Icons/icon-home.png';
 import iconSobre from '../../assets/images/Icons/icon-sobre.png';
 import iconServicos from '../../assets/images/Icons/icon-servicos.png';
 import iconPortfolio from '../../assets/images/Icons/icon-portfolio.png';
@@ -32,34 +33,40 @@ function Navbar() {
             <nav className="sidebar-nav">
                 <ul className="sidebar-links">
                     <li>
-                        <Link to="/sobre">
+                        <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+                            <img src={iconHome} alt="" className="sidebar-icon" />
+                            <span>Home</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/sobre" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
                             <img src={iconSobre} alt="" className="sidebar-icon" />
                             <span>Sobre</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/servicos">
+                        <NavLink to="/servicos" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
                             <img src={iconServicos} alt="" className="sidebar-icon" />
                             <span>Serviços</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/portfolio">
+                        <NavLink to="/portfolio" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
                             <img src={iconPortfolio} alt="" className="sidebar-icon" />
                             <span>Portfólio</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/blog">
+                        <NavLink to="/blog" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
                             <img src={iconBlog} alt="" className="sidebar-icon" />
                             <span>Blog</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/contato">
+                        <NavLink to="/contato" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
                             <img src={iconContato} alt="" className="sidebar-icon" />
                             <span>Contato</span>
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

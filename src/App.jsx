@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './componentes/layout/ScrollToTop';
 import Navbar from './componentes/layout/Navbar';
 import { UserProvider } from './componentes/users/UserContext';
 import { PrivateRoute } from './componentes/users/PrivateRoute';
@@ -19,6 +20,7 @@ import NotFound from './pages/NotFound';
 function App() {
   return (
     <UserProvider>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
