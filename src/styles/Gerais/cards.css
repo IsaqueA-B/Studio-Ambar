@@ -39,14 +39,14 @@ margin: 0 auto;
 text-align: left;
 }
 .card-valores {
-text-align: left;
 display: flex;
 flex-direction: column;
-
-justify-content: flex-start;
-align-items: flex-start;
+justify-content: center;
+align-items: left;
 }
-
+.card-valores.card-titulo {
+align-items: center;
+}
 .card-valores h3 {
 margin-bottom: 20px;
 }

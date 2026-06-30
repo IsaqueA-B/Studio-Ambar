@@ -159,6 +159,8 @@
   font-size: 1.5rem;
   display: flex;
   justify-content: center;
+  text-align: center;
+ 
   /* pode ser sobrescrito se necessário */
 }
 
@@ -223,5 +225,5 @@
   width: 42px;
   height: 42px;
   object-fit: contain;
-filter: invert(73%) sepia(39%) saturate(741%) hue-rotate(352deg) brightness(94%) contrast(88%);
+filter: var(--brand-ambar-filter);
 }
