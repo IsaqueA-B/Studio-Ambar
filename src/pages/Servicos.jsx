@@ -91,7 +91,7 @@ function Servicos() {
 
       {categoriasServicos.map((categoria, index) => (
         <section key={index} className="mb-20">
-          <h2 className="mb-10">{categoria.categoria}</h2>
+          <h2 className="mb-10 sem-linha">{categoria.categoria}</h2>
 
           <div className="grid-3x3">
             {categoria.servicos.map((servico, i) => (
