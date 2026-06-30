@@ -1,6 +1,7 @@
 :root {
     /* Cores da Marca */
     --brand-ambar: #e0a458;
+    --brand-ambar-filter: brightness(0) invert(44%) sepia(100%) saturate(197%) hue-rotate(354deg) brightness(120%) contrast(120%);
     --brand-ambar-dark: #c68b3a;
     --brand-creme: #f7e6c4;
     --brand-navy: #0f1b2e;
