@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5173/api';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
 
 // ========== CLIENTES ==========
 export async function buscarClientes() {
@@ -137,7 +137,11 @@ export async function criarContato(nome, telefone, email) {
  headers: { 'Content-Type': 'application/json' },
  body: JSON.stringify({ nome, telefone, email })
  });
- return await resposta.json();
+ const data = await resposta.json();
+ if (!resposta.ok) {
+ throw new Error(data.erro || 'Erro ao enviar contato');
+ }
+ return data;
 }
 
 export async function atualizarContato(id, nome, telefone, email) {
