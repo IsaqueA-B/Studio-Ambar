@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Blog() {
     return (
-        <main className="blog-container animacao-entrada">
+        <main className="blog-container animacao-entrada p-20">
             {/* Cabeçalho do Blog (usa h1 e subtítulo globais) */}
             <section className="text-center mb-20">
                 <h1>Blog</h1>

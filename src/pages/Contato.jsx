@@ -2,7 +2,7 @@ import React from 'react';
 
 function Contato() {
     return (
-        <main className="contato-container animacao-entrada">
+        <main className="contato-container animacao-entrada p-20">
             {/* Cabeçalho da página (usa h1 e subtitulo-pagina globais) */}
             <section className="text-center">
                 <h1>Contato</h1>
