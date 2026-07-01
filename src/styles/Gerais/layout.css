@@ -27,6 +27,14 @@ main {
     box-sizing: border-box;
 }
 
+.container-servicos {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;  
+    padding: 0 10px;   
+    box-sizing: border-box; 
+}
+
 /* Em mobile, sidebar vira barra superior */
 @media (max-width: 768px) {
     #root {

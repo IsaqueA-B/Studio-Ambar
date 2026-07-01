@@ -83,6 +83,7 @@ const categoriasServicos = [
 
 function Servicos() {
   return (
+    <main className= "container-servicos">
     <main className="p-20 animacao-entrada">
       <section className="text-center mb-20">
         <h1>Nossos Serviços</h1>
@@ -91,7 +92,7 @@ function Servicos() {
 
       {categoriasServicos.map((categoria, index) => (
         <section key={index} className="mb-20">
-          <h2 className="mb-10">{categoria.categoria}</h2>
+          <h2 className="mb-10 sem-linha">{categoria.categoria}</h2>
 
           <div className="grid-3x3">
             {categoria.servicos.map((servico, i) => (
@@ -108,6 +109,7 @@ function Servicos() {
           </div>
         </section>
       ))}
+    </main>
     </main>
   );
 }
