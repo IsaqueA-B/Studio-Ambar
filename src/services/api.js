@@ -176,20 +176,20 @@ export async function buscarUsuarios() {
  return await resposta.json();
 }
 
-export async function criarUsuario(nome, gmail, senha, nivel_acesso, cpf) {
+export async function criarUsuario(nome, email, senha, nivel_acesso, cpf) {
  const resposta = await fetch(`${API_BASE}/usuarios`, {
  method: 'POST',
  headers: { 'Content-Type': 'application/json' },
- body: JSON.stringify({ nome, gmail, senha, nivel_acesso, cpf })
+ body: JSON.stringify({ nome, email, senha, nivel_acesso, cpf })
  });
  return await resposta.json();
 }
 
-export async function atualizarUsuario(id, nome, gmail, senha, nivel_acesso, cpf) {
+export async function atualizarUsuario(id, nome, email, senha, nivel_acesso, cpf) {
  const resposta = await fetch(`${API_BASE}/usuarios/${id}`, {
  method: 'PUT',
  headers: { 'Content-Type': 'application/json' },
- body: JSON.stringify({ nome, gmail, senha, nivel_acesso, cpf })
+ body: JSON.stringify({ nome, email, senha, nivel_acesso, cpf })
  });
  return await resposta.json();
 }

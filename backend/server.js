@@ -329,7 +329,7 @@ app.delete('/api/contatos/:id', async (req, res) => {
 // ========== USUÁRIOS ==========
 app.get('/api/usuarios', async (req, res) => {
  try {
- const [usuarios] = await pool.query('SELECT id, nome, gmail, nivel_acesso, cpf FROM usuarios ORDER BY id DESC');
+ const [usuarios] = await pool.query('SELECT id, nome, email, nivel_acesso, cpf FROM usuarios ORDER BY id DESC');
  res.json(usuarios);
  } catch (error) {
  console.error(error);
@@ -339,15 +339,15 @@ app.get('/api/usuarios', async (req, res) => {
 
 app.post('/api/usuarios', async (req, res) => {
  try {
- const { nome, gmail, senha, nivel_acesso, cpf } = req.body;
- if (!nome || !gmail || !senha) {
+ const { nome,email, senha, nivel_acesso, cpf } = req.body;
+ if (!nome || !email || !senha) {
  return res.status(400).json({ erro: 'Nome, email e senha são obrigatórios' });
  }
  const [result] = await pool.execute(
- 'INSERT INTO usuarios (nome, gmail, senha, nivel_acesso, cpf) VALUES (?, ?, ?, ?, ?)',
- [nome, gmail, senha, nivel_acesso || 'visualizador', cpf || null]
+ 'INSERT INTO usuarios (nome, email, senha, nivel_acesso, cpf) VALUES (?, ?, ?, ?, ?)',
+ [nome, email, senha, nivel_acesso || 'visualizador', cpf || null]
  );
- res.status(201).json({ id: result.insertId, nome, gmail, nivel_acesso: nivel_acesso || 'visualizador', cpf });
+ res.status(201).json({ id: result.insertId, nome, email, nivel_acesso: nivel_acesso || 'visualizador', cpf });
  } catch (error) {
  console.error(error);
  res.status(500).json({ erro: 'Erro ao criar usuário' });
@@ -357,13 +357,13 @@ app.post('/api/usuarios', async (req, res) => {
 app.put('/api/usuarios/:id', async (req, res) => {
  try {
  const { id } = req.params;
- const { nome, gmail, senha, nivel_acesso, cpf } = req.body;
- if (!nome || !gmail || !senha) {
+ const { nome, email, senha, nivel_acesso, cpf } = req.body;
+ if (!nome || !email || !senha) {
  return res.status(400).json({ erro: 'Nome, email e senha são obrigatórios' });
  }
  const [result] = await pool.execute(
- 'UPDATE usuarios SET nome = ?, gmail = ?, senha = ?, nivel_acesso = ?, cpf = ? WHERE id = ?',
- [nome, gmail, senha, nivel_acesso || 'visualizador', cpf || null, id]
+ 'UPDATE usuarios SET nome = ?, email = ?, senha = ?, nivel_acesso = ?, cpf = ? WHERE id = ?',
+ [nome, email, senha, nivel_acesso || 'visualizador', cpf || null, id]
  );
  if (result.affectedRows === 0) {
  return res.status(404).json({ erro: 'Usuário não encontrado' });

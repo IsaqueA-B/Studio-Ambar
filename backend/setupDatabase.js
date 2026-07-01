@@ -86,6 +86,11 @@ async function setupDatabase() {
  await connection.query(query);
  }
 
+ const [usuariosColumn] = await connection.query("SHOW COLUMNS FROM usuarios LIKE 'gmail'");
+ if (usuariosColumn.length > 0) {
+   await connection.query("ALTER TABLE usuarios CHANGE COLUMN gmail email VARCHAR(150) NOT NULL UNIQUE");
+ }
+
  console.log('Banco e tabela criados com sucesso!');
  await connection.end();
  } catch (error) {
