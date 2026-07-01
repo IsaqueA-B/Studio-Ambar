@@ -8,7 +8,7 @@ export default function Blog() {
                 <h1 className="blog-title">BLOG</h1>
                 <p className="blog-subtitle">Dicas, trends e novidades do mundo do design.</p>
                 <p className="blog-highlight">
-                    Confira nossas novidades mais recentes relacionadas a tecnologia e criação de um site!!!
+                    Confira nossas novidades mais recentes relacionadas a tecnologia e a criação de um site!!!
                 </p>
             </header>
 
@@ -21,7 +21,7 @@ export default function Blog() {
                             Como um bom design pode aumentar suas vendas em até 200%
                         </h2>
                         <p className="blog-description">
-                            A importância da criação de identidades visuais estratégicas. Entenda como marcas que investem em experiência visual e posicionamento estético convertem muito mais clientes e dominam o mercado digital.
+                            A importância da criação de identidades visuais estratégicas. Entenda como marcas que investem em experiência visual e o posicionamento estratégico convertem muito mais clientes e dominam o mercado digital.
                         </p>
                         <span className="blog-read-more">Quero ler o artigo completo →</span>
                     </div>
