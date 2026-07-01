@@ -7,9 +7,6 @@ function Blog() {
             {/* Cabeçalho do Blog (usa h1 e subtítulo globais) */}
             <section className="text-center mb-20">
                 <h1>Blog</h1>
-                <p className="subtitulo-pagina">
-                    Dicas, tendências e novidades do mundo do design.
-                </p>
                 <p className="text-brand-ambar">
                     Confira nossas novidades mais recentes relacionadas a tecnologia e criação de sites!
                 </p>
