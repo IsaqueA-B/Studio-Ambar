@@ -1,36 +1,17 @@
-import { useState } from 'react';
-import { useContatos } from '../hooks/useContatos';
-
+import React from 'react';
 export default function Contato() {
-    const { criarContato } = useContatos();
-    const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [telefone, setTelefone] = useState('');
-    const [status, setStatus] = useState(null);
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setStatus(null);
-
-        try {
-            await criarContato(nome, telefone, email);
-            setStatus({ type: 'success', message: 'Mensagem enviada com sucesso!' });
-            setNome('');
-            setEmail('');
-            setTelefone('');
-        } catch (error) {
-            setStatus({ type: 'error', message: error.message || 'Erro ao enviar mensagem.' });
-        }
-    };
-
     return (
         <div className="contato-container">
+            {/* Cabeçalho de Contato */}
             <header className="contato-header">
                 <h1 className="contato-title">CONTATO</h1>
                 <p className="contato-subtitle">Vamos conversar sobre seu projeto.</p>
             </header>
 
+            {/* Grid que coloca Formulário e Informações lado a lado */}
             <div className="contato-main-grid">
+
+                {/* LADO ESQUERDO: Formulário */}
                 <section className="contato-card">
                     <div className="contato-card-content">
                         <div className="contato-title-wrapper">
@@ -38,53 +19,43 @@ export default function Contato() {
                             <h2 className="contato-card-title">Formulário</h2>
                         </div>
 
-                        <form className="contato-form" onSubmit={handleSubmit}>
+                        <form className="contato-form" onSubmit={(e) => e.preventDefault()}>
                             <div className="contato-input-group">
                                 <label className="contato-label">Nome</label>
-                                <input
-                                    type="text"
-                                    className="contato-input"
-                                    placeholder="Digite seu nome completo"
-                                    value={nome}
-                                    onChange={(e) => setNome(e.target.value)}
-                                    required
-                                />
+                                <input type="text" className="contato-input" placeholder="Digite seu nome completo" />
                             </div>
 
                             <div className="contato-input-group">
                                 <label className="contato-label">E-mail</label>
-                                <input
-                                    type="email"
-                                    className="contato-input"
-                                    placeholder="seuemail@exemplo.com"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                />
+                                <input type="email" className="contato-input" placeholder="seuemail@exemplo.com" />
                             </div>
 
                             <div className="contato-input-group">
                                 <label className="contato-label">Telefone</label>
-                                <input
-                                    type="tel"
-                                    className="contato-input"
-                                    placeholder="(55) 99999-9999"
-                                    value={telefone}
-                                    onChange={(e) => setTelefone(e.target.value)}
-                                />
+                                <input type="tel" className="contato-input" placeholder="(55) 99999-9999" />
                             </div>
 
+                            <div className="contato-input-group">
+                                <label className="contato-label">Tipo de Projeto</label>
+                                <select className="contato-select">
+                                    <option>Selecione uma opção</option>
+                                    <option>Criação de Site</option>
+                                    <option>Identidade Visual</option>
+                                    <option>Outros serviços</option>
+                                </select>
+                            </div>
+
+                            <div className="contato-input-group">
+                                <label className="contato-label">Mensagem</label>
+                                <textarea className="contato-textarea" placeholder="Conte sua ideia..."></textarea>
+                            </div>
 
                             <button type="submit" className="contato-button">Enviar Mensagem →</button>
-                            {status && (
-                                <p className={`contato-status ${status.type}`}>
-                                    {status.message}
-                                </p>
-                            )}
                         </form>
                     </div>
                 </section>
 
+                {/* LADO DIREITO: Informações de Contato */}
                 <section className="contato-card">
                     <div className="contato-card-content">
                         <div className="contato-title-wrapper">
@@ -105,7 +76,7 @@ export default function Contato() {
 
                             <div className="contato-info-item">
                                 <span className="contato-info-label">Telefone / WhatsApp</span>
-                                <p className="contato-info-value">(55) 99999-9999</p>
+                                <p className="contato-info-value">(55) 99999-9999</p> {/* Sugestão de número */}
                             </div>
 
                             <div className="contato-info-item">

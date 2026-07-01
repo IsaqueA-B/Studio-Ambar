@@ -1,8 +1,3 @@
-.WordMark {
-    font-size: 5rem;
-    color: var(--brand-ambar)
-}
-
 /* ========== SEÇÃO 1 (flex com linha divisória) ========== */
 .home-secao1 {
     display: flex;

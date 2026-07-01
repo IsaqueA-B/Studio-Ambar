@@ -51,3 +51,7 @@
 .w-100 {
     width: 100%;
 }
+
+.text-brand-ambar {
+    color: var(--brand-ambar);
+}
