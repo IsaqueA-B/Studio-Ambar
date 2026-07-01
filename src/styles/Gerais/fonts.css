@@ -1,4 +1,4 @@
-/* Cinzel */
+/* Cinzel*/
 @font-face {
   font-family: 'Cinzel';
   src: url('../assets/fonts/Cinzel-Regular.otf') format('opentype');
@@ -26,7 +26,8 @@
 /* Manrope */
 @font-face {
   font-family: 'Manrope';
-  src: url('../assets/fonts/Manrope-Regular.otf') format('opentype');
+  src: url('../assets/fonts/Manrope-regular.otf') format('opentype');
+  /* minúsculo */
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -34,7 +35,8 @@
 
 @font-face {
   font-family: 'Manrope';
-  src: url('../assets/fonts/Manrope-SemiBold.otf') format('opentype');
+  src: url('../assets/fonts/Manrope-semibold.otf') format('opentype');
+  /* minúsculo */
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -42,7 +44,8 @@
 
 @font-face {
   font-family: 'Manrope';
-  src: url('../assets/fonts/Manrope-Bold.otf') format('opentype');
+  src: url('../assets/fonts/Manrope-bold.otf') format('opentype');
+  /* minúsculo */
   font-weight: 700;
   font-style: normal;
   font-display: swap;
