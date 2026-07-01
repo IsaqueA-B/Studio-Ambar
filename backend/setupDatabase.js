@@ -75,7 +75,7 @@ async function setupDatabase() {
  `CREATE TABLE IF NOT EXISTS usuarios (
     id              INT AUTO_INCREMENT PRIMARY KEY,
     nome            VARCHAR(150) NOT NULL,
-    gmail           VARCHAR(150) NOT NULL UNIQUE,
+    email           VARCHAR(150) NOT NULL UNIQUE,
     senha           VARCHAR(255) NOT NULL,
     nivel_acesso    ENUM('admin', 'editor', 'visualizador') NOT NULL DEFAULT 'visualizador',
     cpf             BIGINT(14) UNIQUE
