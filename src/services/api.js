@@ -132,12 +132,14 @@ export async function buscarContatos() {
 }
 
 export async function criarContato(nome, telefone, email) {
+ console.log('📡 API: Enviando para', `${API_BASE}/contatos`);
  const resposta = await fetch(`${API_BASE}/contatos`, {
  method: 'POST',
  headers: { 'Content-Type': 'application/json' },
  body: JSON.stringify({ nome, telefone, email })
  });
  const data = await resposta.json();
+ console.log('📡 API: Status', resposta.status, 'Dados:', data);
  if (!resposta.ok) {
  throw new Error(data.erro || 'Erro ao enviar contato');
  }

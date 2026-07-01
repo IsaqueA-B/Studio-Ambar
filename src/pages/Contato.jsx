@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { criarContato } from '../services/api';
+import { useContatos } from '../hooks/useContatos';
 
 export default function Contato() {
+    const { criarContato } = useContatos();
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
