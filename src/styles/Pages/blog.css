@@ -1,100 +1,31 @@
-/* Container principal com fundo escuro e centralização */
+/* Container da página */
 .blog-container {
-    background-color: #0a0d14;
-    color: #ffffff;
-    padding: 30px 20px;
-    font-family: sans-serif;
-    max-width: 1060px;
-    margin: 0 auto;
-    box-sizing: border-box;
     width: 100%;
+    background-color: var(--bg-main);
 }
 
-/* Cabeçalho do blog */
-.blog-header {
-    text-align: center;
-    margin-bottom: 40px;
+/* Destaque principal – borda âmbar grossa à esquerda */
+.card-blog-destaque {
+    border-left: 4px solid var(--brand-ambar);
+    padding: 30px;
+    /* um pouco mais espaçoso que o card padrão */
 }
 
-.blog-title {
-    font-size: 2.4rem;
-    letter-spacing: 4px;
-    color: #f3e5d8;
-    margin: 0 0 8px 0;
+/* Título do artigo em destaque (h2 sem gradiente, cor branca) */
+.blog-titulo-destaque {
+    font-size: 1.8rem;
+    color: var(--text-header);
+    margin-bottom: 12px;
 }
 
-.blog-subtitle {
-    color: #8a8f98;
-    font-size: 1rem;
-    margin: 0 0 12px 0;
+/* Garantir que os cards do grid ocupem altura total e tenham o botão no fim */
+.card-blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.blog-highlight {
-    color: #ff7a00;
-    font-weight: bold;
-    font-size: 0.95rem;
-}
-
-/* Seções */
-.blog-section-row {
-    margin-bottom: 25px;
-    width: 100%;
-}
-
-.blog-section-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-    gap: 30px;
-    width: 100%;
-}
-
-/* Cartões (manchete principal e cards laterais) */
-.blog-card {
-    background-color: #161b26;
-    border-radius: 12px;
-    border-left: 4px solid #ff7a00;
-    box-sizing: border-box;
-}
-
-.blog-card-content {
-    padding: 28px 30px;
-    text-align: left;
-    box-sizing: border-box;
-}
-
-/* Tipografia interna dos cartões */
-.blog-date {
-    color: #5c6370;
-    font-size: 0.8rem;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.blog-main-title {
-    font-size: 1.35rem;
-    margin: 0 0 10px 0;
-    font-weight: bold;
-    line-height: 1.4;
-}
-
-.blog-card-title {
-    font-size: 1.2rem;
-    margin: 0 0 10px 0;
-    font-weight: bold;
-    line-height: 1.4;
-}
-
-.blog-description {
-    color: #a0a5b0;
-    line-height: 1.5;
-    font-size: 0.92rem;
-    margin: 0 0 12px 0;
-}
-
-.blog-read-more {
-    color: #ff7a00;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 0.9rem;
-    display: inline-block;
+/* Ajuste opcional no tamanho do título dos cards menores */
+.card-blog .card-titulo {
+    font-size: 1.3rem;
 }
