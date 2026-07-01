@@ -6,7 +6,10 @@ export function useServicos() {
       console.log('📡 Buscando serviços...');
       const resultado = await buscarServicos();
       console.log('✅ Serviços obtidos:', resultado);
-      return resultado || [];
+      if (!Array.isArray(resultado)) {
+        throw new Error('Resposta inválida ao buscar serviços');
+      }
+      return resultado;
     } catch (error) {
       console.error('❌ Erro ao buscar serviços:', error);
       throw error;

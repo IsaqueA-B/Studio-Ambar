@@ -6,7 +6,10 @@ export function usePortfolio() {
       console.log('📡 Buscando portfólio...');
       const resultado = await buscarPortfolio();
       console.log('✅ Portfólio obtido:', resultado);
-      return resultado || [];
+      if (!Array.isArray(resultado)) {
+        throw new Error('Resposta inválida ao buscar portfólio');
+      }
+      return resultado;
     } catch (error) {
       console.error('❌ Erro ao buscar portfólio:', error);
       throw error;

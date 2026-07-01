@@ -35,7 +35,11 @@ export async function deletarCliente(id) {
 // ========== SERVIÇOS ==========
 export async function buscarServicos() {
  const resposta = await fetch(`${API_BASE}/servicos`);
- return await resposta.json();
+ const data = await resposta.json();
+ if (!resposta.ok) {
+  throw new Error(data.erro || 'Erro ao buscar serviços');
+ }
+ return data;
 }
 
 export async function criarServico(tipo_servico, valor, prazo) {
@@ -97,7 +101,11 @@ export async function deletarProjeto(id) {
 // ========== PORTFOLIO ==========
 export async function buscarPortfolio() {
  const resposta = await fetch(`${API_BASE}/portfolio`);
- return await resposta.json();
+ const data = await resposta.json();
+ if (!resposta.ok) {
+  throw new Error(data.erro || 'Erro ao buscar portfólio');
+ }
+ return data;
 }
 
 export async function criarPortfolio(id_projeto, titulo, descricao) {

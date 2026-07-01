@@ -31,7 +31,7 @@ function Portfolio() {
   if (carregando) return <main className="p-20"><p>Carregando portfólio...</p></main>;
   if (erro) return <main className="p-20"><p>{erro}</p></main>;
 
-  const projetosFiltrados = projetos.filter((proj) => {
+  const projetosFiltrados = (Array.isArray(projetos) ? projetos : []).filter((proj) => {
     if (filter === 'Todos') return true;
     const texto = `${proj.titulo || ''} ${proj.descricao || ''}`.toLowerCase();
     return texto.includes(filter.toLowerCase());
