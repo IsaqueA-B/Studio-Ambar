@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { buscarServicos, criarServico, atualizarServico, deletarServico } from '../services/api';
 
 export function useServicos() {
@@ -16,7 +17,7 @@ export function useServicos() {
     }
   };
 
-  const criar = async (tipo_servico, valor, prazo) => {
+  const criar = useCallback(async (tipo_servico, valor, prazo) => {
     try {
       console.log('📡 Criando serviço:', { tipo_servico, valor, prazo });
       const resultado = await criarServico(tipo_servico, valor, prazo);
@@ -26,9 +27,9 @@ export function useServicos() {
       console.error('❌ Erro ao criar serviço:', error);
       throw error;
     }
-  };
+  }, []);
 
-  const atualizar = async (id, tipo_servico, valor, prazo) => {
+  const atualizar = useCallback(async (id, tipo_servico, valor, prazo) => {
     try {
       const resultado = await atualizarServico(id, tipo_servico, valor, prazo);
       return resultado;
@@ -36,9 +37,9 @@ export function useServicos() {
       console.error('❌ Erro ao atualizar serviço:', error);
       throw error;
     }
-  };
+  }, []);
 
-  const deletar = async (id) => {
+  const deletar = useCallback(async (id) => {
     try {
       const resultado = await deletarServico(id);
       return resultado;
@@ -46,7 +47,7 @@ export function useServicos() {
       console.error('❌ Erro ao deletar serviço:', error);
       throw error;
     }
-  };
+  }, []);
 
   return {
     obterServicos,

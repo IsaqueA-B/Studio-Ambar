@@ -26,7 +26,7 @@ function Portfolio() {
     };
 
     buscarProjetos();
-  }, []);
+  }, [obterPortfolio]);
 
   if (carregando) return <main className="p-20"><p>Carregando portfólio...</p></main>;
   if (erro) return <main className="p-20"><p>{erro}</p></main>;

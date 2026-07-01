@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { buscarPortfolio, criarPortfolio, atualizarPortfolio, deletarPortfolio } from '../services/api';
 
 export function usePortfolio() {
@@ -16,7 +17,7 @@ export function usePortfolio() {
     }
   };
 
-  const criar = async (id_projeto, titulo, descricao) => {
+  const criar = useCallback(async (id_projeto, titulo, descricao) => {
     try {
       const resultado = await criarPortfolio(id_projeto, titulo, descricao);
       return resultado;
@@ -24,9 +25,9 @@ export function usePortfolio() {
       console.error('❌ Erro ao criar portfólio:', error);
       throw error;
     }
-  };
+  }, []);
 
-  const atualizar = async (id, id_projeto, titulo, descricao) => {
+  const atualizar = useCallback(async (id, id_projeto, titulo, descricao) => {
     try {
       const resultado = await atualizarPortfolio(id, id_projeto, titulo, descricao);
       return resultado;
@@ -34,9 +35,9 @@ export function usePortfolio() {
       console.error('❌ Erro ao atualizar portfólio:', error);
       throw error;
     }
-  };
+  }, []);
 
-  const deletar = async (id) => {
+  const deletar = useCallback(async (id) => {
     try {
       const resultado = await deletarPortfolio(id);
       return resultado;
@@ -44,7 +45,7 @@ export function usePortfolio() {
       console.error('❌ Erro ao deletar portfólio:', error);
       throw error;
     }
-  };
+  }, []);
 
   return {
     obterPortfolio,
