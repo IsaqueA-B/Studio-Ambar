@@ -8,13 +8,15 @@ function Sobre() {
   return (
     <main className="sobre-container animacao-entrada">
       <section className="sobre-hero text-center">
-        <div className="sobre-hero-content">
-          <h1 className="sobre-titulo">Sobre o Studio Âmbar</h1>
-          <p className="sobre-subtitulo">Criar • Conectar • Transformar</p>
-          <div className="sobre-slogan-box">
-            <span className="sobre-slogan fonte-titulo">
-              "Sua marca, nossa essência"
-            </span>
+        <div className="sobre-alinhamento">
+          <div className="sobre-hero-content">
+            <h1 className="sobre-titulo">Sobre o Studio Âmbar</h1>
+            <p className="sobre-subtitulo">Criar • Conectar • Transformar</p>
+            <div className="sobre-slogan-box">
+              <span className="sobre-slogan fonte-titulo">
+                "Sua marca, nossa essência"
+              </span>
+            </div>
           </div>
         </div>
       </section>

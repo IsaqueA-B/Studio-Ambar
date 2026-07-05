@@ -4,8 +4,7 @@ import WordMark from '../assets/images/Especificos/WordMark.png';
 
 function Home() {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100%' }}>
-
+        <div>
             <div style={{ marginTop: '80px' }}>
                 <img src={WordMark} alt="WordMark" className="WordMark" />
             </div>
