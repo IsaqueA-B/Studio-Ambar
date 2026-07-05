@@ -34,7 +34,7 @@
     opacity: 0.8;
 }
 
-/* Navegação (Centro) */
+/* Navegação */
 .navbar-nav {
     display: flex;
     align-items: center;
@@ -47,7 +47,6 @@
     margin: 0;
     padding: 0;
     gap: 12px;
-    /* Espaço entre os botões */
 }
 
 .navbar-links li {
@@ -64,7 +63,6 @@
     text-decoration: none;
     transition: all 0.25s;
     border-radius: 30px;
-    /* Efeito Pílula/Cápsula igual ao exemplo */
 }
 
 /* Hover nos links não-ativos */
@@ -73,16 +71,14 @@
     color: var(--brand-ambar);
 }
 
-/* Ocultar ícones para um visual limpo de texto (estilo exemplo) */
 .navbar-icon {
     display: none;
 }
 
-/* Link Ativo (Destaque estilo pílula igual à referência) */
+/* Link Ativo */
 .nav-link.active {
     background: var(--brand-ambar);
     color: var(--bg-main) !important;
-    /* Inverte a cor do texto para dar leitura no fundo âmbar */
 }
 
 /* Área do Usuário / Botão Entrar (Direita) */
@@ -124,14 +120,17 @@
 .btn-sair-icone {
     width: 16px;
     height: 16px;
-    filter: brightness(0);
-    /* Ajusta para escurecer o ícone caso precise no hover */
+    filter: var(--brand-ambar-filter);
 }
 
-/* ========== RESPONSIVO BÁSICO ========== */
+.btn-sair:hover .btn-sair-icone {
+    filter: brightness(0);
+}
+
+/* ========== RESPONSIVO ========== */
 @media (max-width: 992px) {
     .navbar {
-        padding: 0 20px;
+        padding: 0 10px;
     }
 
     .navbar-links a {
@@ -141,9 +140,51 @@
 }
 
 @media (max-width: 768px) {
+    .navbar-links a {
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 2px solid transparent;
+    }
 
-    /* Esconde a lista original no mobile para evitar quebra de layout */
-    .navbar-links {
+    /* Mostra os ícones */
+    .navbar-icon {
+        display: block;
+        width: 24px;
+        height: 24px;
+        filter: brightness(0) invert(1);
+    }
+
+    /* Link ativo: */
+    .nav-link.active {
+        background: var(--brand-ambar);
+        border: 2px solid var(--brand-ambar);
+    }
+
+    .nav-link.active .navbar-icon {
+        filter: brightness(0);
+    }
+
+    /* Esconde o texto */
+    .navbar-links a span {
         display: none;
+    }
+
+    .navbar-links {
+        gap: 8px;
+    }
+
+    /* Parte do Usuario*/
+    .navbar-user {
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .user-nome {
+        max-width: 100px;
+        text-align: center;
+        line-height: 1.2;
+        word-wrap: break-word;
+        white-space: normal;
     }
 }
