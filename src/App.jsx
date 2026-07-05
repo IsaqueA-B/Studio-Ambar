@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import ScrollToTop from './componentes/layout/ScrollToTop';
 import Navbar from './componentes/layout/Navbar';
+import Footer from './componentes/layout/Footer';
 import { UserProvider } from './componentes/users/UserContext';
 import { PrivateRoute } from './componentes/users/PrivateRoute';
 
@@ -22,23 +23,26 @@ function App() {
     <UserProvider>
       <ScrollToTop />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/servicos" element={<Servicos />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/portfolio/:id" element={<PortfolioCase />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contato" element={<Contato />} />
-        <Route path="/sobre" element={<Sobre />} />
-        <Route path="/Admin" element={
-          <PrivateRoute>
-            <Admin />
-          </PrivateRoute>
-        } />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className="main-wrapper">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/servicos" element={<Servicos />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/:id" element={<PortfolioCase />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contato" element={<Contato />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/Admin" element={
+            <PrivateRoute>
+              <Admin />
+            </PrivateRoute>
+          } />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </div>
     </UserProvider>
   );
 }
