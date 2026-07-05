@@ -1,3 +1,10 @@
+/* ========== WORDMARK ========== */
+.WordMark {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* ========== SEÇÃO 1 (flex com linha divisória) ========== */
 .home-secao1 {
     display: flex;
@@ -54,4 +61,3 @@
     background: var(--brand-ambar);
     margin-top: 10px;
 }
-
