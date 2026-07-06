@@ -10,6 +10,7 @@
 @import './Gerais/forms.css';
 @import './Gerais/animations.css';
 @import './Gerais/scroll.css';
+@import './Gerais/pageHero.css';
 
 /* EXTRAS */
 @import './Gerais/navbar.css';

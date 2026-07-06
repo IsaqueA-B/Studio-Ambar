@@ -45,17 +45,18 @@ function Sobre() {
   }, []);
 
   return (
-    <main className="sobre-container animacao-entrada">
-      <section className="sobre-hero text-center">
-        <div className="sobre-alinhamento">
-          <div className="sobre-hero-content">
-            <h1 className="sobre-titulo">Sobre o Studio Âmbar</h1>
-            <p className="sobre-subtitulo">Identidade Visual • Criação de Marcas • Redes Sociais</p>
-            <div className="sobre-slogan-box">
-              <span className="sobre-slogan fonte-titulo">
-                "Sua marca, nossa essência"
-              </span>
-            </div>
+    <main className="p-20 animacao-entrada">
+
+      <section className="page-hero text-center">
+        <div className="page-hero-container">
+          <div className="page-hero-content">
+            <h1 className="page-title">Sobre o Studio Âmbar</h1>
+            <p className="page-subtitle">Identidade Visual • Criação de marcas • Redes Sociais</p>
+          </div>
+          <div className="sobre-slogan-box">
+            <span className="sobre-slogan fonte-titulo">
+              "Sua marca, nossa essência"
+            </span>
           </div>
         </div>
       </section>
@@ -63,11 +64,11 @@ function Sobre() {
       <section className="sobre-secao">
         <div className="sobre-conteudo-flex">
           <div className="sobre-texto-bloco">
-        <h2>Histórico da Empresa</h2>
+            <h2>Histórico da Empresa</h2>
 
-<p> A Studio Âmbar é um estúdio criativo especializado no desenvolvimento de identidade de marca, design gráfico e soluções digitais. Desde sua fundação, atua com o propósito de transformar ideias em projetos estratégicos que fortalecem a presença e a comunicação de empresas no mercado. </p>
+            <p> A Studio Âmbar é um estúdio criativo especializado no desenvolvimento de identidade de marca, design gráfico e soluções digitais. Desde sua fundação, atua com o propósito de transformar ideias em projetos estratégicos que fortalecem a presença e a comunicação de empresas no mercado. </p>
 
-<p className="sobre-destaque-texto"> Ao longo de sua trajetória, a Studio Âmbar consolidou uma abordagem que integra criatividade, planejamento e inovação, desenvolvendo identidades visuais, materiais gráficos e conteúdos digitais que geram valor, fortalecem marcas e proporcionam experiências relevantes para seus clientes. </p>
+            <p className="sobre-destaque-texto"> Ao longo de sua trajetória, a Studio Âmbar consolidou uma abordagem que integra criatividade, planejamento e inovação, desenvolvendo identidades visuais, materiais gráficos e conteúdos digitais que geram valor, fortalecem marcas e proporcionam experiências relevantes para seus clientes. </p>
           </div>
           <div className="sobre-imagem-bloco">
             <div className="moldura-logo-elo">

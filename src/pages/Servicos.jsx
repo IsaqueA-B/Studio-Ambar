@@ -119,70 +119,80 @@ function Servicos() {
       : servicos.filter((s) => s.categoria === filter);
 
   return (
- 
-      <main className="p-20 animacao-entrada">
-        <section className="text-center mb-20">
-          <h1>Nossos Serviços</h1>
-          <p>Soluções criativas para sua marca.</p>
-        </section>
 
-        {/* Filtros */}
-        <div className="mb-20 text-center filter-bar">
-          {filters.map((f) => (
-            <button
-              key={f}
-              className={`btn ${filter === f ? "active" : "btn-outline"}`}
-              onClick={() => setFilter(f)}
-              type="button"
-            >
-              {f}
-            </button>
-          ))}
-        </div>
+    <main className="p-20 animacao-entrada">
 
-        {/* Serviços */}
-        <div className="grid-3x3 mb-20">
-          {servicosFiltrados.map((servico, i) => (
-            <div className="card" key={i}>
-              <h3>{servico.nome}</h3>
-
-              <p>
-                <small>{servico.categoria}</small>
-              </p>
-
-              <p>{servico.desc}</p>
-
-              <h3>
-                <strong>A partir de {servico.valor}</strong>
-              </h3>
-            </div>
-          ))}
-        </div>
-
-        <section className="mb-20">
-          <h2 className="mb-10 sem-linha">
-            Serviços vindos do banco de dados
-          </h2>
-
-          <div className="grid-3x3">
-            {servicosBanco.length > 0 ? (
-              servicosBanco.map((servico) => (
-                <div className="card" key={servico.id}>
-                  <h3>{servico.tipo_servico}</h3>
-
-                  <p>{servico.prazo || "Prazo a combinar"}</p>
-
-                  <h3>
-                    <strong>{servico.valor}</strong>
-                  </h3>
-                </div>
-              ))
-            ) : (
-              <p>Carregando serviços do banco...</p>
-            )}
+      <section className="page-hero text-center">
+        <div className="page-hero-container">
+          <div className="page-hero-content">
+            <h1 className="page-title">Nossos Serviços</h1>
+            <p className="page-subtitle">Identidade Visual • Web Design • E MAIS</p>
           </div>
-        </section>
-      </main>
+          <div className="sobre-slogan-box">
+            <span className="sobre-slogan fonte-titulo">
+              Soluções criativas para sua marca
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Filtros */}
+      <div className="mb-20 text-center filter-bar">
+        {filters.map((f) => (
+          <button
+            key={f}
+            className={`btn ${filter === f ? "active" : "btn-outline"}`}
+            onClick={() => setFilter(f)}
+            type="button"
+          >
+            {f}
+          </button>
+        ))}
+      </div>
+
+      {/* Serviços */}
+      <div className="grid-3x3 mb-20">
+        {servicosFiltrados.map((servico, i) => (
+          <div className="card" key={i}>
+            <h3>{servico.nome}</h3>
+
+            <p>
+              <small>{servico.categoria}</small>
+            </p>
+
+            <p>{servico.desc}</p>
+
+            <h3>
+              <strong>A partir de {servico.valor}</strong>
+            </h3>
+          </div>
+        ))}
+      </div>
+
+      <section className="mb-20">
+        <h2 className="mb-10 sem-linha">
+          Serviços vindos do banco de dados
+        </h2>
+
+        <div className="grid-3x3">
+          {servicosBanco.length > 0 ? (
+            servicosBanco.map((servico) => (
+              <div className="card" key={servico.id}>
+                <h3>{servico.tipo_servico}</h3>
+
+                <p>{servico.prazo || "Prazo a combinar"}</p>
+
+                <h3>
+                  <strong>{servico.valor}</strong>
+                </h3>
+              </div>
+            ))
+          ) : (
+            <p>Carregando serviços do banco...</p>
+          )}
+        </div>
+      </section>
+    </main>
   );
 }
 

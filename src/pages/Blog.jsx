@@ -22,11 +22,19 @@ function Blog() {
     return (
         <main className="blog-container animacao-entrada p-20">
             {/* Cabeçalho do Blog (usa h1 e subtítulo globais) */}
-            <section className="text-center mb-20">
-                <h1>Blog</h1>
-                <p className="text-brand-ambar">
-                    Confira nossas novidades mais recentes relacionadas a tecnologia e criação de sites!
-                </p>
+
+            <section className="page-hero text-center">
+                <div className="page-hero-container">
+                    <div className="page-hero-content">
+                        <h1 className="page-title">Blog</h1>
+                        <p className="page-subtitle">Tendências • Noticias</p>
+                    </div>
+                    <div className="sobre-slogan-box">
+                        <span className="sobre-slogan fonte-titulo">
+                            Confira nossas novidades mais recentes relacionadas a tecnologia e criação de sites!
+                        </span>
+                    </div>
+                </div>
             </section>
 
             {/* Artigo em destaque (card horizontal com borda âmbar grossa) */}
