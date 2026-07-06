@@ -22,6 +22,22 @@
 
             const filters = ['Todos', 'Identidade Visual', 'Social Media', 'Web', 'Saúde', 'Alimentação', 'Comércio', 'Automóveis'];
 
+            // Função para gerar classe CSS dinâmica baseada no nome da empresa
+            const getEmpresaClass = (nome) => {
+                const classMap = {
+                    'Doce Sabor Confeitaria': 'empresa-doce-sabor',
+                    'TechStart': 'empresa-techstart',
+                    'Café do Zé': 'empresa-cafe-do-ze',
+                    'Oficina Rota Certa': 'empresa-oficina-rota',
+                    'Sabor Raiz': 'empresa-sabor-raiz',
+                    'Casa em Dia': 'empresa-casa-em-dia',
+                    'Ilumina Decora': 'empresa-ilumina-decora',
+                    'BioTECNO': 'empresa-biotecno',
+                    'Coopermil': 'empresa-coopermil',
+                };
+                return classMap[nome] || '';
+            };
+
             useEffect(() => {
                 const buscarPortfolio = async () => {
                     try {
@@ -74,7 +90,7 @@
                     <div className="grid-3x3 mb-20">
                         {projetosFiltrados.map((proj) => (
                             <Link to={`/portfolio/${proj.id}`} className="btn-card" key={proj.id}>
-                                <div className="card">
+                                <div className={`card ${getEmpresaClass(proj.nome)}`}>
                                     <h3>{proj.nome}</h3>
                                     <p><small>{proj.categoria}</small></p>
                                     <p>{proj.desc}</p>
