@@ -105,17 +105,24 @@ function PortfolioCase() {
     const buscarPortfolio = async () => {
       try {
         const dados = await obterPortfolio();
-        const encontrado = dados.find((item) => String(item.id) === String(id) || String(item.id_projeto) === String(id));
-        if (encontrado) {
-          setPortfolioItem(encontrado);
+        
+        // Validar se dados é um array antes de usar find()
+        if (Array.isArray(dados) && dados.length > 0) {
+          const encontrado = dados.find(
+            (item) => String(item.id) === String(id) || String(item.id_projeto) === String(id)
+          );
+          if (encontrado) {
+            setPortfolioItem(encontrado);
+          }
         }
       } catch (error) {
-        console.error(error);
+        console.error('Erro ao buscar portfolio:', error);
+        // Falha silenciosamente - usa dados estáticos
       }
     };
 
     buscarPortfolio();
-  }, [id]);
+  }, [id, obterPortfolio]);
 
   const isTech = projeto.id === '2';
   const isCafe = projeto.id === '3';
