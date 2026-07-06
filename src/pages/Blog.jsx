@@ -66,7 +66,9 @@ function Blog() {
                     ) : (
                         <p>Carregando itens do banco...</p>
                     )}
+                       <button className="btn" type="button" onClick={() => {}} > Cadastrar Item </button>
                 </div>
+            
             </section>
 
             {/* Grid de artigos com 2 colunas (usando grid-auto) */}
