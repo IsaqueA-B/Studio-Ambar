@@ -5,6 +5,19 @@ import pool from './db.js';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// ========== FUNÇÕES UTILITÁRIAS ==========
+const removerMascaraCPF = (cpf) => {
+  if (!cpf) return null;
+  return cpf.replace(/\D/g, '').slice(0, 11);
+};
+
+const validarCPF = (cpf) => {
+  if (!cpf) return false;
+  const cpfLimpo = removerMascaraCPF(cpf);
+  return cpfLimpo.length === 11;
+};
+
 app.use(cors());
 app.use(express.json());
 app.get('/', (req, res) => {
@@ -154,6 +167,19 @@ app.post('/api/projetos', async (req, res) => {
  if (!id_cliente || !id_servico || !data_inicioProjeto) {
  return res.status(400).json({ erro: 'Cliente, serviço e data de início são obrigatórios' });
  }
+ 
+ // Verificar se cliente existe
+ const [cliente] = await pool.execute('SELECT id FROM clientes WHERE id = ?', [id_cliente]);
+ if (cliente.length === 0) {
+ return res.status(400).json({ erro: 'Cliente não encontrado' });
+ }
+ 
+ // Verificar se serviço existe
+ const [servico] = await pool.execute('SELECT id FROM servicos WHERE id = ?', [id_servico]);
+ if (servico.length === 0) {
+ return res.status(400).json({ erro: 'Serviço não encontrado' });
+ }
+ 
  const [result] = await pool.execute(
  'INSERT INTO projetos (id_cliente, id_servico, data_inicioProjeto, data_finalProjeto) VALUES (?, ?, ?, ?)',
  [id_cliente, id_servico, data_inicioProjeto, data_finalProjeto || null]
@@ -217,6 +243,13 @@ app.post('/api/portfolio', async (req, res) => {
  if (!id_projeto || !titulo || !titulo.trim()) {
  return res.status(400).json({ erro: 'Projeto e título são obrigatórios' });
  }
+ 
+ // Verificar se projeto existe
+ const [projeto] = await pool.execute('SELECT id FROM projetos WHERE id = ?', [id_projeto]);
+ if (projeto.length === 0) {
+ return res.status(400).json({ erro: 'Projeto não encontrado' });
+ }
+ 
  const [result] = await pool.execute(
  'INSERT INTO portfolio (id_projeto, titulo, descricao) VALUES (?, ?, ?)',
  [id_projeto, titulo, descricao || null]
@@ -339,17 +372,49 @@ app.get('/api/usuarios', async (req, res) => {
 
 app.post('/api/usuarios', async (req, res) => {
  try {
- const { nome,email, senha, nivel_acesso, cpf } = req.body;
- if (!nome || !email || !senha) {
+ const { nome, email, senha, nivel_acesso, cpf } = req.body;
+ if (!nome || !nome.trim() || !email || !email.trim() || !senha) {
  return res.status(400).json({ erro: 'Nome, email e senha são obrigatórios' });
  }
+ 
+ // Validar CPF
+ const cpfLimpo = removerMascaraCPF(cpf);
+ if (cpf && !validarCPF(cpf)) {
+ return res.status(400).json({ erro: 'CPF inválido. Deve ter 11 dígitos' });
+ }
+ 
+ // Verificar email duplicado
+ if (email) {
+ const [emailExiste] = await pool.execute(
+ 'SELECT id FROM usuarios WHERE email = ?',
+ [email]
+ );
+ if (emailExiste.length > 0) {
+ return res.status(409).json({ erro: 'Email já cadastrado' });
+ }
+ }
+ 
+ // Verificar CPF duplicado
+ if (cpfLimpo) {
+ const [cpfExiste] = await pool.execute(
+ 'SELECT id FROM usuarios WHERE cpf = ?',
+ [cpfLimpo]
+ );
+ if (cpfExiste.length > 0) {
+ return res.status(409).json({ erro: 'CPF já cadastrado' });
+ }
+ }
+ 
  const [result] = await pool.execute(
  'INSERT INTO usuarios (nome, email, senha, nivel_acesso, cpf) VALUES (?, ?, ?, ?, ?)',
- [nome, email, senha, nivel_acesso || 'visualizador', cpf || null]
+ [nome, email, senha, nivel_acesso || 'visualizador', cpfLimpo || null]
  );
- res.status(201).json({ id: result.insertId, nome, email, nivel_acesso: nivel_acesso || 'visualizador', cpf });
+ res.status(201).json({ id: result.insertId, nome, email, nivel_acesso: nivel_acesso || 'visualizador', cpf: cpfLimpo });
  } catch (error) {
  console.error(error);
+ if (error.code === 'ER_DUP_ENTRY') {
+ return res.status(409).json({ erro: 'Email ou CPF já cadastrado' });
+ }
  res.status(500).json({ erro: 'Erro ao criar usuário' });
  }
 });
