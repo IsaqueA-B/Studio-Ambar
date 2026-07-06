@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { usePortfolio } from '../hooks/usePortfolio';
 
 function Blog() {
+    const { obterPortfolio } = usePortfolio();
+    const [portfolioBanco, setPortfolioBanco] = useState([]);
+
+    useEffect(() => {
+        const buscarPortfolio = async () => {
+            try {
+                const dados = await obterPortfolio();
+                setPortfolioBanco(dados || []);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        buscarPortfolio();
+    }, []);
+
     return (
         <main className="blog-container animacao-entrada p-20">
             {/* Cabeçalho do Blog (usa h1 e subtítulo globais) */}
@@ -25,6 +42,22 @@ function Blog() {
                     <Link to="/blog/1" className="btn btn-outline mt-10">
                         Quero ler o artigo completo
                     </Link>
+                </div>
+            </section>
+
+            <section className="mb-20">
+                <div className="card">
+                    <h2 className="card-titulo">Itens recentes do banco</h2>
+                    {portfolioBanco.length > 0 ? (
+                        portfolioBanco.slice(0, 3).map((item) => (
+                            <div key={item.id} style={{ marginTop: '10px' }}>
+                                <strong>{item.titulo}</strong>
+                                <p>{item.descricao}</p>
+                            </div>
+                        ))
+                    ) : (
+                        <p>Carregando itens do banco...</p>
+                    )}
                 </div>
             </section>
 

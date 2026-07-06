@@ -1,13 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUser } from '../componentes/users/UserContext';
 import { aplicarMascaraCPF } from '../componentes/users/auth';
+import { useUsuarios } from '../hooks/useUsuarios';
 
 function Login() {
     const { login } = useUser();
+    const { obterUsuarios } = useUsuarios();
     const navigate = useNavigate();
     const [cpf, setCpf] = useState('');
     const [senha, setSenha] = useState('');
+    const [usuariosBanco, setUsuariosBanco] = useState([]);
+
+    useEffect(() => {
+        const carregarUsuarios = async () => {
+            try {
+                const dados = await obterUsuarios();
+                setUsuariosBanco(Array.isArray(dados) ? dados : []);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        carregarUsuarios();
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -47,6 +63,7 @@ function Login() {
                 <p className="text-center mt-20">
                     Não tem conta? <Link to="/register">Cadastre-se</Link>
                 </p>
+                <p className="text-center mt-10">Usuários carregados do banco: {usuariosBanco.length}</p>
             </div>
         </main>
     );

@@ -1,95 +1,157 @@
 # Studio Âmbar
 
-A Studio Âmbar é uma empresa especializada em identidade visual, criação de marcas, design para redes sociais e soluções digitais para pequenos negócios. A empresa busca transformar ideias em marcas fortes, com comunicação visual profissional e presença digital organizada.
+O Studio Âmbar é um projeto de site institucional e painel administrativo para uma agência de branding, design e comunicação visual. A aplicação combina frontend em React com backend em Node.js/Express e banco de dados MySQL para exibir e armazenar conteúdos relacionados a serviços, clientes, contatos e portfólio.
 
-Nosso trabalho atual é a criação das paginas requisitas (um total de 8: Home, Sobre, Serviços, Portfolio, Cases (que juntamos com o proprio Portfolio com PorfolioCase.jsx) Blog e o Contato) 
+## Visão geral
 
-## Sobre a empresa
-A empresa Studio Âmbar atua no ramo de Design Digital, oferecendo Suporte na criação de identidade visual no mercado além de soluções para seus clientes.
+O sistema foi estruturado para oferecer:
+- uma interface pública com páginas como Home, Sobre, Serviços, Portfólio, Blog e Contato;
+- um fluxo de cadastro e login para usuários;
+- integração com um backend para persistir contatos, clientes, serviços, projetos, usuários e itens de portfólio;
+- um painel administrativo para visualizar mensagens recebidas.
 
-## Objetivo do sistema
-O sistema tem como objetivo criar toda a estrutura para a empresa ter o funcionamento. Ele permitirá que os usuários possam ver tudo sobre o site, junto com seus serviços / projetos, também permitindo que entrem em contato e assim tendo potenciais clientes.
-
-## Integrantes (e Git)
-- Isaque E. A. Bastos (IsaqueA-B)
-- Emanuel A. S. Hubner (emanohubner-ui)
-- Cássio R. Shultz (quagmire77)
-- Leonardo A. Hemmilla (leeoo999)
-- Guilherme Z. Thomas (guilhermethomas14-a11y)
+## Equipe
+- Isaque E. A. Bastos
+- Emanuel A. S. Hubner
+- Cássio R. Schultz
+- Leonardo A. Hemmilla
+- Guilherme Z. Thomas
 
 ## Tecnologias utilizadas
 - React
 - Vite
+- JavaScript
+- React Router
 - Node.js
 - Express
 - MySQL
 - mysql2
-- GitHub
+- dotenv
+- CORS
 
-## Como instalar e executar
-Clone o repositório:
-git clone [LINK_DO_REPOSITORIO](https://github.com/IsaqueA-B/Studio-Ambar.git)
+## Estrutura do projeto
 
-Acesse a pasta do projeto:
-cd [Nome-Da-Pasta] (Studio-Ambar)
+- src/pages: páginas públicas e administrativas
+- src/hooks: integração com a API
+- src/services/api.js: funções de comunicação com o backend
+- src/componentes: componentes reutilizáveis e contexto de usuário
+- backend/: servidor Express e scripts de banco de dados
 
-Instale as dependências:
+## Requisitos
+- Node.js 18 ou superior
+- npm
+- MySQL em execução
+
+## Instalação
+
+1. Clone o repositório.
+2. Entre na pasta do projeto.
+3. Instale as dependências:
+
+```bash
 npm install
-
-Execute o projeto:
-npm run dev
-
-Backend (Ainda em desenvolvimento):
-cd backend
-npm install
-npm start
+```
 
 ## Variáveis de ambiente
-Crie um arquivo .env com base no .env.example.
 
-Exemplo de .env.example:
-DB_HOST=
-DB_PORT=
-DB_NAME=
-DB_USER=
-DB_PASSWORD=
+Crie um arquivo .env na raiz do projeto com base no arquivo .env.example.
+
+Exemplo:
+
+```env
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=studio_ambar
+DB_USER=root
+DB_PASSWORD=sua_senha
+PORT=3000
+VITE_API_BASE=http://localhost:3000/api
+```
+
+## Configuração do banco de dados
+
+Antes de iniciar o backend, crie o banco e as tabelas:
+
+```bash
+npm run setup-db
+```
+
+## Como executar
+
+### Frontend e backend juntos
+
+```bash
+npm run dev:all
+```
+
+Isso inicia:
+- o backend em http://localhost:3000
+- o frontend em http://localhost:5173
+
+### Executar separadamente
+
+```bash
+npm run server
+```
+
+```bash
+npm run dev
+```
 
 ## Entidades principais
-- Clientes: Dados de contato e identificação de clientes/empresas.
-- Serviços: Catálogo de serviços com preço e prazo.
-- Projetos: Vincula um cliente a um serviço, com data de início e fim.
-- Portfólio: Projetos finalizados expostos para o público.
-- Contatos: Mensagens enviadas por potenciais clientes.
-- Usuários: Contas com níveis de acesso para gerenciar o sistema.
 
-## Endpoints planejados
+- Clientes: dados de clientes e empresas
+- Serviços: catálogo de serviços com valor e prazo
+- Projetos: relacionamento entre cliente e serviço
+- Portfólio: itens públicos exibidos na página de portfólio
+- Contatos: mensagens enviadas pelo formulário de contato
+- Usuários: contas para acesso administrativo e autenticação
 
-### Clientes (/clientes)
-- GET /clientes → Lista todos.
-- POST /clientes → Cadastra um novo.
-- PUT /clientes/:id → Atualiza dados.
-- DELETE /clientes/:id → Remove do sistema.
+## Rotas da API
 
-### Serviços (/servicos)
-- GET /servicos → Lista os serviços.
-- POST /servicos → Cria novo serviço.
-- PUT /servicos/:id → Edita preço/prazo.
-- DELETE /servicos/:id → Deleta o serviço.
+### Clientes
+- GET /api/clientes
+- POST /api/clientes
+- PUT /api/clientes/:id
+- DELETE /api/clientes/:id
 
-### Projetos e Portfólio
-- GET /projetos → Lista projetos ativos.
-- POST /projetos → Cria um novo projeto.
-- GET /portfolio → Lista itens públicos do portfólio.
+### Serviços
+- GET /api/servicos
+- POST /api/servicos
+- PUT /api/servicos/:id
+- DELETE /api/servicos/:id
 
-## Prints do projeto
+### Projetos
+- GET /api/projetos
+- POST /api/projetos
+- PUT /api/projetos/:id
+- DELETE /api/projetos/:id
 
-![Home](src/assets/images/SiteExemplo/Home.png)
-![Sobre1](src/assets/images/SiteExemplo/Sobre1.png)
-![Sobre2](src/assets/images/SiteExemplo/Sobre2.png)
-![Portfolio1](src/assets/images/SiteExemplo/Portfolio1.png)
-![Portfolio2](src/assets/images/SiteExemplo/Portfolio2.png)
+### Portfólio
+- GET /api/portfolio
+- POST /api/portfolio
+- PUT /api/portfolio/:id
+- DELETE /api/portfolio/:id
+
+### Contatos
+- GET /api/contatos
+- POST /api/contatos
+- PUT /api/contatos/:id
+- DELETE /api/contatos/:id
+
+### Usuários
+- GET /api/usuarios
+- POST /api/usuarios
+- PUT /api/usuarios/:id
+- DELETE /api/usuarios/:id
+
+## Observações importantes
+
+- As páginas públicas agora buscam dados do backend quando disponíveis.
+- O formulário de contato envia mensagens para o banco.
+- A área administrativa exibe os contatos recebidos.
+- O fluxo de login e cadastro foi integrado ao contexto de usuário e à tabela de usuários do banco.
 
 ## Status do projeto
-Toda a base ja esta bem estruturada, com o sistema de navegação correta, paginas criadas e varias funções ja atribuidas, agora precisamos adicionar os ultimos detalhes (como a anexação do banco de dados) e personalizar ainda mais o site deixando realmente profissional e estilizado.
 
-Todas as paginas ja tem toda a gama de informação necessaria, apenas vamos organizar melhor daqui para a frente dando mais identidade visual para o Studio Âmbar.
+A estrutura principal do projeto já está consolidada, com navegação, páginas, integração com backend e persistência em banco de dados. O próximo passo natural é aprimorar a identidade visual e expandir os recursos administrativos.

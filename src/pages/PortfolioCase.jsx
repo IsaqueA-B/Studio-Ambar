@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { usePortfolio } from '../hooks/usePortfolio';
 
 const projetos = [
   {
@@ -96,7 +97,25 @@ const projetos = [
 
 function PortfolioCase() {
   const { id } = useParams();
+  const { obterPortfolio } = usePortfolio();
+  const [portfolioItem, setPortfolioItem] = useState(null);
   const projeto = projetos.find((item) => item.id === id) || projetos[0];
+
+  useEffect(() => {
+    const buscarPortfolio = async () => {
+      try {
+        const dados = await obterPortfolio();
+        const encontrado = dados.find((item) => String(item.id) === String(id) || String(item.id_projeto) === String(id));
+        if (encontrado) {
+          setPortfolioItem(encontrado);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    buscarPortfolio();
+  }, [id]);
 
   const isTech = projeto.id === '2';
   const isCafe = projeto.id === '3';
@@ -142,7 +161,7 @@ function PortfolioCase() {
               ? 'Identidade e packaging para cafeteria — rótulos, copos, cardápio e sinalização.'
               : projeto.desc}
           </p>
-          <p className="portfolio-case-highlight">{projeto.destaque}</p>
+          <p className="portfolio-case-highlight">{portfolioItem ? `Item carregado do banco: ${portfolioItem.titulo}` : projeto.destaque}</p>
         </div>
       </section>
 
@@ -160,6 +179,16 @@ function PortfolioCase() {
           <p>{projeto.foco}</p>
         </div>
       </section>
+
+      {portfolioItem && (
+        <section className="mb-20">
+          <div className="card">
+            <h3>Dados vindos do banco</h3>
+            <p><strong>Título:</strong> {portfolioItem.titulo}</p>
+            <p>{portfolioItem.descricao}</p>
+          </div>
+        </section>
+      )}
 
       <section>
         <h2>Galeria de imagens</h2>

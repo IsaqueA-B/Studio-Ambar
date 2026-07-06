@@ -1,6 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useContatos } from '../hooks/useContatos';
 
 function Contato() {
+    const { criarContato } = useContatos();
+    const [form, setForm] = useState({
+        nome: '',
+        email: '',
+        telefone: '',
+        tipoProjeto: '',
+        mensagem: ''
+    });
+    const [enviando, setEnviando] = useState(false);
+    const [statusMensagem, setStatusMensagem] = useState('');
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setEnviando(true);
+        setStatusMensagem('');
+
+        try {
+            await criarContato(form.nome, form.telefone, form.email);
+            setStatusMensagem('Mensagem enviada com sucesso e registrada no banco.');
+            setForm({ nome: '', email: '', telefone: '', tipoProjeto: '', mensagem: '' });
+        } catch (error) {
+            console.error(error);
+            setStatusMensagem(error.message || 'Não foi possível enviar a mensagem.');
+        } finally {
+            setEnviando(false);
+        }
+    };
+
     return (
         <main className="contato-container animacao-entrada p-20">
             {/* Cabeçalho da página (usa h1 e subtitulo-pagina globais) */}
@@ -15,25 +49,25 @@ function Contato() {
                 <section className="card card-contato">
                     <h2 className="card-titulo-contato">Formulário</h2>
 
-                    <form className="contato-form" onSubmit={(e) => e.preventDefault()}>
+                    <form className="contato-form" onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label>Nome</label>
-                            <input type="text" placeholder="Digite seu nome completo" />
+                            <input name="nome" value={form.nome} onChange={handleChange} type="text" placeholder="Digite seu nome completo" required />
                         </div>
 
                         <div className="form-group">
                             <label>E-mail</label>
-                            <input type="email" placeholder="seuemail@exemplo.com" />
+                            <input name="email" value={form.email} onChange={handleChange} type="email" placeholder="seuemail@exemplo.com" required />
                         </div>
 
                         <div className="form-group">
                             <label>Telefone</label>
-                            <input type="tel" placeholder="(55) 99999-9999" />
+                            <input name="telefone" value={form.telefone} onChange={handleChange} type="tel" placeholder="(55) 99999-9999" />
                         </div>
 
                         <div className="form-group">
                             <label>Tipo de Projeto</label>
-                            <select>
+                            <select name="tipoProjeto" value={form.tipoProjeto} onChange={handleChange}>
                                 <option>Selecione uma opção</option>
                                 <option>Criação de Site</option>
                                 <option>Identidade Visual</option>
@@ -43,12 +77,13 @@ function Contato() {
 
                         <div className="form-group">
                             <label>Mensagem</label>
-                            <textarea placeholder="Conte sua ideia..." rows="5"></textarea>
+                            <textarea name="mensagem" value={form.mensagem} onChange={handleChange} placeholder="Conte sua ideia..." rows="5"></textarea>
                         </div>
 
-                        <button type="submit" className="btn btn-outline w-100">
-                            Enviar Mensagem
+                        <button type="submit" className="btn btn-outline w-100" disabled={enviando}>
+                            {enviando ? 'Enviando...' : 'Enviar Mensagem'}
                         </button>
+                        {statusMensagem ? <p style={{ marginTop: '10px' }}>{statusMensagem}</p> : null}
                     </form>
                 </section>
 

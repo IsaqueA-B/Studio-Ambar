@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUser } from '../componentes/users/UserContext';
 import { aplicarMascaraCPF } from '../componentes/users/auth';
+import { useUsuarios } from '../hooks/useUsuarios';
 
 function Register() {
     const { register } = useUser();
+    const { obterUsuarios, criar } = useUsuarios();
     const navigate = useNavigate();
     const [form, setForm] = useState({
         nome: '',
@@ -13,6 +15,20 @@ function Register() {
         senha: ''
     });
     const [termos, setTermos] = useState(false);
+    const [usuariosBanco, setUsuariosBanco] = useState([]);
+
+    useEffect(() => {
+        const carregarUsuarios = async () => {
+            try {
+                const dados = await obterUsuarios();
+                setUsuariosBanco(Array.isArray(dados) ? dados : []);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        carregarUsuarios();
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -23,7 +39,7 @@ function Register() {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!termos) {
             alert('Aceite os termos de uso.');
@@ -31,6 +47,11 @@ function Register() {
         }
         const resultado = register(form);
         if (resultado.sucesso) {
+            try {
+                await criar(form.nome, form.email, form.senha, 'visualizador', form.cpf);
+            } catch (error) {
+                console.error(error);
+            }
             navigate('/');
         } else {
             alert(resultado.mensagem);
@@ -67,6 +88,7 @@ function Register() {
                 <p className="text-center mt-20">
                     Já tem conta? <Link to="/login">Faça login</Link>
                 </p>
+                <p className="text-center mt-10">Usuários carregados do banco: {usuariosBanco.length}</p>
             </div>
         </main>
     );

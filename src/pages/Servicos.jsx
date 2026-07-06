@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useServicos } from "../hooks/useServicos";
 
 const categoriasServicos = [
   {
@@ -82,12 +83,47 @@ const categoriasServicos = [
 ];
 
 function Servicos() {
+  const { obterServicos } = useServicos();
+  const [servicosBanco, setServicosBanco] = useState([]);
+
+  useEffect(() => {
+    const buscarServicos = async () => {
+      try {
+        const dados = await obterServicos();
+        setServicosBanco(dados || []);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    buscarServicos();
+  }, []);
+
   return (
     <main className= "container-servicos">
     <main className="p-20 animacao-entrada">
       <section className="text-center mb-20">
         <h1>Nossos Serviços</h1>
         <p>Soluções criativas para sua marca.</p>
+      </section>
+
+      <section className="mb-20">
+        <h2 className="mb-10 sem-linha">Serviços vindos do banco de dados</h2>
+        <div className="grid-3x3">
+          {servicosBanco.length > 0 ? (
+            servicosBanco.map((servico) => (
+              <div className="card" key={servico.id}>
+                <h3>{servico.tipo_servico}</h3>
+                <p>{servico.prazo || 'Prazo a combinar'}</p>
+                <h3>
+                  <strong>{servico.valor}</strong>
+                </h3>
+              </div>
+            ))
+          ) : (
+            <p>Carregando serviços do banco...</p>
+          )}
+        </div>
       </section>
 
       {categoriasServicos.map((categoria, index) => (

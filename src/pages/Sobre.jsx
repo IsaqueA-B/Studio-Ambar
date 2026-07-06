@@ -1,10 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import iconMissao from "../assets/images/Icons/missões.png";
 import iconValores from "../assets/images/Icons/valores.png";
 import iconVisão from "../assets/images/Icons/visão.png";
 import daniel from "../assets/images/pessoas/Daniel.jpeg";
+import { useClientes } from "../hooks/useClientes";
+import { useContatos } from "../hooks/useContatos";
+import { usePortfolio } from "../hooks/usePortfolio";
+import { useServicos } from "../hooks/useServicos";
 
 function Sobre() {
+  const { obterClientes } = useClientes();
+  const { obterServicos } = useServicos();
+  const { obterPortfolio } = usePortfolio();
+  const { obterContatos } = useContatos();
+  const [estatisticas, setEstatisticas] = useState({
+    clientes: 0,
+    servicos: 0,
+    portfolio: 0,
+    contatos: 0,
+  });
+
+  useEffect(() => {
+    const buscarDados = async () => {
+      try {
+        const [clientesData, servicosData, portfolioData, contatosData] = await Promise.all([
+          obterClientes(),
+          obterServicos(),
+          obterPortfolio(),
+          obterContatos(),
+        ]);
+
+        setEstatisticas({
+          clientes: Array.isArray(clientesData) ? clientesData.length : 0,
+          servicos: Array.isArray(servicosData) ? servicosData.length : 0,
+          portfolio: Array.isArray(portfolioData) ? portfolioData.length : 0,
+          contatos: Array.isArray(contatosData) ? contatosData.length : 0,
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    buscarDados();
+  }, []);
+
   return (
     <main className="sobre-container animacao-entrada">
       <section className="sobre-hero text-center">
@@ -42,6 +81,31 @@ function Sobre() {
                 alt="Arte conceitual Studio Âmbar"
                 className="sobre-img"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="sobre-secao">
+        <div className="sobre-alinhamento">
+          <h2 className="h2-central titulo-secao-central">Dados do Studio</h2>
+
+          <div className="grid-auto">
+            <div className="card card-lg text-center">
+              <h3 className="card-titulo">Clientes cadastrados</h3>
+              <p>{estatisticas.clientes}</p>
+            </div>
+            <div className="card card-lg text-center">
+              <h3 className="card-titulo">Serviços disponíveis</h3>
+              <p>{estatisticas.servicos}</p>
+            </div>
+            <div className="card card-lg text-center">
+              <h3 className="card-titulo">Itens no portfólio</h3>
+              <p>{estatisticas.portfolio}</p>
+            </div>
+            <div className="card card-lg text-center">
+              <h3 className="card-titulo">Mensagens recebidas</h3>
+              <p>{estatisticas.contatos}</p>
             </div>
           </div>
         </div>
