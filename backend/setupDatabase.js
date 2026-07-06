@@ -86,6 +86,11 @@ async function setupDatabase() {
  await connection.query(query);
  }
 
+ const [clientesColumn] = await connection.query("SHOW COLUMNS FROM clientes LIKE 'gmail'");
+ if (clientesColumn.length > 0) {
+   await connection.query("ALTER TABLE clientes CHANGE COLUMN gmail email VARCHAR(255)");
+ }
+
  const [usuariosColumn] = await connection.query("SHOW COLUMNS FROM usuarios LIKE 'gmail'");
  if (usuariosColumn.length > 0) {
    await connection.query("ALTER TABLE usuarios CHANGE COLUMN gmail email VARCHAR(150) NOT NULL UNIQUE");
