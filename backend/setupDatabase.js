@@ -98,8 +98,10 @@ async function setupDatabase() {
 
  console.log('Banco e tabela criados com sucesso!');
  await connection.end();
+ process.exit(0);
  } catch (error) {
  console.error('Erro ao configurar o banco:', error);
+ process.exit(1);
  }
 }
 

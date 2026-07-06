@@ -45,10 +45,18 @@ function Register() {
             alert('Aceite os termos de uso.');
             return;
         }
+        
+        // Remover máscara do CPF antes de enviar
+        const cpfLimpo = form.cpf.replace(/\D/g, '');
+        if (cpfLimpo.length !== 11) {
+            alert('CPF deve ter 11 dígitos');
+            return;
+        }
+        
         const resultado = register(form);
         if (resultado.sucesso) {
             try {
-                await criar(form.nome, form.email, form.senha, 'visualizador', form.cpf);
+                await criar(form.nome, form.email, form.senha, 'visualizador', cpfLimpo);
             } catch (error) {
                 console.error(error);
             }
