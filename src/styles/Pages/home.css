@@ -1,9 +1,11 @@
 /* ========== WORDMARK ========== */
 .WordMark {
-    width: 100%;
+    width: 80%;
     height: auto;
     display: block;
     margin-top: 105px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ========== SEÇÃO 1 (flex com linha divisória) ========== */

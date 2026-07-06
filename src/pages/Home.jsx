@@ -4,23 +4,6 @@ import WordMark from '../assets/images/Especificos/WordMark.png';
 import { useServicos } from '../hooks/useServicos';
 
 function Home() {
-    const { obterServicos } = useServicos();
-    const [servicos, setServicos] = useState([]);
-    const [erroServicos, setErroServicos] = useState('');
-
-    useEffect(() => {
-        const buscarServicos = async () => {
-            try {
-                const dados = await obterServicos();
-                setServicos(dados || []);
-            } catch (error) {
-                console.error(error);
-                setErroServicos('Não foi possível carregar os serviços no momento.');
-            }
-        };
-
-        buscarServicos();
-    }, []);
 
     return (
         <div>
@@ -56,20 +39,6 @@ function Home() {
                             Estilização personalizada
                         </p>
                         <Link to="/servicos" className="btn btn-outline">Ver todos os serviços</Link>
-                        {erroServicos ? (
-                            <p style={{ marginTop: '10px' }}>{erroServicos}</p>
-                        ) : servicos.length > 0 ? (
-                            <div style={{ marginTop: '10px' }}>
-                                <strong>Serviços vindos do banco:</strong>
-                                <ul style={{ marginTop: '8px', paddingLeft: '20px' }}>
-                                    {servicos.slice(0, 3).map((servico) => (
-                                        <li key={servico.id}>
-                                            {servico.tipo_servico || 'Serviço'} {servico.valor ? `- ${servico.valor}` : ''}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ) : null}
                     </div>
                 </section>
 
