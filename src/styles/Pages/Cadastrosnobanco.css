@@ -1,0 +1,45 @@
+.formulario-servico {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 700px;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.campo-form label {
+    font-size: 1.1rem;
+    color: var(--text-header);
+    font-weight: 600;
+}
+
+.campo-form input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #313843;
+    border-radius: 12px;
+    background: #1d232b;
+    color: var(--text-header);
+    font-size: 1.05rem;
+    transition: all .25s ease;
+    outline: none;
+}
+
+.campo-form input::placeholder {
+    color: #8e96a5;
+}
+
+.campo-form input:focus {
+    border-color: var(--brand-ambar);
+    box-shadow: 0 0 0 4px rgba(233, 171, 83, .15);
+}
+
+.formulario-servico .btn {
+    margin-top: 10px;
+    align-self: flex-start;
+    min-width: 220px;
+}

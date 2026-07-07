@@ -37,10 +37,19 @@ function Contato() {
 
     return (
         <main className="contato-container animacao-entrada p-20">
-            {/* Cabeçalho da página (usa h1 e subtitulo-pagina globais) */}
-            <section className="text-center">
-                <h1>Contato</h1>
-                <p className="subtitulo-pagina">Vamos conversar sobre seu projeto.</p>
+
+            <section className="page-hero text-center">
+                <div className="page-hero-container">
+                    <div className="page-hero-content">
+                        <h1 className="page-title">Contato</h1>
+                        <p className="page-subtitle">Nossas Redes • Como Contatar</p>
+                    </div>
+                    <div className="sobre-slogan-box">
+                        <span className="sobre-slogan fonte-titulo">
+                            Vamos conversar sobre seu projeto.
+                        </span>
+                    </div>
+                </div>
             </section>
 
             {/* Grid principal (Formulário + Informações) */}

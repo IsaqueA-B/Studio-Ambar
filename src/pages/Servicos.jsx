@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useServicos } from "../hooks/useServicos";
-
+import { Link } from 'react-router-dom';
 const categoriasServicos = [
   {
     categoria: "Branding e Identidade",
-    servicos: [  
+    servicos: [
       {
         nome: "Identidade Visual",
         desc: "Criação de logo, paleta de cores e tipografia.",
@@ -82,9 +82,23 @@ const categoriasServicos = [
   },
 ];
 
+const servicos = categoriasServicos.flatMap((categoria) =>
+  categoria.servicos.map((servico) => ({
+    ...servico,
+    categoria: categoria.categoria,
+  }))
+);
+
 function Servicos() {
   const { obterServicos } = useServicos();
+
   const [servicosBanco, setServicosBanco] = useState([]);
+  const [filter, setFilter] = useState("Todos");
+
+  const filters = [
+    "Todos",
+    ...new Set(servicos.map((s) => s.categoria)),
+  ];
 
   useEffect(() => {
     const buscarServicos = async () => {
@@ -99,22 +113,75 @@ function Servicos() {
     buscarServicos();
   }, []);
 
+  const servicosFiltrados =
+    filter === "Todos"
+      ? servicos
+      : servicos.filter((s) => s.categoria === filter);
+
   return (
-    <main className= "container-servicos">
+
     <main className="p-20 animacao-entrada">
-      <section className="text-center mb-20">
-        <h1>Nossos Serviços</h1>
-        <p>Soluções criativas para sua marca.</p>
+
+      <section className="page-hero text-center">
+        <div className="page-hero-container">
+          <div className="page-hero-content">
+            <h1 className="page-title">Nossos Serviços</h1>
+            <p className="page-subtitle">Identidade Visual • Web Design • E MAIS</p>
+          </div>
+          <div className="sobre-slogan-box">
+            <span className="sobre-slogan fonte-titulo">
+              Soluções criativas para sua marca
+            </span>
+          </div>
+        </div>
       </section>
 
+      {/* Filtros */}
+      <div className="mb-20 text-center filter-bar">
+        {filters.map((f) => (
+          <button
+            key={f}
+            className={`btn ${filter === f ? "active" : "btn-outline"}`}
+            onClick={() => setFilter(f)}
+            type="button"
+          >
+            {f}
+          </button>
+        ))}
+      </div>
+
+      {/* Serviços */}
+      <div className="grid-3x3 mb-20">
+        {servicosFiltrados.map((servico, i) => (
+          <div className="card" key={i}>
+            <h3>{servico.nome}</h3>
+
+            <p>
+              <small>{servico.categoria}</small>
+            </p>
+
+            <p>{servico.desc}</p>
+
+            <h3>
+              <strong>A partir de {servico.valor}</strong>
+            </h3>
+          </div>
+        ))}
+      </div>
+
       <section className="mb-20">
-        <h2 className="mb-10 sem-linha">Serviços vindos do banco de dados</h2>
+        <h2 className="mb-10 sem-linha">
+          Serviços vindos do banco de dados
+        </h2>
+
         <div className="grid-3x3">
           {servicosBanco.length > 0 ? (
             servicosBanco.map((servico) => (
               <div className="card" key={servico.id}>
                 <h3>{servico.tipo_servico}</h3>
-                <p>{servico.prazo || 'Prazo a combinar'}</p>
+
+                <p>{servico.prazo || "Prazo a combinar"}</p>
+
                 <h3>
                   <strong>{servico.valor}</strong>
                 </h3>
@@ -124,30 +191,9 @@ function Servicos() {
             <p>Carregando serviços do banco...</p>
           )}
         </div>
+    <Link to="/cadastro" className="btn btn-outline"> Cadastrar Serviço</Link>
       </section>
-
-      {categoriasServicos.map((categoria, index) => (
-        <section key={index} className="mb-20">
-          <h2 className="mb-10 sem-linha">{categoria.categoria}</h2>
-
-          <div className="grid-3x3">
-            {categoria.servicos.map((servico, i) => (
-              <div className="card" key={i}>
-                <h3>{servico.nome}</h3>
-
-                <p>{servico.desc}</p>
-
-                <h3>
-                  <strong>A partir de {servico.valor}</strong>
-                </h3>
-              </div>
-            ))}
-          </div>
-        </section>
-      ))}
-    </main>
     </main>
   );
 }
-
 export default Servicos;

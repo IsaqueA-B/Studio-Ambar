@@ -1,8 +1,4 @@
 /* ========== CONTAINER E SEÇÕES ========== */
-.sobre-container {
-  width: 100%;
-  background-color: var(--bg-main);
-}
 
 .sobre-alinhamento {
   max-width: 1200px;
