@@ -1,0 +1,10 @@
+/* Super Charge */
+@font-face {
+  font-family: 'Super Charge';
+  src: url('../assets/fonts/SuperchargeExpanded-z83aw.otf') format('opentype');
+}
+
+.projeto-id-2 {
+    font-family: 'Super Charge', sans-serif;
+    
+}

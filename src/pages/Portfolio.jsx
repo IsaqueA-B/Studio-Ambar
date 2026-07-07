@@ -56,7 +56,7 @@ function Portfolio() {
             <section className="page-hero text-center">
                 <div className="page-hero-container">
                     <div className="page-hero-content">
-                        <h1 className="page-title">Portfolio</h1>
+                        <h1 className="page-title">Portfólio</h1>
                         <p className="page-subtitle">Projetos • Cases de Estudo • Empresas</p>
                     </div>
                     <div className="sobre-slogan-box">
@@ -85,7 +85,9 @@ function Portfolio() {
                 {projetosFiltrados.map((proj) => (
                     <Link to={`/portfolio/${proj.id}`} className="btn-card" key={proj.id}>
                         <div className="card">
-                            <h3>{proj.nome}</h3>
+                        <h3 className={`projeto-id-${proj.id}`}>
+                            {proj.nome}
+                            </h3>
                             <p><small>{proj.categoria}</small></p>
                             <p>{proj.desc}</p>
                         </div>
