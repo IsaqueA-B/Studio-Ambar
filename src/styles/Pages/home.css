@@ -8,7 +8,7 @@
     margin-right: auto;
 }
 
-/* ========== SEÇÃO 1 (flex com linha divisória) ========== */
+/* ========== SEÇÃO 1 (Como agimos e img) ========== */
 .home-secao1 {
     display: flex;
     align-items: stretch;
@@ -19,7 +19,6 @@
 }
 
 .home-lado {
-    flex: 1;
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
@@ -33,23 +32,17 @@
 
 .home-esquerda {
     text-align: left;
+    flex: 3;
 }
 
 .home-direita {
     text-align: left;
-}
-
-/* Linha vertical âmbar */
-.home-linha {
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, var(--brand-ambar), transparent);
-    flex-shrink: 0;
-    margin: 20px 0;
+    flex: 1;
 }
 
 .home-titulo-esquerda,
 .home-titulo-direita {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--text-header);
     margin-bottom: 20px;
     position: relative;
@@ -62,5 +55,56 @@
     width: 40px;
     height: 3px;
     background: var(--brand-ambar);
-    margin-top: 10px;
+    margin-top: 5px;
+}
+
+.home-icone-slogan {
+    width: auto;
+    height: 450px;
+    margin-top: 40px;
+    align-self: center;
+}
+
+/* ========== SEÇÃO 2 (Serviços) ========== */
+
+.home-card-titulo {
+    border-left: none;
+    padding-left: 0;
+    color: var(--brand-creme);
+    font-size: 1.5rem;
+    display: flex;
+}
+
+.home-icon-card {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    background-color: rgba(255, 221, 126, 0.065);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.home-icon-card img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    filter: var(--brand-ambar-filter);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .home-icon-card {
+    transform: scale(1.05);
+    rotate: 5deg;
+}
+
+.btn-nav-servicos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 20px;
 }

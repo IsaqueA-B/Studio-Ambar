@@ -14,7 +14,7 @@ h2 {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 4em;
     font-weight: 800;
     -webkit-background-clip: text;
     background-clip: text;
@@ -23,7 +23,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: 3em;
     font-weight: 700;
     background: linear-gradient(135deg, var(--brand-ambar), var(--brand-creme));
     -webkit-background-clip: text;
@@ -78,7 +78,6 @@ h2.centralizado,
     text-align: center;
     display: block;
     color: var(--text-header);
-    /* opcional: substitui gradiente por branco */
     background: none;
     -webkit-text-fill-color: currentColor;
 }
@@ -86,8 +85,6 @@ h2.centralizado,
 h2.centralizado::after,
 .h2-central::after {
     left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
     background: var(--brand-ambar);
 }
 

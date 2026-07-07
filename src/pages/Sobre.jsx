@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
-import iconMissao from "../assets/images/Icons/missões.png";
-import iconValores from "../assets/images/Icons/valores.png";
-import iconVisão from "../assets/images/Icons/visão.png";
+
+/* icons */
+import iconMissao from "../assets/images/Icons/Sobre/missões.png";
+import iconValores from "../assets/images/Icons/Sobre/valores.png";
+import iconVisão from "../assets/images/Icons/Sobre/visão.png";
+
+/* Fotos */
 import daniel from "../assets/images/pessoas/Daniel.jpeg";
+
 import { useClientes } from "../hooks/useClientes";
 import { useContatos } from "../hooks/useContatos";
 import { usePortfolio } from "../hooks/usePortfolio";
@@ -84,7 +89,7 @@ function Sobre() {
 
       <section className="sobre-secao">
         <div className="sobre-alinhamento">
-          <h2 className="h2-central titulo-secao-central">Dados do Studio</h2>
+          <h2 className="h2-central titulo-secao-central sem-linha">Dados do Studio</h2>
 
           <div className="grid-auto">
             <div className="card card-lg text-center">
@@ -109,7 +114,7 @@ function Sobre() {
 
       <section className="sobre-secao">
         <div className="sobre-alinhamento">
-          <h2 className="h2-central titulo-secao-central">Propósito</h2>
+          <h2 className="h2-central titulo-secao-central sem-linha">Propósito</h2>
 
           <div className="grid-auto">
             <div className="card card-lg text-center">
@@ -171,7 +176,7 @@ function Sobre() {
 
       <section className="sobre-secao">
         <div className="sobre-alinhamento">
-          <h2 className="h2-central titulo-secao-central">Nossa Equipe</h2>
+          <h2 className="h2-central titulo-secao-central sem-linha">Nossa Equipe</h2>
 
           <div className="grid-auto">
             {" "}
@@ -246,7 +251,7 @@ function Sobre() {
 
       <section className="sobre-secao">
         <div className="sobre-alinhamento">
-          <h2 className="h2-central titulo-secao-central">
+          <h2 className="h2-central titulo-secao-central sem-linha">
             Por que nos escolher?
           </h2>
           <div className="grid-auto">

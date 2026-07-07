@@ -35,7 +35,6 @@
 
 /* ========== TÍTULO DA PÁGINA ========== */
 .page-title {
-    font-size: 3.4rem;
     color: var(--brand-ambar);
     margin-bottom: 12px;
     letter-spacing: 1px;

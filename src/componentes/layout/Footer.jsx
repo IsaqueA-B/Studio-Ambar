@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../assets/images/Especificos/LogoCompleta.png';
 
 // Icons da navegação
-import iconContato from '../../assets/images/Icons/icon-contato.png';
-import iconEmail from '../../assets/images/Icons/icon-email.png';
-import iconLocalizacao from '../../assets/images/Icons/icon-localizacao.png';
-import iconRedes from '../../assets/images/Icons/icon-redes.png';
+import iconContato from '../../assets/images/Icons/Nav_Footer/icon-contato.png';
+import iconEmail from '../../assets/images/Icons/Nav_Footer/icon-email.png';
+import iconLocalizacao from '../../assets/images/Icons/Nav_Footer/icon-localizacao.png';
+import iconRedes from '../../assets/images/Icons/Nav_Footer/icon-redes.png';
 
 const Footer = () => {
     return (

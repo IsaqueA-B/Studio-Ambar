@@ -1,15 +1,15 @@
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { useUser } from '../users/UserContext';
 import logo from '../../assets/images/Especificos/LogoCompleta.png';
-import iconeSair from '../../assets/images/Icons/btn-sair.png';
+import iconeSair from '../../assets/images/Icons/Nav_Footer/btn-sair.png';
 
 // Icons da navegação
-import iconHome from '../../assets/images/Icons/icon-home.png';
-import iconSobre from '../../assets/images/Icons/icon-sobre.png';
-import iconServicos from '../../assets/images/Icons/icon-servicos.png';
-import iconPortfolio from '../../assets/images/Icons/icon-portfolio.png';
-import iconBlog from '../../assets/images/Icons/icon-blog.png';
-import iconContato from '../../assets/images/Icons/icon-contato.png';
+import iconHome from '../../assets/images/Icons/Nav_Footer/icon-home.png';
+import iconSobre from '../../assets/images/Icons/Nav_Footer/icon-sobre.png';
+import iconServicos from '../../assets/images/Icons/Nav_Footer/icon-servicos.png';
+import iconPortfolio from '../../assets/images/Icons/Nav_Footer/icon-portfolio.png';
+import iconBlog from '../../assets/images/Icons/Nav_Footer/icon-blog.png';
+import iconContato from '../../assets/images/Icons/Nav_Footer/icon-contato.png';
 
 function Navbar() {
     const { user, logout } = useUser();
