@@ -1,6 +1,5 @@
-            import React, { useEffect, useState } from 'react';
+            import React, { useState } from 'react';
             import { Link } from 'react-router-dom';
-            import { usePortfolio } from '../hooks/usePortfolio';
 
         const projetosEstaticos = [
             { id: 1, nome: 'Doce Sabor Confeitaria', categoria: 'Identidade Visual', desc: 'Nova identidade e embalagens.' },
@@ -16,24 +15,9 @@
         ];
 
         function Portfolio() {
-            const { obterPortfolio } = usePortfolio();
             const [filter, setFilter] = useState('Todos');
-            const [portfolioBanco, setPortfolioBanco] = useState([]);
 
             const filters = ['Todos', 'Identidade Visual', 'Social Media', 'Web', 'Saúde', 'Alimentação', 'Comércio', 'Automóveis'];
-
-            useEffect(() => {
-                const buscarPortfolio = async () => {
-                    try {
-                        const dados = await obterPortfolio();
-                        setPortfolioBanco(dados || []);
-                    } catch (error) {
-                        console.error(error);
-                    }
-                };
-
-                buscarPortfolio();
-            }, []);
 
             const matchesFilter = (proj) => {
                 if (filter === 'Todos') return true;
@@ -82,22 +66,6 @@
                             </Link>
                         ))}
                     </div>
-
-                    <section className="mb-20">
-                        <h2 className="mb-10 sem-linha">Itens recentes do banco de dados</h2>
-                        <div className="grid-3x3">
-                            {portfolioBanco.length > 0 ? (
-                                portfolioBanco.slice(0, 6).map((item) => (
-                                    <div className="card" key={item.id}>
-                                        <h3>{item.titulo}</h3>
-                                        <p>{item.descricao}</p>
-                                    </div>
-                                ))
-                            ) : (
-                                <p>Carregando itens do banco...</p>
-                            )}
-                        </div>
-                    </section>
                 </main>
             );
         }
