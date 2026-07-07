@@ -14,21 +14,23 @@ import iconBioTecno from "../assets/images/Icons/Home/Biotecno.png";
 import iconCoopermil from "../assets/images/Icons/Home/Coopermil.png";
 import iconTechStart from "../assets/images/Icons/Home/TechStart.png";
 
+import iconContato from "../assets/images/Icons/Home/icon-contato2.png";
+
 function Home() {
 
     return (
         <div>
             <div style={{ marginTop: '80px' }}>
-                <img src={WordMark} alt="WordMark" className="WordMark" />
+                <img src={WordMark} alt="WordMark" className="home-wordmark" />
             </div>
 
             <main className="p-20 animacao-entrada">
 
                 {/* SEÇÃO 1: QUEM SOMOS + SERVIÇOS EM DESTAQUE (dividida por linha) */}
-                <section className="home-secao1">
+                <section className="home-section home-secao1">
                     <div className="home-lado home-esquerda">
                         <span className="home-tag">Como agimos?</span>
-                        <h2 className="home-titulo-esquerda">Usamos a Criatividade</h2>
+                        <h2 className="home-title">Usamos a Criatividade</h2>
                         <p>
                             No Studio Âmbar, acreditamos que a criatividade é o ponto de partida
                             para construir marcas que realmente conectam. Transformamos ideias em
@@ -52,14 +54,14 @@ function Home() {
                     </div>
                 </section>
 
-                <section className="home-secao2">
-                    <div className="sobre-alinhamento">
-                        <span className="home-tag centralizado">Alguns serviços</span>
+                <section className="home-section home-secao2">
+                    <div className="home-align-center">
+                        <span className="home-tag">Alguns serviços</span>
                         <h2 className="h2-central sem-linha">O que fazemos</h2>
 
                         <div className="grid-4x4">
                             <div className="card">
-                                <div className="home-icon-card">
+                                <div className="icon-box icon-box--service">
                                     <img src={iconVisual} alt="Ícone Missão" />
                                 </div>
                                 <h3 className="home-card-titulo">Identidade Visual</h3>
@@ -69,7 +71,7 @@ function Home() {
                                 </p>
                             </div>
                             <div className="card">
-                                <div className="home-icon-card">
+                                <div className="icon-box icon-box--service">
                                     <img src={iconSocial} alt="Ícone Visão" />
                                 </div>
                                 <h3 className="home-card-titulo">Social Media</h3>
@@ -79,7 +81,7 @@ function Home() {
                                 </p>
                             </div>
                             <div className="card">
-                                <div className="home-icon-card">
+                                <div className="icon-box icon-box--service">
                                     <img src={iconPersonalizacao} alt="Ícone Visão" />
                                 </div>
                                 <h3 className="home-card-titulo">Personalização Visual</h3>
@@ -89,7 +91,7 @@ function Home() {
                                 </p>
                             </div>
                             <div className="card">
-                                <div className="home-icon-card">
+                                <div className="icon-box icon-box--service">
                                     <img src={iconInstitucionais} alt="Ícone Visão" />
                                 </div>
                                 <h3 className="home-card-titulo">Sites Institucionais</h3>
@@ -99,19 +101,19 @@ function Home() {
                                 </p>
                             </div>
                         </div>
-                        <Link to="/servicos" className="btn btn-outline btn-nav-servicos">Ver todos os serviços</Link>
+                        <Link to="/servicos" className="btn btn-outline">Ver todos os serviços</Link>
                     </div>
                 </section>
 
 
-                <section className="home-secao3">
-                    <div className="sobre-alinhamento">
-                        <span className="home-tag centralizado">Em destaque</span>
+                <section className="home-section home-secao3">
+                    <div className="home-align-center">
+                        <span className="home-tag">Em destaque</span>
                         <h2 className="h2-central sem-linha">Do Portfólio</h2>
 
                         <div className="grid-3x3">
                             <div className="card">
-                                <div className="home-icon-empresa">
+                                <div className="icon-box icon-box--company">
                                     <img src={iconBioTecno} alt="Ícone Missão" />
                                 </div>
                                 <h3 className="home-card-titulo">BioTecno</h3>
@@ -126,7 +128,7 @@ function Home() {
                                 </Link>
                             </div>
                             <div className="card">
-                                <div className="home-icon-empresa">
+                                <div className="icon-box icon-box--company">
                                     <img src={iconCoopermil} alt="Ícone Visão" />
                                 </div>
                                 <h3 className="home-card-titulo">Coopermil</h3>
@@ -141,7 +143,7 @@ function Home() {
                                 </Link>
                             </div>
                             <div className="card">
-                                <div className="home-icon-empresa">
+                                <div className="icon-box icon-box--company">
                                     <img src={iconTechStart} alt="Ícone Visão" />
                                 </div>
                                 <h3 className="home-card-titulo">TechStart</h3>
@@ -156,7 +158,29 @@ function Home() {
                                 </Link>
                             </div>
                         </div>
-                        <Link to="/portfolio" className="btn btn-outline btn-nav-servicos">Ver todos os projetos</Link>
+                        <Link to="/portfolio" className="btn btn-outline">Ver todos os projetos</Link>
+                    </div>
+                </section>
+
+                <section className="home-cta">
+                    <div className="card card-lg card-cta">
+
+                        <div className="home-cta-icon">
+                            <img src={iconContato} alt="Ícone Contato" />
+                        </div>
+
+                        <h2 className="home-cta-titulo sem-linha">
+                            Quer saber mais ou agendar um projeto?
+                        </h2>
+
+                        <p className="home-cta-texto">
+                            Entre em contato conosco para começar a planejar um novo projeto
+                            conosco!
+                        </p>
+
+                        <Link to="/contato" className="btn btn-outline">
+                            Entre em Contato
+                        </Link>
                     </div>
                 </section>
 

@@ -1,72 +1,41 @@
 /* ========== WORDMARK ========== */
-.WordMark {
+.home-wordmark {
     width: 80%;
     height: auto;
     display: block;
-    margin-top: 105px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 105px auto 0;
 }
 
-/* ========== TAGS ========== */
-.home-tag {
-  display: inline-block;
-  color: var(--brand-ambar);
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  margin-bottom: 0px;
-}
-
-.home-tag.centralizado {
-  display: block;
-  text-align: center;
-}
-
-
-/* ========== SEÇÃO 1 (Como agimos e img) ========== */
-.home-secao1 {
+/* ========== BASE DAS SEÇÕES ========== */
+.home-section {
     display: flex;
     align-items: stretch;
     max-width: 1200px;
-    margin: 0 auto 80px;
+    margin: 0 auto 120px;
     padding: 0 20px;
     gap: 40px;
 }
 
-.home-lado {
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+/* ========== TAGS ========== */
+.home-tag {
+    display: inline-block;
+    color: var(--brand-ambar);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
 }
 
-.home-lado .btn {
-    margin-top: auto;
-}
-
-.home-esquerda {
-    text-align: left;
-    flex: 3;
-}
-
-.home-direita {
-    text-align: left;
-    flex: 1;
-}
-
-.home-titulo-esquerda,
-.home-titulo-direita {
+/* ========== TÍTULOS COM LINHA ÂMBAR ========== */
+.home-title {
     font-size: 2.2rem;
     color: var(--text-header);
     margin-bottom: 20px;
     position: relative;
 }
 
-.home-titulo-esquerda::after,
-.home-titulo-direita::after {
+.home-title::after {
     content: '';
     display: block;
     width: 40px;
@@ -75,23 +44,82 @@
     margin-top: 5px;
 }
 
-.home-icone-slogan {
+/* ========== SEÇÃO 1: QUEM SOMOS ========== */
+.home-secao1 .home-lado {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.home-secao1 .home-lado .btn {
+    margin-top: auto;
+}
+
+.home-secao1 .home-esquerda {
+    flex: 3;
+    text-align: left;
+}
+
+.home-secao1 .home-direita {
+    flex: 1;
+    text-align: left;
+}
+
+.home-secao1 .home-icone-slogan {
     width: auto;
     height: 450px;
     margin-top: 40px;
     align-self: center;
 }
 
-/* ========== SEÇÃO 2 (Serviços) ========== */
-.home-secao2 {
+/* ========== CAIXAS DE ÍCONES ========== */
+.icon-box {
     display: flex;
-    align-items: stretch;
-    max-width: 1200px;
-    margin: 0 auto 80px;
-    padding: 0 20px;
-    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.icon-box--service {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: rgba(255, 221, 126, 0.065);
+    margin-bottom: 12px;
+}
+
+.icon-box--service img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    filter: var(--brand-ambar-filter);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.icon-box--company {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+}
+
+.icon-box--company img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .icon-box--service {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.card:hover .icon-box--company {
+    transform: scale(1.05);
+}
+
+/* ========== CARDS DE TÍTULO ========== */
 .home-card-titulo {
     border-left: none;
     padding-left: 0;
@@ -100,67 +128,62 @@
     display: flex;
 }
 
-.home-icon-card {
-    width: 50px;
-    height: 50px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-    background-color: rgba(255, 221, 126, 0.065);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+/* ========== ALINHAMENTO CENTRALIZADO (HOME) ========== */
+.home-align-center {
+    width: 100%;
 }
 
-.home-icon-card img {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    filter: var(--brand-ambar-filter);
-    transition: filter 0.3s ease, transform 0.3s ease;
+.home-align-center .home-tag {
+    display: block;
+    text-align: center;
 }
 
-.card:hover .home-icon-card {
-    transform: scale(1.05);
-    rotate: 5deg;
-}
-
-.btn-nav-servicos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.home-align-center .btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: fit-content;
-    margin: 0 auto;
     margin-top: 20px;
 }
 
-/* ========== SEÇÃO 3 (Portfólio) ========== */
-.home-secao3 {
-    display: flex;
-    align-items: stretch;
-    max-width: 1200px;
-    margin: 0 auto 80px;
+/* ========== SEÇÃO 4: CTA ========== */
+.home-cta {
+    max-width: 1000px;
+    margin: 0 auto 30px;
     padding: 0 20px;
-    gap: 40px;
 }
 
-.home-icon-empresa {
-    width: 64px;
-    height: 64px;
+.home-cta .card-cta {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+.home-cta-icon {
+    margin-bottom: 20px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    filter: var(--brand-ambar-filter);
+}
+
+.home-cta-icon img {
+    width: auto;
+    height: 70px;
+}
+
+.home-cta-titulo {
+    font-size: 2.1rem;
+    color: var(--text-header);
+    font-weight: 700;
     margin-bottom: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.home-icon-empresa img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.card:hover .home-icon-empresa {
-    transform: scale(1.05);
+.home-cta-texto {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
