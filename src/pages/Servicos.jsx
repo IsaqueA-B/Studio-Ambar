@@ -191,6 +191,7 @@ function Servicos() {
             <p>Carregando serviços do banco...</p>
           )}
         </div>
+          <button className="btn" type="button" onClick={() => {}} > Cadastrar Serviço </button>
       </section>
     </main>
   );
