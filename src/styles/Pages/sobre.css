@@ -10,22 +10,6 @@
   padding: 40px 0;
 }
 
-/* ========== TAGS ========== */
-.sobre-tag {
-  display: inline-block;
-  color: var(--brand-ambar);
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.sobre-tag.centralizado {
-  display: block;
-  text-align: center;
-}
-
 /* ========== HERO ========== */
 .sobre-hero {
   position: relative;

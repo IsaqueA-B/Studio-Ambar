@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 import WordMark from '../assets/images/Especificos/WordMark.png';
 import { useServicos } from '../hooks/useServicos';
 
+import iconSlogan from "../assets/images/Especificos/Icon_Slogan.png";
+
 import iconInstitucionais from "../assets/images/Icons/Home/Institucionais.png";
 import iconPersonalizacao from "../assets/images/Icons/Home/Personalizacao.png";
 import iconSocial from "../assets/images/Icons/Home/Social.png";
 import iconVisual from "../assets/images/Icons/Home/Visual.png";
 
-import iconSlogan from "../assets/images/Especificos/Icon_Slogan.png";
+import iconBioTecno from "../assets/images/Icons/Home/Biotecno.png";
+import iconCoopermil from "../assets/images/Icons/Home/Coopermil.png";
+import iconTechStart from "../assets/images/Icons/Home/TechStart.png";
 
 function Home() {
 
@@ -23,7 +27,7 @@ function Home() {
                 {/* SEÇÃO 1: QUEM SOMOS + SERVIÇOS EM DESTAQUE (dividida por linha) */}
                 <section className="home-secao1">
                     <div className="home-lado home-esquerda">
-                        <span className="sobre-tag">Como agimos?</span>
+                        <span className="home-tag">Como agimos?</span>
                         <h2 className="home-titulo-esquerda">Usamos a Criatividade</h2>
                         <p>
                             No Studio Âmbar, acreditamos que a criatividade é o ponto de partida
@@ -48,9 +52,9 @@ function Home() {
                     </div>
                 </section>
 
-                <section className="sobre-secao">
+                <section className="home-secao2">
                     <div className="sobre-alinhamento">
-                        <span className="sobre-tag centralizado">Alguns serviços</span>
+                        <span className="home-tag centralizado">Alguns serviços</span>
                         <h2 className="h2-central sem-linha">O que fazemos</h2>
 
                         <div className="grid-4x4">
@@ -95,12 +99,69 @@ function Home() {
                                 </p>
                             </div>
                         </div>
+                        <Link to="/servicos" className="btn btn-outline btn-nav-servicos">Ver todos os serviços</Link>
                     </div>
-                    <Link to="/servicos" className="btn btn-outline btn-nav-servicos">Ver todos os serviços</Link>
                 </section>
+
+
+                <section className="home-secao3">
+                    <div className="sobre-alinhamento">
+                        <span className="home-tag centralizado">Em destaque</span>
+                        <h2 className="h2-central sem-linha">Do Portfólio</h2>
+
+                        <div className="grid-3x3">
+                            <div className="card">
+                                <div className="home-icon-empresa">
+                                    <img src={iconBioTecno} alt="Ícone Missão" />
+                                </div>
+                                <h3 className="home-card-titulo">BioTecno</h3>
+                                <p>
+                                    A BioTecno atua com biotecnologia sustentável e precisava de
+                                    uma comunicação visual à altura de sua inovação científica.
+                                    Desenvolvemos materiais corporativos, apresentações
+                                    profissionais e posts para redes sociais.
+                                </p>
+                                <Link to="/portfolio/8" className="btn btn-outline btn-sm">
+                                    Conhecer BioTecno →
+                                </Link>
+                            </div>
+                            <div className="card">
+                                <div className="home-icon-empresa">
+                                    <img src={iconCoopermil} alt="Ícone Visão" />
+                                </div>
+                                <h3 className="home-card-titulo">Coopermil</h3>
+                                <p>
+                                    Com décadas de tradição no agronegócio, a Coopermil precisava
+                                    modernizar sua imagem sem perder a essência cooperativista. O
+                                    Studio Âmbar criou um rebranding completo: novo logotipo,
+                                    embalagens padronizadas e presença digital estratégica.
+                                </p>
+                                <Link to="/portfolio/9" className="btn btn-outline btn-sm">
+                                    Conhecer Coopermil →
+                                </Link>
+                            </div>
+                            <div className="card">
+                                <div className="home-icon-empresa">
+                                    <img src={iconTechStart} alt="Ícone Visão" />
+                                </div>
+                                <h3 className="home-card-titulo">TechStart</h3>
+                                <p>
+                                    A TechStart é uma startup de soluções em nuvem que buscava se
+                                    posicionar como referência em inovação. Desenvolvemos uma
+                                    identidade visual moderna, com logotipo, paleta de cores
+                                    vibrantes e um site institucional responsivo.
+                                </p>
+                                <Link to="/portfolio/2" className="btn btn-outline btn-sm">
+                                    Conhecer TechStart →
+                                </Link>
+                            </div>
+                        </div>
+                        <Link to="/portfolio" className="btn btn-outline btn-nav-servicos">Ver todos os projetos</Link>
+                    </div>
+                </section>
+
             </main>
         </div>
     );
 }
-
 export default Home;

@@ -59,14 +59,14 @@
 }
 
 .filter-bar .btn.btn-outline {
-    border-color: rgba(0,0,0,0.06);
+    border-color: rgba(0, 0, 0, 0.06);
 }
 
 .filter-bar .btn.active {
     background: var(--brand-ambar);
     color: var(--bg-main);
     border: none;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 /* Para botões sem borda para a navegação do footer*/
@@ -84,4 +84,11 @@
 
 .btn-link:hover {
     color: var(--brand-ambar);
+}
+
+.btn-sm {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    display: inline-block;
 }

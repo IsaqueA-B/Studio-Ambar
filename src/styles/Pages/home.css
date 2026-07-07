@@ -8,6 +8,23 @@
     margin-right: auto;
 }
 
+/* ========== TAGS ========== */
+.home-tag {
+  display: inline-block;
+  color: var(--brand-ambar);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 0px;
+}
+
+.home-tag.centralizado {
+  display: block;
+  text-align: center;
+}
+
+
 /* ========== SEÇÃO 1 (Como agimos e img) ========== */
 .home-secao1 {
     display: flex;
@@ -66,6 +83,14 @@
 }
 
 /* ========== SEÇÃO 2 (Serviços) ========== */
+.home-secao2 {
+    display: flex;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+    gap: 40px;
+}
 
 .home-card-titulo {
     border-left: none;
@@ -107,4 +132,35 @@
     width: fit-content;
     margin: 0 auto;
     margin-top: 20px;
+}
+
+/* ========== SEÇÃO 3 (Portfólio) ========== */
+.home-secao3 {
+    display: flex;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.home-icon-empresa {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.home-icon-empresa img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .home-icon-empresa {
+    transform: scale(1.05);
 }
