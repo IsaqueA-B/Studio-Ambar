@@ -17,6 +17,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
+import Cadastrosnobanco from './pages/Cadastrosnobanco';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/sobre" element={<Sobre />} />
+          <Route path="/cadastro" element={<Cadastrosnobanco />} />
           <Route path="/Admin" element={
             <PrivateRoute>
               <Admin />

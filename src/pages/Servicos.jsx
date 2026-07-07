@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useServicos } from "../hooks/useServicos";
-
+import { Link } from 'react-router-dom';
 const categoriasServicos = [
   {
     categoria: "Branding e Identidade",
@@ -191,10 +191,9 @@ function Servicos() {
             <p>Carregando serviços do banco...</p>
           )}
         </div>
-          <button className="btn" type="button" onClick={() => {}} > Cadastrar Serviço </button>
+    <Link to="/cadastro" className="btn btn-outline"> Cadastrar Serviço</Link>
       </section>
     </main>
   );
 }
-
 export default Servicos;
