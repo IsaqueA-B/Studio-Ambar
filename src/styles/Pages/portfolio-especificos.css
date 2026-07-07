@@ -1,37 +1,49 @@
-/* Super Charge - TechStart */
-@font-face {
-  font-family: 'Super Charge';
-  src: url('../../assets/fonts/Portfolio/SuperchargeExpanded-z83aw.otf') format('opentype');
-}
+  .projeto-text {
+    font-size: 1.4em;
+    letter-spacing: 1px;
+    font-weight: 10;
+    background: var(--text-main);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    position: relative;
+  }
 
-.projeto-id-2 {
-    font-family: 'Super Charge', sans-serif;
-}
+  /* Mochi Boom - Doce Sabor Confeitaria */
+  @font-face {
+    font-family: 'Mochi Boom';
+    src: url('../../assets/fonts/Portfolio/Mochi Boom DEMO.ttf') format('truetype');
+  }
 
-/* Mochi Boom - Doce Sabor Confeitaria */
-@font-face {
-  font-family: 'Mochi Boom';
-  src: url('../../assets/fonts/Portfolio/Mochi Boom DEMO.ttf') format('truetype');
-}
-
-.projeto-id-1 {
+  .projeto-id-1 {
     font-family: 'Mochi Boom', sans-serif;
-}
+  }
 
-@font-face {
-  font-family: 'Hankey Demo';
-  src: url('../../assets/fonts/Portfolio/Hanky Demo.otf') format('opentype');
-}
+  /* Super Charge - TechStart */
+  @font-face {
+    font-family: 'Super Charge';
+    src: url('../../assets/fonts/Portfolio/SuperchargeExpanded-z83aw.otf') format('opentype');
+  }
 
-.projeto-id-3 {
+  .projeto-id-2 {
+    font-family: 'Super Charge', sans-serif;
+  }
+
+  @font-face {
+    font-family: 'Hankey Demo';
+    src: url('../../assets/fonts/Portfolio/Hanky Demo.otf') format('opentype');
+  }
+
+  .projeto-id-3 {
     font-family: 'Hankey Demo', sans-serif;
-}
+  }
 
-@font-face {
-  font-family: 'Vipnagorgialla';
-  src: url('../../assets/fonts/Portfolio/Vipnagorgialla Bd.otf') format('opentype');
-}
+  @font-face {
+    font-family: 'Vipnagorgialla';
+    src: url('../../assets/fonts/Portfolio/Vipnagorgialla Bd.otf') format('opentype');
+  }
 
-.projeto-id-4 {
+  .projeto-id-4 {
     font-family: 'Vipnagorgialla', sans-serif;
-}
+  }

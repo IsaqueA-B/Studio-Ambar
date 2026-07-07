@@ -85,7 +85,7 @@ function Portfolio() {
                 {projetosFiltrados.map((proj) => (
                     <Link to={`/portfolio/${proj.id}`} className="btn-card" key={proj.id}>
                         <div className="card">
-                        <h3 className={`projeto-id-${proj.id}`}>
+                        <h3 className={ `projeto-id-${proj.id} projeto-text`}>
                             {proj.nome}
                             </h3>
                             <p><small>{proj.categoria}</small></p>
