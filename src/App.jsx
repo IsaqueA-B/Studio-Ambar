@@ -5,6 +5,7 @@ import Footer from './componentes/layout/Footer';
 import { UserProvider } from './componentes/users/UserContext';
 import { PrivateRoute } from './componentes/users/PrivateRoute';
 
+
 //===PAGINAS===
 import Admin from './pages/Admin';
 import Sobre from './pages/Sobre';
@@ -17,7 +18,9 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
-import Cadastrosnobanco from './pages/Cadastrosnobanco';
+import CadastrosServico from './pages/CadastrosServicos';
+import CadastroPortifolio from './pages/CadastroPortifolio';
+import CadastroBlog from './pages/CadastroBlog';
 
 function App() {
   return (
@@ -35,7 +38,10 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/sobre" element={<Sobre />} />
-          <Route path="/cadastro" element={<Cadastrosnobanco />} />
+          <Route path="/cadastroServico" element={<CadastrosServico />} />
+          <Route path="/CadastroPortifolio" element={<CadastroPortifolio />} />
+          <Route path="/CadastroBlog" element={<CadastroBlog />} />
+          
           <Route path="/Admin" element={
             <PrivateRoute>
               <Admin />

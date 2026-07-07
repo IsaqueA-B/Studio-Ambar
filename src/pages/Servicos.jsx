@@ -191,7 +191,7 @@ function Servicos() {
             <p>Carregando serviços do banco...</p>
           )}
         </div>
-    <Link to="/cadastro" className="btn btn-outline"> Cadastrar Serviço</Link>
+    <Link to="/cadastroServico" className="btn btn-outline"> Cadastrar Serviço</Link>
       </section>
     </main>
   );

@@ -109,7 +109,7 @@ function Portfolio() {
                         <p>Carregando itens do banco...</p>
                     )}
                 </div>
-                  <button className="btn" type="button" onClick={() => {}} > Cadastrar Item </button>
+                  <Link to="/CadastroPortifolio" className="btn btn-outline"> Cadastrar Portifólio</Link>
             </section>
         </main>
     );

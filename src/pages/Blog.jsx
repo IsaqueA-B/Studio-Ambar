@@ -65,6 +65,7 @@ function Blog() {
                     ) : (
                         <p>Carregando itens do banco...</p>
                     )}
+                       <Link to="/CadastroBlog" className="btn btn-outline"> Cadastrar Blog</Link>
                 </div>
             </section>
 
