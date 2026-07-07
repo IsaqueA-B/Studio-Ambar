@@ -21,7 +21,6 @@ function Blog() {
 
     return (
         <main className="blog-container animacao-entrada p-20">
-            {/* Cabeçalho do Blog (usa h1 e subtítulo globais) */}
 
             <section className="page-hero text-center">
                 <div className="page-hero-container">
@@ -29,9 +28,9 @@ function Blog() {
                         <h1 className="page-title">Blog</h1>
                         <p className="page-subtitle">Tendências • Noticias</p>
                     </div>
-                    <div className="sobre-slogan-box">
-                        <span className="sobre-slogan fonte-titulo">
-                            Confira nossas novidades mais recentes relacionadas a tecnologia e criação de sites!
+                    <div className="slogan-box">
+                        <span className="slogan fonte-titulo">
+                            Confira nossas novidades mais recentes!
                         </span>
                     </div>
                 </div>
@@ -66,9 +65,7 @@ function Blog() {
                     ) : (
                         <p>Carregando itens do banco...</p>
                     )}
-                       <button className="btn" type="button" onClick={() => {}} > Cadastrar Item </button>
                 </div>
-            
             </section>
 
             {/* Grid de artigos com 2 colunas (usando grid-auto) */}

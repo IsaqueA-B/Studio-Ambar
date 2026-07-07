@@ -25,8 +25,32 @@ function Login() {
         carregarUsuarios();
     }, []);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
+        try {
+            // Tenta autenticar no banco primeiro
+            const cpfLimpo = cpf.replace(/\D/g, '');
+            const resposta = await fetch('http://localhost:3000/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ cpf: cpfLimpo, senha })
+            });
+
+            if (resposta.ok) {
+                const usuario = await resposta.json();
+                console.log('✅ Login no banco com sucesso');
+                localStorage.setItem('currentUser', JSON.stringify(usuario));
+                navigate('/');
+                return;
+            } else {
+                console.warn('❌ Banco retornou erro:', resposta.status);
+            }
+        } catch {
+            console.warn('⚠️ Banco indisponível, tentando localStorage');
+        }
+
+        // Fallback: usa localStorage
         if (login(cpf, senha)) {
             navigate('/');
         } else {

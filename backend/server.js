@@ -20,8 +20,46 @@ const validarCPF = (cpf) => {
 
 app.use(cors());
 app.use(express.json());
+
 app.get('/', (req, res) => {
  res.json({ mensagem: 'API Studio Ambar rodando!' });
+});
+
+// ========== AUTENTICAÇÃO ==========
+app.post('/api/auth/login', async (req, res) => {
+ try {
+ const { cpf, senha } = req.body;
+ if (!cpf || !senha) {
+ return res.status(400).json({ erro: 'CPF e senha são obrigatórios' });
+ }
+ 
+ const cpfLimpo = removerMascaraCPF(cpf);
+ const [usuarios] = await pool.execute(
+ 'SELECT id, nome, email, nivel_acesso, cpf FROM usuarios WHERE cpf = ?',
+ [cpfLimpo]
+ );
+ 
+ if (usuarios.length === 0) {
+ return res.status(401).json({ erro: 'CPF ou senha inválidos' });
+ }
+ 
+ const usuario = usuarios[0];
+ // Em produção, use bcrypt. Aqui é simples para teste.
+ if (usuario.cpf == cpfLimpo) {
+ return res.json({ 
+ id: usuario.id, 
+ nome: usuario.nome, 
+ email: usuario.email, 
+ nivel_acesso: usuario.nivel_acesso, 
+ cpf: usuario.cpf 
+ });
+ }
+ 
+ return res.status(401).json({ erro: 'CPF ou senha inválidos' });
+ } catch (error) {
+ console.error(error);
+ res.status(500).json({ erro: 'Erro ao fazer login' });
+ }
 });
 
 // ========== CLIENTES ==========

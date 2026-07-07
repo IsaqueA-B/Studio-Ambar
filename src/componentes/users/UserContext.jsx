@@ -5,24 +5,43 @@ const UserContext = createContext();
 
 export function UserProvider({ children }) {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
+    // Carregar usuário do localStorage ao iniciar
     useEffect(() => {
         const saved = localStorage.getItem('currentUser');
-        if (saved) setUser(JSON.parse(saved));
+        if (saved) {
+            try {
+                setUser(JSON.parse(saved));
+            } catch (error) {
+                console.error('Erro ao carregar usuário:', error);
+                localStorage.removeItem('currentUser');
+            }
+        }
+        setLoading(false);
     }, []);
 
+    // Login: valida no localStorage
     const login = (cpfDigitado, senha) => {
-        const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-        const encontrado = usuarios.find(u => u.cpf === cpfDigitado && u.senha === senha);
-        if (encontrado) {
-            const { senha, ...userSemSenha } = encontrado;
-            setUser(userSemSenha);
-            localStorage.setItem('currentUser', JSON.stringify(userSemSenha));
-            return true;
+        try {
+            const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+            const encontrado = usuarios.find(u => u.cpf === cpfDigitado && u.senha === senha);
+            if (encontrado) {
+                const { senha, ...userSemSenha } = encontrado;
+                setUser(userSemSenha);
+                localStorage.setItem('currentUser', JSON.stringify(userSemSenha));
+                console.log('✅ Login do localStorage com sucesso');
+                return true;
+            }
+            console.warn('❌ Credenciais inválidas no localStorage');
+            return false;
+        } catch (error) {
+            console.error('❌ Erro ao fazer login:', error);
+            return false;
         }
-        return false;
     };
 
+    // Register: cria no banco, depois salva no localStorage
     const register = (dados) => {
         if (!cpfValidator.isValid(dados.cpf)) {
             return { sucesso: false, mensagem: 'CPF inválido.' };
@@ -46,7 +65,7 @@ export function UserProvider({ children }) {
     };
 
     return (
-        <UserContext.Provider value={{ user, login, register, logout }}>
+        <UserContext.Provider value={{ user, login, register, logout, loading }}>
             {children}
         </UserContext.Provider>
     );

@@ -44,8 +44,8 @@ function Contato() {
                         <h1 className="page-title">Contato</h1>
                         <p className="page-subtitle">Nossas Redes • Como Contatar</p>
                     </div>
-                    <div className="sobre-slogan-box">
-                        <span className="sobre-slogan fonte-titulo">
+                    <div className="slogan-box">
+                        <span className="slogan fonte-titulo">
                             Vamos conversar sobre seu projeto.
                         </span>
                     </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useServicos } from "../hooks/useServicos";
-
+import { Link } from 'react-router-dom';
 const categoriasServicos = [
   {
     categoria: "Branding e Identidade",
@@ -128,8 +128,8 @@ function Servicos() {
             <h1 className="page-title">Nossos Serviços</h1>
             <p className="page-subtitle">Identidade Visual • Web Design • E MAIS</p>
           </div>
-          <div className="sobre-slogan-box">
-            <span className="sobre-slogan fonte-titulo">
+          <div className="slogan-box">
+            <span className="slogan fonte-titulo">
               Soluções criativas para sua marca
             </span>
           </div>
@@ -191,10 +191,9 @@ function Servicos() {
             <p>Carregando serviços do banco...</p>
           )}
         </div>
-          <button className="btn" type="button" onClick={() => {}} > Cadastrar Serviço </button>
+    <Link to="/cadastro" className="btn btn-outline"> Cadastrar Serviço</Link>
       </section>
     </main>
   );
 }
-
 export default Servicos;
