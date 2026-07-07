@@ -59,8 +59,8 @@ function Portfolio() {
                         <h1 className="page-title">Portfólio</h1>
                         <p className="page-subtitle">Projetos • Cases de Estudo • Empresas</p>
                     </div>
-                    <div className="sobre-slogan-box">
-                        <span className="sobre-slogan fonte-titulo">
+                    <div className="slogan-box">
+                        <span className="slogan fonte-titulo">
                             Conheça alguns dos nossos trabalhos.
                         </span>
                     </div>
