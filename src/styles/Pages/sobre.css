@@ -68,19 +68,6 @@
   margin-bottom: 35px;
 }
 
-.sobre-slogan-box {
-  display: inline-block;
-  border-top: 1px solid rgba(247, 230, 196, 0.2);
-  border-bottom: 1px solid rgba(247, 230, 196, 0.2);
-  padding: 12px 30px;
-}
-
-.sobre-slogan {
-  font-size: 1.2rem;
-  color: var(--brand-ambar);
-  letter-spacing: 1px;
-}
-
 /* ========== HISTÓRIA ========== */
 .sobre-conteudo-flex {
   max-width: 1200px;

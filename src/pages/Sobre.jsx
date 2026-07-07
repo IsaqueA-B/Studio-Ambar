@@ -53,8 +53,8 @@ function Sobre() {
             <h1 className="page-title">Sobre o Studio Âmbar</h1>
             <p className="page-subtitle">Identidade Visual • Criação de marcas • Redes Sociais</p>
           </div>
-          <div className="sobre-slogan-box">
-            <span className="sobre-slogan fonte-titulo">
+          <div className="slogan-box">
+            <span className="slogan fonte-titulo">
               "Sua marca, nossa essência"
             </span>
           </div>

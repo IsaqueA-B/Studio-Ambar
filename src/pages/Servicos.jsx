@@ -128,8 +128,8 @@ function Servicos() {
             <h1 className="page-title">Nossos Serviços</h1>
             <p className="page-subtitle">Identidade Visual • Web Design • E MAIS</p>
           </div>
-          <div className="sobre-slogan-box">
-            <span className="sobre-slogan fonte-titulo">
+          <div className="slogan-box">
+            <span className="slogan fonte-titulo">
               Soluções criativas para sua marca
             </span>
           </div>
