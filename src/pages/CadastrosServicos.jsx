@@ -85,12 +85,12 @@ function CadastrarServico() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="prazo">Prazo</label>
+              <label htmlFor="prazo">Descrição</label>
               <input
-                type="number"
+                type="text"
                 id="prazo"
                 name="prazo"
-                placeholder="Ex.: 30 dias"
+                placeholder="Ex.: Posts, stories..."
                 value={prazo}
                 onChange={(e) => setPrazo(e.target.value)}
                 min="1"
