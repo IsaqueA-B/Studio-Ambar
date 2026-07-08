@@ -174,6 +174,29 @@ function Sobre() {
         </div>
       </section>
 
+
+      <section className="sobre-secao">
+        <div className="sobre-alinhamento">
+          <h2 className="h2-central titulo-secao-central sem-linha">
+            Por que nos escolher?
+          </h2>
+          <div className="grid-3x3">
+            <div className="card SF grid-border-right">
+              <h3 className="card-titulo">Atendimento Próximo</h3>
+              <p> Comunicação clara, transparente e suporte humanizado durante todo o projeto.</p>
+            </div>
+            <div className="card SF grid-border-right">
+              <h3 className="card-titulo">Projetos Sob Medida</h3>
+              <p> Soluções criadas exclusivamente e pensando na necessidade de cada cliente.</p>
+            </div>
+            <div className="card SF">
+              <h3 className="card-titulo">Resultados Reais</h3>
+              <p>Estratégias visuais e modernas planejadas para dar destaque real ao seu negócio.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="sobre-secao">
         <div className="sobre-alinhamento">
           <h2 className="h2-central titulo-secao-central sem-linha">Nossa Equipe</h2>
@@ -249,27 +272,6 @@ function Sobre() {
         </div>
       </section>
 
-      <section className="sobre-secao">
-        <div className="sobre-alinhamento">
-          <h2 className="h2-central titulo-secao-central sem-linha">
-            Por que nos escolher?
-          </h2>
-          <div className="grid-3x3">
-            <div className="card SF grid-border-right">
-              <h3 className="card-titulo">Atendimento Próximo</h3>
-              <p> Comunicação clara, transparente e suporte humanizado durante todo o projeto.</p>
-            </div>
-            <div className="card SF grid-border-right">
-              <h3 className="card-titulo">Projetos Sob Medida</h3>
-              <p> Soluções criadas exclusivamente e pensando na necessidade de cada cliente.</p>
-            </div>
-            <div className="card SF">
-              <h3 className="card-titulo">Resultados Reais</h3>
-              <p>Estratégias visuais e modernas planejadas para dar destaque real ao seu negócio.</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

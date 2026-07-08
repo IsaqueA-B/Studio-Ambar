@@ -10,9 +10,8 @@ const projetosEstaticos = [
     { id: 5, nome: 'Sabor Raiz', categoria: 'Branding & Embalagem', desc: 'Projeto para linha de alimentos artesanais com sabor caseiro.' },
     { id: 6, nome: 'Casa em Dia', categoria: 'Interior & Social', desc: 'Identidade visual para serviços de organização e decoração residencial.' },
     { id: 7, nome: 'Ilumina Decora', categoria: 'Design de Marca', desc: 'Branding para escritório de decoração com estilo elegante e contemporâneo.' },
-    { id: 8, nome: 'BioTECNO', categoria: 'Refrigeração Médica', desc: 'Soluções de refrigeração para equipamentos médicos e armazenamento sensível.' },
+    { id: 8, nome: 'BioTECNO', categoria: 'Refrigeração Médica', desc: 'Soluções de refrigeração para equipamentos médicos.' },
     { id: 9, nome: 'Coopermil', categoria: 'Cooperativa Agropecuária', desc: 'Atuação em supermercados, postos e lojas agropecuárias.' },
-    // Adicionar mais
 ];
 
 function Portfolio() {
