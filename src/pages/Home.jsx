@@ -112,12 +112,12 @@ function Home() {
                         <h2 className="h2-central sem-linha">Do Portfólio</h2>
 
                         <div className="grid-3x3">
-                            <div className="card">
-                                <div className="icon-box icon-box--company">
+                            <div className="home-card-portfolio card SF grid-border-right">
+                                <div className="icon-box icon-box--company centralizado">
                                     <img src={iconBioTecno} alt="Ícone Missão" />
                                 </div>
-                                <h3 className="home-card-titulo">BioTecno</h3>
-                                <p>
+                                <h3 className="home-card-titulo centralizado">BioTecno</h3>
+                                <p className="centralizado">
                                     A BioTecno atua com biotecnologia sustentável e precisava de
                                     uma comunicação visual à altura de sua inovação científica.
                                     Desenvolvemos materiais corporativos, apresentações
@@ -127,12 +127,12 @@ function Home() {
                                     Conhecer BioTecno →
                                 </Link>
                             </div>
-                            <div className="card">
-                                <div className="icon-box icon-box--company">
-                                    <img src={iconCoopermil} alt="Ícone Visão" />
+                            <div className="home-card-portfolio card SF grid-border-right">
+                                <div className="icon-box icon-box--company centralizado">
+                                    <img src={iconCoopermil} alt="Ícone Coopermil" />
                                 </div>
-                                <h3 className="home-card-titulo">Coopermil</h3>
-                                <p>
+                                <h3 className="home-card-titulo centralizado">Coopermil</h3>
+                                <p className="centralizado">
                                     Com décadas de tradição no agronegócio, a Coopermil precisava
                                     modernizar sua imagem sem perder a essência cooperativista. O
                                     Studio Âmbar criou um rebranding completo: novo logotipo,
@@ -142,12 +142,12 @@ function Home() {
                                     Conhecer Coopermil →
                                 </Link>
                             </div>
-                            <div className="card">
-                                <div className="icon-box icon-box--company">
-                                    <img src={iconTechStart} alt="Ícone Visão" />
+                            <div className="home-card-portfolio card SF">
+                                <div className="icon-box icon-box--company centralizado">
+                                    <img src={iconTechStart} alt="Ícone TechStart" />
                                 </div>
-                                <h3 className="home-card-titulo">TechStart</h3>
-                                <p>
+                                <h3 className="home-card-titulo centralizado">TechStart</h3>
+                                <p className="centralizado">
                                     A TechStart é uma startup de soluções em nuvem que buscava se
                                     posicionar como referência em inovação. Desenvolvemos uma
                                     identidade visual moderna, com logotipo, paleta de cores
@@ -157,7 +157,7 @@ function Home() {
                                     Conhecer TechStart →
                                 </Link>
                             </div>
-                        </div>
+                        </div> <br></br>
                         <Link to="/portfolio" className="btn btn-outline">Ver todos os projetos</Link>
                     </div>
                 </section>

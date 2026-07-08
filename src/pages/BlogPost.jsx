@@ -33,13 +33,12 @@ function BlogPost() {
                 {/* Data */}
                 <span className="cargo artigo-data">{artigo.data}</span>
 
-                {/* Imagem de destaque (placeholder ou real) */}
+                {/* Imagem de destaque */}
                 <figure className="artigo-imagem-container">
                     <img
                         src={artigo.imagem}
                         alt={artigo.titulo}
                         className="artigo-imagem"
-                        // Opcional: fallback se a imagem não existir
                         onError={(e) => {
                             e.target.onerror = null;
                             e.target.src = '/images/blog/placeholder.jpg';
@@ -54,7 +53,7 @@ function BlogPost() {
                     ))}
                 </div>
 
-                {/* Rodapé do artigo (opcional) */}
+                {/* Rodapé do artigo */}
                 <div className="artigo-footer mt-20 pt-10 border-top">
                     <p>Gostou do conteúdo? Compartilhe com outros empreendedores!</p>
                 </div>

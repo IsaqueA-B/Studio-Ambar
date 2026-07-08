@@ -44,6 +44,12 @@
     margin-top: 5px;
 }
 
+/* ========== LINHA ÂMBAR ========== */
+.home-linha {
+    border-right: 3px solid var(--brand-ambar);
+}
+
+
 /* ========== SEÇÃO 1: QUEM SOMOS ========== */
 .home-secao1 .home-lado {
     padding: 40px 20px;
@@ -119,16 +125,27 @@
     transform: scale(1.05);
 }
 
-/* ========== CARDS DE TÍTULO ========== */
+/* ========== CARDS DO HOME ========== */
 .home-card-titulo {
     border-left: none;
     padding-left: 0;
     color: var(--brand-creme);
     font-size: 1.5rem;
-    display: flex;
 }
 
-/* ========== ALINHAMENTO CENTRALIZADO (HOME) ========== */
+
+.home-card-portfolio {
+    margin-right: -10px;
+    margin-left: -10px;
+    padding: 0px 10px;
+}
+
+.home-card-texto {
+    align-items: center;
+    text-align: center;
+}
+
+/* ========== ALINHAMENTO CENTRALIZADO  ========== */
 .home-align-center {
     width: 100%;
 }

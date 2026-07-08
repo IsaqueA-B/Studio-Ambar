@@ -67,7 +67,7 @@ function Portfolio() {
                 </div>
             </section>
 
-            {/* Filtros futuros (opcional) */}
+            {/* Filtros */}
             <div className="mb-20 text-center filter-bar">
                 {filters.map((f) => (
                     <button

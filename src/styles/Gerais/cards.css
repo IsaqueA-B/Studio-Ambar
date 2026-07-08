@@ -1,10 +1,19 @@
 .card {
     background: var(--bg-elevated);
     border-radius: var(--radius);
-    padding: 24px;
+    padding: 30px;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     border: 1px solid var(--border-color);
+    flex-direction: column;
+    justify-content: center;
+}
+
+.SF {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 .card:hover {
@@ -13,7 +22,7 @@
     border-color: var(--brand-ambar);
 }
 
-.card-rounded {
+.card-rounded { 
     border-radius: 50px;
 }
 
@@ -29,51 +38,55 @@
 .card-lg {
     padding: 45px 35px;
 }
+
 /* MISSÃO E VISÃO */
 
 .card-lg p {
-font-size: 1.2rem;
-line-height: 1.8;
-max-width: 90%;
-margin: 0 auto;
-text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: left;
 }
+
 .card-valores {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
 }
+
 .card-valores.card-titulo {
-align-items: center;
+    align-items: center;
 }
+
 .card-valores h3 {
-margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .lista-valores {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-gap: 22px;
+    gap: 22px;
 
-width: 100%;
+    width: 100%;
 }
 
 .lista-valores p {
-margin: 0;
+    margin: 0;
 
-line-height: 1.2;
+    line-height: 1.2;
 
-text-align: left;
+    text-align: left;
 }
 
 .lista-valores strong {
-display: inline-block;
+    display: inline-block;
 
-margin-bottom: 5px;
+    margin-bottom: 5px;
 
-color: #ffffff;
+    color: #ffffff;
 }
 
 
@@ -84,7 +97,10 @@ color: #ffffff;
     gap: 24px;
 }
 
-/* Ensure cards in grids have uniform height so filtered views look consistent */
+.grid-border-right {
+    border-right: 3px solid var(--brand-ambar);
+}
+
 .grid-3x3 .card {
     min-height: 220px;
     display: flex;
@@ -121,5 +137,3 @@ color: #ffffff;
         grid-template-columns: 1fr;
     }
 }
-
-

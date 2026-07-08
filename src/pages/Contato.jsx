@@ -56,7 +56,7 @@ function Contato() {
             <div className="grid-auto">
                 {/* LADO ESQUERDO: Formulário */}
                 <section className="card card-contato">
-                    <h2 className="card-titulo-contato">Formulário</h2>
+                    <h2 className="card-titulo-contato sem-linha">Formulário</h2>
 
                     <form className="contato-form" onSubmit={handleSubmit}>
                         <div className="form-group">
@@ -98,7 +98,7 @@ function Contato() {
 
                 {/* LADO DIREITO: Informações de Contato */}
                 <section className="card card-contato">
-                    <h2 className="card-titulo-contato">Informações</h2>
+                    <h2 className="card-titulo-contato sem-linha">Informações</h2>
 
                     <div className="contato-info-list">
                         <div className="contato-info-item">
