@@ -42,20 +42,20 @@ export async function buscarServicos() {
  return data;
 }
 
-export async function criarServico(tipo_servico, valor, prazo) {
+export async function criarServico(tipo_servico, valor, descricao) {
  const resposta = await fetch(`${API_BASE}/servicos`, {
  method: 'POST',
  headers: { 'Content-Type': 'application/json' },
- body: JSON.stringify({ tipo_servico, valor, prazo })
+ body: JSON.stringify({ tipo_servico, valor, descricao })
  });
  return await resposta.json();
 }
 
-export async function atualizarServico(id, tipo_servico, valor, prazo) {
+export async function atualizarServico(id, tipo_servico, valor, descricao) {
  const resposta = await fetch(`${API_BASE}/servicos/${id}`, {
  method: 'PUT',
  headers: { 'Content-Type': 'application/json' },
- body: JSON.stringify({ tipo_servico, valor, prazo })
+ body: JSON.stringify({ tipo_servico, valor, descricao })
  });
  return await resposta.json();
 }

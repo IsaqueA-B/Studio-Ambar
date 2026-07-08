@@ -180,10 +180,10 @@ function Servicos() {
               <div className="card" key={servico.id}>
                 <h3>{servico.tipo_servico}</h3>
 
-                <p>{servico.prazo || "Prazo a combinar"}</p>
+                <p>{servico.descricao || "Descrição a definir"}</p>
 
                 <h3>
-                  <strong>{servico.valor}</strong>
+                  <strong>R$ {servico.valor}</strong>
                 </h3>
               </div>
             ))

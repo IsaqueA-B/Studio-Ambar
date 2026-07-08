@@ -17,10 +17,10 @@ export function useServicos() {
     }
   };
 
-  const criar = useCallback(async (tipo_servico, valor, prazo) => {
+  const criar = useCallback(async (tipo_servico, valor, descricao) => {
     try {
-      console.log('📡 Criando serviço:', { tipo_servico, valor, prazo });
-      const resultado = await criarServico(tipo_servico, valor, prazo);
+      console.log('📡 Criando serviço:', { tipo_servico, valor, descricao });
+      const resultado = await criarServico(tipo_servico, valor, descricao);
       console.log('✅ Serviço criado:', resultado);
       return resultado;
     } catch (error) {
@@ -29,9 +29,9 @@ export function useServicos() {
     }
   }, []);
 
-  const atualizar = useCallback(async (id, tipo_servico, valor, prazo) => {
+  const atualizar = useCallback(async (id, tipo_servico, valor, descricao) => {
     try {
-      const resultado = await atualizarServico(id, tipo_servico, valor, prazo);
+      const resultado = await atualizarServico(id, tipo_servico, valor, descricao);
       return resultado;
     } catch (error) {
       console.error('❌ Erro ao atualizar serviço:', error);

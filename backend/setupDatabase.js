@@ -49,7 +49,7 @@ export async function setupDatabase() {
         id INT AUTO_INCREMENT PRIMARY KEY,
         tipo_servico VARCHAR(100) NOT NULL,
         valor DECIMAL(10,2) NOT NULL,
-        prazo INT
+        descricao TEXT
       )`,
       `CREATE TABLE IF NOT EXISTS projetos (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -110,8 +110,8 @@ export async function setupDatabase() {
     const [servicosExistentes] = await connection.query('SELECT id FROM servicos LIMIT 1');
     if (servicosExistentes.length === 0) {
       await connection.query(
-        'INSERT INTO servicos (tipo_servico, valor, prazo) VALUES (?, ?, ?)',
-        ['Serviço padrão', 0, 30]
+        'INSERT INTO servicos (tipo_servico, valor, descricao) VALUES (?, ?, ?)',
+        ['Serviço padrão', 0, 'Descrição padrão']
       );
     }
 

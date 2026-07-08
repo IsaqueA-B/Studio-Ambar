@@ -5,7 +5,7 @@ const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
 function CadastrarServico() {
   const [tipo_servico, setTipoServico] = useState("");
   const [valor, setValor] = useState("");
-  const [prazo, setPrazo] = useState("");
+  const [descricao, setDescricao] = useState("");
 
   const cadastrarServico = async () => {
     try {
@@ -17,7 +17,7 @@ function CadastrarServico() {
         body: JSON.stringify({
           tipo_servico,
           valor: Number(valor),
-          prazo: prazo ? Number(prazo) : null,
+          descricao: descricao || null,
         }),
       });
 
@@ -32,7 +32,7 @@ function CadastrarServico() {
 
       setTipoServico("");
       setValor("");
-      setPrazo("");
+      setDescricao("");
     } catch (error) {
       console.error(error);
       alert("Erro ao conectar com o servidor.");
@@ -85,15 +85,14 @@ function CadastrarServico() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="prazo">Descrição</label>
-              <input
-                type="text"
-                id="prazo"
-                name="prazo"
-                placeholder="Ex.: Posts, stories..."
-                value={prazo}
-                onChange={(e) => setPrazo(e.target.value)}
-                min="1"
+              <label htmlFor="descricao">Descrição</label>
+              <textarea
+                id="descricao"
+                name="descricao"
+                placeholder="Ex.: Posts, stories, design, roteiros"
+                value={descricao}
+                onChange={(e) => setDescricao(e.target.value)}
+                rows="4"
               />
             </div>
 
