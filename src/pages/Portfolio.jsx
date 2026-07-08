@@ -109,8 +109,9 @@ function Portfolio() {
                         <p>Carregando itens do banco...</p>
                     )}
                 </div>
-                  <Link to="/CadastroPortifolio" className="btn btn-outline"> Cadastrar Portifólio</Link>
             </section>
+            <Link to="/CadastroPortifolio" className="btn btn-outline"> Cadastrar Portifólio</Link>
+
         </main>
     );
 }

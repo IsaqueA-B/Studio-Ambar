@@ -1,13 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
 
 function CadastrarPortfolio() {
+  const [projetos, setProjetos] = useState([]);
   const [idProjeto, setIdProjeto] = useState("");
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
+  const [carregando, setCarregando] = useState(true);
+
+  useEffect(() => {
+    const buscarProjetos = async () => {
+      try {
+        const response = await fetch(`${API_BASE}/projetos`);
+        const data = await response.json();
+        setProjetos(Array.isArray(data) ? data : []);
+        if (data.length > 0) {
+          setIdProjeto(String(data[0].id));
+        }
+      } catch (error) {
+        console.error('Erro ao buscar projetos:', error);
+      } finally {
+        setCarregando(false);
+      }
+    };
+    buscarProjetos();
+  }, []);
 
   const cadastrarPortfolio = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/portfolio", {
+      const response = await fetch(`${API_BASE}/portfolio`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,7 +50,7 @@ function CadastrarPortfolio() {
 
       alert("Projeto do portfólio cadastrado com sucesso!");
 
-      setIdProjeto("");
+      setIdProjeto("1");
       setTitulo("");
       setDescricao("");
 
@@ -56,6 +78,29 @@ function CadastrarPortfolio() {
             }}
           >
   
+
+            <div className="form-group">
+              <label htmlFor="idProjeto">Projeto</label>
+              {carregando ? (
+                <p>Carregando projetos...</p>
+              ) : projetos.length > 0 ? (
+                <select
+                  id="idProjeto"
+                  value={idProjeto}
+                  onChange={(e) => setIdProjeto(e.target.value)}
+                  required
+                >
+                  <option value="">Selecione um projeto</option>
+                  {projetos.map((proj) => (
+                    <option key={proj.id} value={String(proj.id)}>
+                      ID {proj.id} - Cliente ID {proj.id_cliente}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <p style={{ color: 'red' }}>Nenhum projeto disponível. Crie um projeto primeiro.</p>
+              )}
+            </div>
 
             <div className="form-group">
               <label htmlFor="titulo">Título</label>

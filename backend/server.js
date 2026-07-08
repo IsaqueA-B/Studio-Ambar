@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import pool from './db.js';
+import { setupDatabase } from './setupDatabase.js';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,6 +26,16 @@ app.get('/', (req, res) => {
  res.json({ mensagem: 'API Studio Ambar rodando!' });
 });
 
+app.post('/api/setup-database', async (req, res) => {
+  try {
+    const resultado = await setupDatabase();
+    res.json(resultado);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ erro: error.message });
+  }
+});
+
 // ========== AUTENTICAÇÃO ==========
 app.post('/api/auth/login', async (req, res) => {
  try {
@@ -44,8 +55,12 @@ app.post('/api/auth/login', async (req, res) => {
  }
  
  const usuario = usuarios[0];
- // Em produção, use bcrypt. Aqui é simples para teste.
- if (usuario.cpf == cpfLimpo) {
+ if (!usuario) {
+ return res.status(401).json({ erro: 'CPF ou senha inválidos' });
+ }
+
+ const senhaCorreta = String(usuario.senha) === String(senha);
+ if (senhaCorreta) {
  return res.json({ 
  id: usuario.id, 
  nome: usuario.nome, 
@@ -491,6 +506,14 @@ app.delete('/api/usuarios/:id', async (req, res) => {
  res.status(500).json({ erro: 'Erro ao deletar usuário' });
  }
 });
+
+setupDatabase()
+  .then((resultado) => {
+    console.log(resultado.message);
+  })
+  .catch((error) => {
+    console.error('Falha ao preparar o banco automaticamente:', error.message);
+  });
 
 app.listen(PORT, () => {
  console.log(`Servidor rodando na porta ${PORT}`);

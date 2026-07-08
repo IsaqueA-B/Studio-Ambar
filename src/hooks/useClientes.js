@@ -18,7 +18,7 @@ export function useClientes() {
       const resultado = await criarCliente(nome_pessoa, nome_empresa, telefone, email, cnpj, cep);
       return resultado;
     } catch (error) {
-      console.error('❌ Erro ao criar cliente:', error);
+      console.error(' Erro ao criar cliente:', error);
       throw error;
     }
   };

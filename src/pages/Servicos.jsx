@@ -174,7 +174,7 @@ function Servicos() {
           Serviços vindos do banco de dados
         </h2>
 
-        <div className="grid-3x3">
+        <div className="grid-3x3 p-20">
           {servicosBanco.length > 0 ? (
             servicosBanco.map((servico) => (
               <div className="card" key={servico.id}>

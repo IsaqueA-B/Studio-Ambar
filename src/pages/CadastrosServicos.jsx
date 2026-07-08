@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
+
 function CadastrarServico() {
   const [tipo_servico, setTipoServico] = useState("");
   const [valor, setValor] = useState("");
@@ -7,7 +9,7 @@ function CadastrarServico() {
 
   const cadastrarServico = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/servicos", {
+      const response = await fetch(`${API_BASE}/servicos`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
