@@ -13,6 +13,7 @@ import Servicos from './pages/Servicos';
 import Portfolio from './pages/Portfolio';
 import PortfolioCase from './pages/PortfolioCase';
 import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import Contato from './pages/Contato';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -36,12 +37,13 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/:id" element={<PortfolioCase />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/cadastroServico" element={<CadastrosServico />} />
           <Route path="/CadastroPortifolio" element={<CadastroPortifolio />} />
           <Route path="/CadastroBlog" element={<CadastroBlog />} />
-          
+
           <Route path="/Admin" element={
             <PrivateRoute>
               <Admin />

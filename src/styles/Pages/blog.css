@@ -4,28 +4,26 @@
     background-color: var(--bg-main);
 }
 
-/* Destaque principal – borda âmbar grossa à esquerda */
+/* Destaque principal */
 .card-blog-destaque {
     border-left: 4px solid var(--brand-ambar);
     padding: 30px;
     /* um pouco mais espaçoso que o card padrão */
 }
 
-/* Título do artigo em destaque (h2 sem gradiente, cor branca) */
+/* Título do artigo em destaque */
 .blog-titulo-destaque {
     font-size: 1.8rem;
     color: var(--text-header);
     margin-bottom: 12px;
 }
 
-/* Garantir que os cards do grid ocupem altura total e tenham o botão no fim */
 .card-blog {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-/* Ajuste opcional no tamanho do título dos cards menores */
 .card-blog .card-titulo {
     font-size: 1.3rem;
 }

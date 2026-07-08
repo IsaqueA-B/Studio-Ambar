@@ -69,7 +69,7 @@ function Register() {
     return (
         <main className="p-20">
             <div className="card" style={{ maxWidth: '500px', margin: '0 auto' }}>
-                <h1 className="text-center">Criar Conta</h1>
+                <h2 className="centralizado sem-linha">Criar Conta</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>Nome completo</label>

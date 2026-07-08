@@ -8,11 +8,9 @@
 /* ========== HERO ========== */
 .page-hero {
     position: relative;
-    padding: 60px 0;
+    padding: 20px 0;
     overflow: hidden;
     clip-path: inset(0);
-    /* Se quiser, pode manter a cor de fundo da página */
-    /* background-color: var(--bg-main); */
 }
 
 .page-hero::before {
@@ -48,7 +46,6 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 35px;
-    /* Pode ajustar se não houver slogan */
 }
 
 /* ========== SLOGAN ========== */

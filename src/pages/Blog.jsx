@@ -1,23 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { usePortfolio } from '../hooks/usePortfolio';
 
 function Blog() {
-    const { obterPortfolio } = usePortfolio();
-    const [portfolioBanco, setPortfolioBanco] = useState([]);
-
-    useEffect(() => {
-        const buscarPortfolio = async () => {
-            try {
-                const dados = await obterPortfolio();
-                setPortfolioBanco(dados || []);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        buscarPortfolio();
-    }, []);
 
     return (
         <main className="blog-container animacao-entrada p-20">
@@ -40,7 +24,7 @@ function Blog() {
             <section className="mb-20">
                 <div className="card card-blog-destaque">
                     <span className="cargo">05/06/2026</span>
-                    <h2 className="card-titulo blog-titulo-destaque">
+                    <h2 className="card-titulo blog-titulo-destaque sem-linha">
                         Como um bom design pode aumentar suas vendas em até 200%
                     </h2>
                     <p>
@@ -52,29 +36,13 @@ function Blog() {
                 </div>
             </section>
 
-            <section className="mb-20">
-                <div className="card">
-                    <h2 className="card-titulo">Itens recentes do banco</h2>
-                    {portfolioBanco.length > 0 ? (
-                        portfolioBanco.slice(0, 3).map((item) => (
-                            <div key={item.id} style={{ marginTop: '10px' }}>
-                                <strong>{item.titulo}</strong>
-                                <p>{item.descricao}</p>
-                            </div>
-                        ))
-                    ) : (
-                        <p>Carregando itens do banco...</p>
-                    )}
-                       <Link to="/CadastroBlog" className="btn btn-outline"> Cadastrar Blog</Link>
-                </div>
-            </section>
-
             {/* Grid de artigos com 2 colunas (usando grid-auto) */}
             <section>
                 <div className="grid-auto">
                     <div className="card card-blog">
                         <span className="cargo">10/06/2026</span>
-                        <h3 className="card-titulo">5 tendências de branding para 2026</h3>
+                        <h2 className="card-titulo blog-titulo-destaque sem-linha">
+                            5 tendências de branding para 2026</h2>
                         <p>
                             O minimalismo caloroso e o uso de IA nas marcas. Novidades estéticas que vão fazer muito sucesso no próximo ano.
                         </p>
@@ -83,9 +51,9 @@ function Blog() {
 
                     <div className="card card-blog">
                         <span className="cargo">01/06/2026</span>
-                        <h3 className="card-titulo">
+                        <h2 className="card-titulo blog-titulo-destaque sem-linha">
                             Por que sua empresa precisa de um site profissional
-                        </h3>
+                        </h2>
                         <p>
                             Entenda como o desenvolvimento web sob medida constrói autoridade e ajuda nos empreendimentos das empresas no Google.
                         </p>
