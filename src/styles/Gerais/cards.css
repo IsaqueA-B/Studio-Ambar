@@ -91,6 +91,12 @@
 
 
 /* Grids */
+.grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 50%;
+}
 .grid-3x3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

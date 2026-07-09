@@ -1,34 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useUser } from '../componentes/users/UserContext';
-import { aplicarMascaraCPF } from '../componentes/users/auth';
 import { useUsuarios } from '../hooks/useUsuarios';
+import { aplicarMascaraCPF } from '../componentes/users/Mascaras';
 
 function Register() {
-    const { register } = useUser();
-    const { obterUsuarios, criar } = useUsuarios();
+    const { criar } = useUsuarios();
     const navigate = useNavigate();
-    const [form, setForm] = useState({
-        nome: '',
-        cpf: '',
-        email: '',
-        senha: ''
-    });
+    const [form, setForm] = useState({ nome: '', cpf: '', email: '', senha: '' });
     const [termos, setTermos] = useState(false);
-    const [usuariosBanco, setUsuariosBanco] = useState([]);
-
-    useEffect(() => {
-        const carregarUsuarios = async () => {
-            try {
-                const dados = await obterUsuarios();
-                setUsuariosBanco(Array.isArray(dados) ? dados : []);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        carregarUsuarios();
-    }, []);
+    const [erro, setErro] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -41,28 +21,25 @@ function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setErro('');
+
         if (!termos) {
-            alert('Aceite os termos de uso.');
+            setErro('Aceite os termos de uso.');
             return;
         }
-        
-        // Remover máscara do CPF antes de enviar
+
         const cpfLimpo = form.cpf.replace(/\D/g, '');
         if (cpfLimpo.length !== 11) {
-            alert('CPF deve ter 11 dígitos');
+            setErro('CPF deve ter 11 dígitos.');
             return;
         }
-        
-        const resultado = register(form);
-        if (resultado.sucesso) {
-            try {
-                await criar(form.nome, form.email, form.senha, 'visualizador', cpfLimpo);
-            } catch (error) {
-                console.error(error);
-            }
-            navigate('/');
-        } else {
-            alert(resultado.mensagem);
+
+        try {
+            await criar(form.nome, form.email, form.senha, 'visualizador', cpfLimpo);
+            alert('Conta criada com sucesso! Faça login.');
+            navigate('/login');
+        } catch (error) {
+            setErro('Erro ao criar conta. Verifique os dados.');
         }
     };
 
@@ -81,7 +58,7 @@ function Register() {
                     </div>
                     <div className="form-group">
                         <label>Email</label>
-                        <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="exemplo@gmail.com" required />
+                        <input name="email" type="email" value={form.email} onChange={handleChange} required />
                     </div>
                     <div className="form-group">
                         <label>Senha</label>
@@ -91,12 +68,12 @@ function Register() {
                         <input type="checkbox" id="termos" checked={termos} onChange={(e) => setTermos(e.target.checked)} />
                         <label htmlFor="termos">Aceito os termos de uso e política de privacidade</label>
                     </div>
+                    {erro && <p className="erro">{erro}</p>}
                     <button type="submit" className="btn w-100">Cadastrar</button>
                 </form>
                 <p className="text-center mt-20">
                     Já tem conta? <Link to="/login">Faça login</Link>
                 </p>
-                <p className="text-center mt-10">Usuários carregados do banco: {usuariosBanco.length}</p>
             </div>
         </main>
     );

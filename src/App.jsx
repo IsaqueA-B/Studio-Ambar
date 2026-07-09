@@ -1,13 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
-import ScrollToTop from './componentes/layout/ScrollToTop';
-import Navbar from './componentes/layout/Navbar';
-import Footer from './componentes/layout/Footer';
 import { UserProvider } from './componentes/users/UserContext';
 import { PrivateRoute } from './componentes/users/PrivateRoute';
 
 
+//===NAVEGAÇÃO===
+import ScrollToTop from './componentes/layout/ScrollToTop';
+import Navbar from './componentes/layout/Navbar';
+import Footer from './componentes/layout/Footer';
+import NotFound from './pages/NotFound';
+
 //===PAGINAS===
 import Admin from './pages/Admin';
+import AdminRoute from './componentes/users/AdminRoute';
 import Sobre from './pages/Sobre';
 import Servicos from './pages/Servicos';
 import Portfolio from './pages/Portfolio';
@@ -16,12 +20,16 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Contato from './pages/Contato';
 import Home from './pages/Home';
+
+//===LOGAR===
 import Login from './pages/Login';
 import Register from './pages/Register';
-import NotFound from './pages/NotFound';
-import CadastrosServico from './pages/CadastrosServicos';
-import CadastroPortifolio from './pages/CadastroPortifolio';
-import CadastroBlog from './pages/CadastroBlog';
+
+//===CADASTROS===
+import CadastroServico from './cadastro/CadastroServico';
+import CadastroPortifolio from './cadastro/CadastroPortifolio';
+import CadastroCliente from './cadastro/CadastroCliente';
+import CadastroProjeto from './cadastro/CadastroProjeto'
 
 function App() {
   return (
@@ -40,15 +48,12 @@ function App() {
           <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/sobre" element={<Sobre />} />
-          <Route path="/cadastroServico" element={<CadastrosServico />} />
-          <Route path="/CadastroPortifolio" element={<CadastroPortifolio />} />
-          <Route path="/CadastroBlog" element={<CadastroBlog />} />
+          <Route path="/cadastroServico" element={<CadastroServico />} />
+          <Route path="/cadastroPortifolio" element={<CadastroPortifolio />} />
+          <Route path="/cadastroCliente" element={<CadastroCliente />} />
+          <Route path="/cadastroProjeto" element={<CadastroProjeto />} />
+          <Route path="/admin" element={<AdminRoute><Admin /></AdminRoute>} />
 
-          <Route path="/Admin" element={
-            <PrivateRoute>
-              <Admin />
-            </PrivateRoute>
-          } />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

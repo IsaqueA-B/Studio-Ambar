@@ -84,8 +84,8 @@ function Portfolio() {
                 {projetosFiltrados.map((proj) => (
                     <Link to={`/portfolio/${proj.id}`} className="btn-card" key={proj.id}>
                         <div className="card">
-                        <h3 className={ `projeto-id-${proj.id} projeto-text`}>
-                            {proj.nome}
+                            <h3 className={`projeto-id-${proj.id} projeto-text`}>
+                                {proj.nome}
                             </h3>
                             <p><small>{proj.categoria}</small></p>
                             <p>{proj.desc}</p>
@@ -109,8 +109,10 @@ function Portfolio() {
                     )}
                 </div>
             </section>
-            <Link to="/CadastroPortifolio" className="btn btn-outline"> Cadastrar Portifólio</Link>
-
+            <div className='grid-2x2'>
+                <Link to="/cadastroPortifolio" className="btn btn-outline"> Cadastrar Portifólio</Link>
+                <Link to="/cadastroClientes" className="btn btn-outline"> Cadastrar Cliente</Link>
+            </div>
         </main>
     );
 }
