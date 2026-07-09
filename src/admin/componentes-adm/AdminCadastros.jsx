@@ -43,7 +43,7 @@ function AdminCadastros() {
                             Publique projetos finalizados com título e descrição. Eles aparecerão na seção pública do
                             site.
                         </p>
-                        <Link to="/cadastroPortfolio" className="btn btn-outline">
+                        <Link to="/cadastroPortifolio" className="btn btn-outline">
                             Cadastrar Portfólio
                         </Link>
                     </div>
