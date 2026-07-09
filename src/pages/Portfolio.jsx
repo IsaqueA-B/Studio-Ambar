@@ -93,25 +93,24 @@ function Portfolio() {
                     </Link>
                 ))}
             </div>
-
-            <section className="mb-20">
-                <h2 className="mb-10 sem-linha">Itens recentes do banco de dados</h2>
-                <div className="grid-3x3">
-                    {portfolioBanco.length > 0 ? (
-                        portfolioBanco.slice(0, 6).map((item) => (
-                            <div className="card" key={item.id}>
-                                <h3>{item.titulo}</h3>
-                                <p>{item.descricao}</p>
-                            </div>
-                        ))
-                    ) : (
-                        <p>Carregando itens do banco...</p>
-                    )}
+            <section className="page-hero text-center">
+                <div className="page-hero-container">
+                    <div className="page-hero-content">
+                        <h2 className="page-title sem-linha">Itens recentes do banco de dados</h2>
+                    </div>
                 </div>
             </section>
-            <div className='grid-2x2'>
-                <Link to="/cadastroPortifolio" className="btn btn-outline"> Cadastrar Portifólio</Link>
-                <Link to="/cadastroClientes" className="btn btn-outline"> Cadastrar Cliente</Link>
+            <div className="grid-3x3">
+                {portfolioBanco.length > 0 ? (
+                    portfolioBanco.slice(0, 6).map((item) => (
+                        <div className="card" key={item.id}>
+                            <h3>{item.titulo}</h3>
+                            <p>{item.descricao}</p>
+                        </div>
+                    ))
+                ) : (
+                    <p>Carregando itens do banco...</p>
+                )}
             </div>
         </main>
     );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { aplicarMascaraCNPJ, aplicarMascaraCEP, aplicarMascaraTelefone } from "../componentes/users/Mascaras";
+import { Link, useParams } from 'react-router-dom';
 
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
 
@@ -75,6 +76,8 @@ function CadastroCliente() {
 
     return (
         <main className="p-20 animacao-entrada">
+            <Link to="/admin" className="btn-voltar">← Voltar ao Administrativo </Link>
+
             <section className="text-center mb-20">
                 <h1>Cadastrar Cliente</h1>
                 <p>Preencha todos os campos obrigatórios.</p>

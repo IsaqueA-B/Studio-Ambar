@@ -169,30 +169,30 @@ function Servicos() {
         ))}
       </div>
 
-      <section className="mb-20">
-        <h2 className="mb-10 sem-linha">
-          Serviços vindos do banco de dados
-        </h2>
-
-        <div className="grid-3x3 p-20">
-          {servicosBanco.length > 0 ? (
-            servicosBanco.map((servico) => (
-              <div className="card" key={servico.id}>
-                <h3>{servico.tipo_servico}</h3>
-
-                <p>{servico.descricao || "Descrição a definir"}</p>
-
-                <h3>
-                  <strong>R$ {servico.valor}</strong>
-                </h3>
-              </div>
-            ))
-          ) : (
-            <p>Carregando serviços do banco...</p>
-          )}
+      <section className="page-hero text-center">
+        <div className="page-hero-container">
+          <div className="page-hero-content">
+            <h2 className="page-title sem-linha">Serviços vindos do banco de dados</h2>
+          </div>
         </div>
-    <Link to="/cadastroServico" className="btn btn-outline"> Cadastrar Serviço</Link>
       </section>
+      <div className="grid-3x3">
+        {servicosBanco.length > 0 ? (
+          servicosBanco.map((servico) => (
+            <div className="card" key={servico.id}>
+              <h3>{servico.tipo_servico}</h3>
+
+              <p>{servico.descricao || "Descrição a definir"}</p>
+
+              <h3>
+                <strong>R$ {servico.valor}</strong>
+              </h3>
+            </div>
+          ))
+        ) : (
+          <p>Carregando serviços do banco...</p>
+        )}
+      </div>
     </main>
   );
 }

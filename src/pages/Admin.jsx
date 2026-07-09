@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function Admin() {
     return (
@@ -51,12 +51,11 @@ function Admin() {
                                 Publique projetos finalizados com título e descrição. Eles aparecerão na seção pública do
                                 site.
                             </p>
-                            <Link to="/cadastroPortfolio" className="btn btn-outline">
+                            <Link to="/cadastroPortifolio" className="btn btn-outline">
                                 Cadastrar Portfólio
                             </Link>
                         </div>
-                    </div> 
-                    <Link to="/portfolio" className="btn btn-outline">Ver todos os projetos</Link>
+                    </div>
                 </div>
             </section>
         </main>

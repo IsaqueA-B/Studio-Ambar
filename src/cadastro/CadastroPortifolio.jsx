@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { Link, useParams } from 'react-router-dom';
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
 
 function CadastroPortfolio() {
@@ -68,6 +68,8 @@ function CadastroPortfolio() {
 
   return (
     <main className="p-20 animacao-entrada">
+      <Link to="/admin" className="btn-voltar">← Voltar ao Administrativo </Link>
+
       <section className="text-center mb-20">
         <h1>Cadastrar Portfólio</h1>
         <p>Preencha todos os campos obrigatórios.</p>

@@ -10,6 +10,7 @@ import iconServicos from '../../assets/images/Icons/Nav_Footer/icon-servicos.png
 import iconPortfolio from '../../assets/images/Icons/Nav_Footer/icon-portfolio.png';
 import iconBlog from '../../assets/images/Icons/Nav_Footer/icon-blog.png';
 import iconContato from '../../assets/images/Icons/Nav_Footer/icon-contato.png';
+import iconAdmin from '../../assets/images/Icons/Nav_Footer/icon-admin.png'
 
 function Navbar() {
     const { user, logout } = useUser();
@@ -66,26 +67,38 @@ function Navbar() {
                             <span>Contato</span>
                         </NavLink>
                     </li>
+                    {/* Link do Painel Admin – visível apenas para admin */}
+                    {user && user.nivel_acesso === 'admin' && (
+                        <li>
+                            <NavLink to="/admin" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+                                {/* Substitua pelo ícone que preferir */}
+                                <img src={iconSobre} alt="" className="navbar-icon" />
+                                <span>Admin</span>
+                            </NavLink>
+                        </li>
+                    )}
                 </ul>
-            </nav>
+            </nav >
 
             {/* Área do usuário à direita */}
-            <div className="navbar-user">
-                {user ? (
-                    <>
-                        <span className="user-nome">{user.nome}</span>
-                        <button onClick={handleLogout} className="btn-sair">
-                            <img src={iconeSair} alt="Sair" className="btn-sair-icone" />
-                            Sair
-                        </button>
-                    </>
-                ) : (
-                    <Link to="/login" className="btn-sair" style={{ textDecoration: 'none' }}>
-                        Entrar
-                    </Link>
-                )}
-            </div>
-        </header>
+            < div className="navbar-user" >
+                {
+                    user ? (
+                        <>
+                            <span className="user-nome">{user.nome}</span>
+                            <button onClick={handleLogout} className="btn-sair">
+                                <img src={iconeSair} alt="Sair" className="btn-sair-icone" />
+                                Sair
+                            </button>
+                        </>
+                    ) : (
+                        <Link to="/login" className="btn-sair" style={{ textDecoration: 'none' }}>
+                            Entrar
+                        </Link>
+                    )
+                }
+            </div >
+        </header >
     );
 }
 
