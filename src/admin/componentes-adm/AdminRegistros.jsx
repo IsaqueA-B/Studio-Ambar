@@ -107,7 +107,7 @@ function AdminRegistros() {
 
     return (
         <>
-            <section className="home-section home-secao3">
+            <section className="section section--flex">
                 <div className="home-align-center">
                     <h2 className="h2-central sem-linha">Registros</h2>
                     <div className="grid-4x4">

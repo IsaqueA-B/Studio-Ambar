@@ -92,3 +92,11 @@
     margin-top: 12px;
     display: inline-block;
 }
+
+.btn-voltar {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--brand-ambar);
+    text-decoration: none;
+    font-weight: 700;
+}

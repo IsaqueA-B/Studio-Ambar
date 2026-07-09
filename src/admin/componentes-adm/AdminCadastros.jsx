@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function AdminCadastros() {
     return (
-        <section className="home-section home-secao3">
+        <section className="section section--flex">
             <div className="home-align-center">
                 <h2 className="h2-central sem-linha">Cadastros</h2>
                 <div className="grid-4x4">

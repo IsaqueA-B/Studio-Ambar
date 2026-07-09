@@ -27,7 +27,7 @@ function Home() {
             <main className="p-20 animacao-entrada">
 
                 {/* SEÇÃO 1: QUEM SOMOS + SERVIÇOS EM DESTAQUE (dividida por linha) */}
-                <section className="home-section home-secao1">
+                <section className="section section--flex home-secao1">
                     <div className="home-lado home-esquerda">
                         <span className="home-tag">Como agimos?</span>
                         <h2 className="home-title">Usamos a Criatividade</h2>
@@ -54,7 +54,7 @@ function Home() {
                     </div>
                 </section>
 
-                <section className="home-section home-secao2">
+                <section className="section section--flex home-secao2">
                     <div className="home-align-center">
                         <span className="home-tag">Alguns serviços</span>
                         <h2 className="h2-central sem-linha">O que fazemos</h2>
@@ -106,7 +106,7 @@ function Home() {
                 </section>
 
 
-                <section className="home-section home-secao3">
+                <section className="section section--flex home-secao3">
                     <div className="home-align-center">
                         <span className="home-tag">Em destaque</span>
                         <h2 className="h2-central sem-linha">Do Portfólio</h2>
