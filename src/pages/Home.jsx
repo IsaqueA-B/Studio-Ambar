@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import WordMark from '../assets/images/Especificos/WordMark.png';
-import { useServicos } from '../hooks/useServicos';
+import { useServicos } from '../admin/hooks/useServicos';
 
 import iconSlogan from "../assets/images/Especificos/Icon_Slogan.png";
 

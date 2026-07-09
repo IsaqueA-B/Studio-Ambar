@@ -8,10 +8,10 @@ import iconVisão from "../assets/images/Icons/Sobre/visão.png";
 /* Fotos */
 import daniel from "../assets/images/pessoas/Daniel.jpeg";
 
-import { useClientes } from "../hooks/useClientes";
-import { useContatos } from "../hooks/useContatos";
-import { usePortfolio } from "../hooks/usePortfolio";
-import { useServicos } from "../hooks/useServicos";
+import { useClientes } from "../admin/hooks/useClientes";
+import { useContatos } from "../admin/hooks/useContatos";
+import { usePortfolio } from "../admin/hooks/usePortfolio";
+import { useServicos } from "../admin/hooks/useServicos";
 
 function Sobre() {
   const { obterClientes } = useClientes();

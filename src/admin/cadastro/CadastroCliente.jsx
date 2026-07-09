@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { aplicarMascaraCNPJ, aplicarMascaraCEP, aplicarMascaraTelefone } from "../componentes/users/Mascaras";
+import { aplicarMascaraCNPJ, aplicarMascaraCEP, aplicarMascaraTelefone } from "../../componentes/users/Mascaras";
 import { Link, useParams } from 'react-router-dom';
 
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';

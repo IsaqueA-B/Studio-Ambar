@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useContatos } from '../hooks/useContatos';
+import { useContatos } from '../admin/hooks/useContatos';
 
 function Contato() {
     const { criarContato } = useContatos();

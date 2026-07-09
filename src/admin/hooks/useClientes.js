@@ -1,4 +1,4 @@
-import { buscarClientes, criarCliente, atualizarCliente, deletarCliente } from '../services/api';
+import { buscarClientes, criarCliente, atualizarCliente, deletarCliente } from '../../services/api';
 
 export function useClientes() {
   const obterClientes = async () => {

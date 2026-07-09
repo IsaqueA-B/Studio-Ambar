@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useUsuarios } from '../hooks/useUsuarios';
+import { useUsuarios } from '../admin/hooks/useUsuarios';
 import { aplicarMascaraCPF } from '../componentes/users/Mascaras';
 
 function Register() {

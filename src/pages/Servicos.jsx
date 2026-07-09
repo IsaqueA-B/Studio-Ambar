@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useServicos } from "../hooks/useServicos";
+import { useServicos } from "../admin/hooks/useServicos";
 import { Link } from 'react-router-dom';
 const categoriasServicos = [
   {

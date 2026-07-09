@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { usePortfolio } from '../hooks/usePortfolio';
+import { usePortfolio } from '../admin/hooks/usePortfolio';
 
 const projetosEstaticos = [
     { id: 1, nome: 'Doce Sabor Confeitaria', categoria: 'Identidade Visual', desc: 'Nova identidade e embalagens.' },

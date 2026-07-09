@@ -1,4 +1,4 @@
-import { buscarUsuarios, criarUsuario, atualizarUsuario, deletarUsuario } from '../services/api';
+import { buscarUsuarios, criarUsuario, atualizarUsuario, deletarUsuario } from '../../services/api';
 
 export function useUsuarios() {
   const obterUsuarios = async () => {

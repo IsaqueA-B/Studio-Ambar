@@ -67,12 +67,12 @@ function Navbar() {
                             <span>Contato</span>
                         </NavLink>
                     </li>
+
                     {/* Link do Painel Admin – visível apenas para admin */}
                     {user && user.nivel_acesso === 'admin' && (
                         <li>
                             <NavLink to="/admin" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-                                {/* Substitua pelo ícone que preferir */}
-                                <img src={iconSobre} alt="" className="navbar-icon" />
+                                <img src={iconAdmin} alt="" className="navbar-icon" />
                                 <span>Admin</span>
                             </NavLink>
                         </li>

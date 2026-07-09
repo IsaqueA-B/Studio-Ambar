@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { buscarServicos, criarServico, atualizarServico, deletarServico } from '../services/api';
+import { buscarServicos, criarServico, atualizarServico, deletarServico } from '../../services/api';
 
 export function useServicos() {
   const obterServicos = async () => {

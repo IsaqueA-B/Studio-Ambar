@@ -10,8 +10,8 @@ import Footer from './componentes/layout/Footer';
 import NotFound from './pages/NotFound';
 
 //===PAGINAS===
-import Admin from './pages/Admin';
-import AdminRoute from './componentes/users/AdminRoute';
+import Admin from './admin/Admin';
+import AdminRoute from './admin/AdminRoute';
 import Sobre from './pages/Sobre';
 import Servicos from './pages/Servicos';
 import Portfolio from './pages/Portfolio';
@@ -26,10 +26,10 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 
 //===CADASTROS===
-import CadastroServico from './cadastro/CadastroServico';
-import CadastroPortifolio from './cadastro/CadastroPortifolio';
-import CadastroCliente from './cadastro/CadastroCliente';
-import CadastroProjeto from './cadastro/CadastroProjeto'
+import CadastroServico from './admin/cadastro/CadastroServico';
+import CadastroPortifolio from './admin/cadastro/CadastroPortifolio';
+import CadastroCliente from './admin/cadastro/CadastroCliente';
+import CadastroProjeto from './admin/cadastro/CadastroProjeto'
 
 function App() {
   return (

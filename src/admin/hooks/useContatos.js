@@ -1,4 +1,4 @@
-import { criarContato as criarContatoAPI, buscarContatos as buscarContatosAPI } from '../services/api';
+import { criarContato as criarContatoAPI, buscarContatos as buscarContatosAPI } from '../../services/api';
 
 export function useContatos() {
   const obterContatos = async () => {

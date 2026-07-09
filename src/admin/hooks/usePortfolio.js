@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { buscarPortfolio, criarPortfolio, atualizarPortfolio, deletarPortfolio } from '../services/api';
+import { buscarPortfolio, criarPortfolio, atualizarPortfolio, deletarPortfolio } from '../../services/api';
 
 export function usePortfolio() {
   const obterPortfolio = async () => {

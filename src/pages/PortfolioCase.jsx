@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { usePortfolio } from '../hooks/usePortfolio';
+import { usePortfolio } from '../admin/hooks/usePortfolio';
 import { projetos } from '../componentes/data/portfolioData'
 
 function PortfolioCase() {
