@@ -46,7 +46,7 @@ function Register() {
     return (
         <main className="p-20">
             <div className="card" style={{ maxWidth: '500px', margin: '0 auto' }}>
-                <h2 className="centralizado sem-linha">Criar Conta</h2>
+                <h1 className="text-center">Cadastrar</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>Nome completo</label>
@@ -54,7 +54,7 @@ function Register() {
                     </div>
                     <div className="form-group">
                         <label>CPF</label>
-                        <input name="cpf" value={form.cpf} onChange={handleChange} placeholder="000.000.000-00" maxLength={14} required />
+                        <input name="cpf" value={form.cpf} onChange={handleChange} placeholder="000.000.000-00" maxLength={14} />
                     </div>
                     <div className="form-group">
                         <label>Email</label>

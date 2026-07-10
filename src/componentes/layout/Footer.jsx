@@ -69,7 +69,7 @@ const Footer = () => {
                         </li>
                         <li className="footer-contact-item">
                             <img src={iconContato} alt="" className="footer-icon" />
-                            <a href="tel:+5555999999999">(55) 99999-9999</a>
+                            <a href="tel:+5555999999999">(55) 99196-6173</a>
                         </li>
                         <li className="footer-contact-item">
                             <img src={iconRedes} alt="" className="footer-icon" />

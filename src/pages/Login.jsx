@@ -13,8 +13,12 @@ function Login() {
         e.preventDefault();
         setErro('');
         try {
-            await login(email, senha);
-            navigate('/admin');  // ou '/', conforme sua lógica
+            const usuario = await login(email, senha);
+            if (usuario && usuario.nivel_acesso === 'admin') {
+                navigate('/admin'); // Se for admin, vai para o painel
+            } else {
+                navigate('/'); // Se 'visualizador', vai para a Home
+            }
         } catch (error) {
             setErro(error.message);
         }
