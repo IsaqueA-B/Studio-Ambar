@@ -113,9 +113,8 @@ function Contato() {
 
                         <div className="contato-info-item">
                             <span className="cargo">Telefone / WhatsApp</span>
-                            <p className="contato-info-valor">(55) 99999-9999</p>
+                            <p className="contato-info-valor">(55) 99196-6173</p>
                         </div>
-
                         <div className="contato-info-item">
                             <span className="cargo">Redes Sociais</span>
                             <p className="contato-info-valor">@studio.ambar</p>
