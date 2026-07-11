@@ -50,7 +50,6 @@
     border-right: 3px solid var(--brand-ambar);
 }
 
-
 /* ========== SEÇÃO 1: QUEM SOMOS ========== */
 .home-secao1 .home-lado {
     padding: 40px 20px;
@@ -74,11 +73,17 @@
     text-align: left;
 }
 
-.home-secao1 .home-icone-slogan {
+/* ========== SEÇÃO 1: ÍCONE SLOGAN (DESKTOP) ========== */
+.home-icone-slogan {
     width: auto;
     height: 450px;
     margin-top: 40px;
     align-self: center;
+}
+
+/* Esconde a versão mobile no desktop */
+.home-icone-slogan-mobile {
+    display: none;
 }
 
 /* ========== CAIXAS DE ÍCONES ========== */

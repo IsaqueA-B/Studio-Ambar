@@ -4,6 +4,7 @@ import WordMark from '../assets/images/Especificos/WordMark.png';
 import { useServicos } from '../admin/hooks/useServicos';
 
 import iconSlogan from "../assets/images/Especificos/Icon_Slogan.png";
+import iconSloganQuadrado from "../assets/images/Especificos/Icon_Slogan_Quadrado.png";
 
 import iconInstitucionais from "../assets/images/Icons/Home/Institucionais.png";
 import iconPersonalizacao from "../assets/images/Icons/Home/Personalizacao.png";
@@ -16,17 +17,19 @@ import iconTechStart from "../assets/images/Icons/Home/TechStart.png";
 
 import iconContato from "../assets/images/Icons/Home/icon-contato2.png";
 
+import '../styles/Pages/homeR.css';
+
 function Home() {
 
     return (
-        <div>
+        <div className="home-page"> 
             <div style={{ marginTop: '80px' }}>
                 <img src={WordMark} alt="WordMark" className="home-wordmark" />
             </div>
 
             <main className="p-20 animacao-entrada">
 
-                {/* SEÇÃO 1: QUEM SOMOS + SERVIÇOS EM DESTAQUE (dividida por linha) */}
+                {/* SEÇÃO 1: QUEM SOMOS + SERVIÇOS EM DESTAQUE */}
                 <section className="section section--flex home-secao1">
                     <div className="home-lado home-esquerda">
                         <span className="home-tag">Como agimos?</span>
@@ -50,7 +53,10 @@ function Home() {
                     </div>
 
                     <div className="home-lado home-direita">
-                        <img src={iconSlogan} alt="Ícone Slogan" className="home-icone-slogan" />
+                        {/* Imagem para desktop */}
+                        <img src={iconSlogan} alt="Ícone Slogan" className="home-icone-slogan home-icone-slogan-desktop" />
+                        {/* Imagem para mobile */}
+                        <img src={iconSloganQuadrado} alt="Ícone Slogan" className="home-icone-slogan home-icone-slogan-mobile" />
                     </div>
                 </section>
 
@@ -124,7 +130,7 @@ function Home() {
                                     profissionais e posts para redes sociais.
                                 </p>
                                 <Link to="/portfolio/8" className="btn btn-outline btn-sm">
-                                    Conhecer BioTecno →
+                                    Conhecer BioTecno
                                 </Link>
                             </div>
                             <div className="home-card-portfolio card SF grid-border-right">
@@ -139,7 +145,7 @@ function Home() {
                                     embalagens padronizadas e presença digital estratégica.
                                 </p>
                                 <Link to="/portfolio/9" className="btn btn-outline btn-sm">
-                                    Conhecer Coopermil →
+                                    Conhecer Coopermil
                                 </Link>
                             </div>
                             <div className="home-card-portfolio card SF">
@@ -154,7 +160,7 @@ function Home() {
                                     vibrantes e um site institucional responsivo.
                                 </p>
                                 <Link to="/portfolio/2" className="btn btn-outline btn-sm">
-                                    Conhecer TechStart →
+                                    Conhecer TechStart
                                 </Link>
                             </div>
                         </div> <br></br>
