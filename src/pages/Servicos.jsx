@@ -1,6 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useServicos } from "../admin/hooks/useServicos";
-import { Link } from 'react-router-dom';
+
+/* Ícones das categorias */
+import brandingIcon from "../assets/images/Icons/serviços/Branding e Identidade.png";
+import materiaisIcon from "../assets/images/Icons/serviços/Materiais Corporativos.png";
+import redesIcon from "../assets/images/Icons/serviços/Redes Sociais e Marketing.png";
+import webIcon from "../assets/images/Icons/serviços/Web Design e Desenvolvimento.png";
+
+const iconesCategorias = {
+  "Branding e Identidade": brandingIcon,
+  "Redes Sociais e Marketing": redesIcon,
+  "Web Design e Desenvolvimento": webIcon,
+  "Materiais Corporativos": materiaisIcon,
+};
+
 const categoriasServicos = [
   {
     categoria: "Branding e Identidade",
@@ -27,7 +41,6 @@ const categoriasServicos = [
       },
     ],
   },
-
   {
     categoria: "Redes Sociais e Marketing",
     servicos: [
@@ -43,7 +56,6 @@ const categoriasServicos = [
       },
     ],
   },
-
   {
     categoria: "Web Design e Desenvolvimento",
     servicos: [
@@ -64,13 +76,12 @@ const categoriasServicos = [
       },
     ],
   },
-
   {
     categoria: "Materiais Corporativos",
     servicos: [
       {
         nome: "Papelaria Corporativa",
-        desc: "Cartão de visita, papel timbrado, assinatura de e-mail.",
+        desc: "Cartão de visita, papel timbrado e assinatura de e-mail.",
         valor: "R$ 350",
       },
       {
@@ -95,10 +106,7 @@ function Servicos() {
   const [servicosBanco, setServicosBanco] = useState([]);
   const [filter, setFilter] = useState("Todos");
 
-  const filters = [
-    "Todos",
-    ...new Set(servicos.map((s) => s.categoria)),
-  ];
+  const filters = ["Todos", ...new Set(servicos.map((s) => s.categoria))];
 
   useEffect(() => {
     const buscarServicos = async () => {
@@ -119,15 +127,16 @@ function Servicos() {
       : servicos.filter((s) => s.categoria === filter);
 
   return (
-
     <main className="p-20 animacao-entrada">
-
       <section className="page-hero text-center">
         <div className="page-hero-container">
           <div className="page-hero-content">
             <h1 className="page-title">Nossos Serviços</h1>
-            <p className="page-subtitle">Identidade Visual • Web Design • E MAIS</p>
+            <p className="page-subtitle">
+              Identidade Visual • Web Design • E MAIS
+            </p>
           </div>
+
           <div className="slogan-box">
             <span className="slogan fonte-titulo">
               Soluções criativas para sua marca
@@ -153,7 +162,13 @@ function Servicos() {
       {/* Serviços */}
       <div className="grid-3x3 mb-20">
         {servicosFiltrados.map((servico, i) => (
-          <div className="card" key={i}>
+          <div className="card text-center" key={i}>
+            <img
+              src={iconesCategorias[servico.categoria]}
+              alt={servico.categoria}
+              className="servico-icon"
+            />
+
             <h3>{servico.nome}</h3>
 
             <p>
@@ -172,14 +187,17 @@ function Servicos() {
       <section className="page-hero text-center">
         <div className="page-hero-container">
           <div className="page-hero-content">
-            <h2 className="page-title sem-linha">Serviços vindos do banco de dados</h2>
+            <h2 className="page-title sem-linha">
+              Serviços vindos do banco de dados
+            </h2>
           </div>
         </div>
       </section>
+
       <div className="grid-3x3">
         {servicosBanco.length > 0 ? (
           servicosBanco.map((servico) => (
-            <div className="card" key={servico.id}>
+            <div className="card text-center" key={servico.id}>
               <h3>{servico.tipo_servico}</h3>
 
               <p>{servico.descricao || "Descrição a definir"}</p>
@@ -196,4 +214,5 @@ function Servicos() {
     </main>
   );
 }
+
 export default Servicos;
