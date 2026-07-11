@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Blog() {
 
     return (
-        <main className="blog-container animacao-entrada p-20">
+            <main className="p-20 animacao-entrada">
 
             <section className="page-hero text-center">
                 <div className="page-hero-container">

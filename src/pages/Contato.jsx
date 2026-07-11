@@ -36,7 +36,7 @@ function Contato() {
     };
 
     return (
-        <main className="contato-container animacao-entrada p-20">
+            <main className="p-20 animacao-entrada">
 
             <section className="page-hero text-center">
                 <div className="page-hero-container">
