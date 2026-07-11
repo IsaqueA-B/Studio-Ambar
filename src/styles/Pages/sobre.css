@@ -194,13 +194,130 @@
   height: 42px;
   object-fit: contain;
   filter: var(--brand-ambar-filter);
+
 }
+/* ==========================================
+   DADOS DO STUDIO
+========================================== */
+
+.card-dashboard {
+  padding: 28px;
+  border-radius: 22px;
+  min-height: 160px;
+  transition: all 0.3s ease;
+}
+
+.card-dashboard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(224, 164, 88, 0.5);
+  box-shadow: 0 15px 35px rgba(224, 164, 88, 0.12);
+}
+
+.dashboard-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.dashboard-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--brand-creme);
+}
+
+.dashboard-icon {
+  width: 68px;
+  height: 68px;
+  min-width: 68px;
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(224, 164, 88, 0.12);
+  border: 1px solid rgba(224, 164, 88, 0.3);
+}
+
+.dashboard-icon img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: var(--brand-ambar-filter);
+}
+
+.dashboard-info h3 {
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  color: var(--brand-creme);
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.card-dashboard span {
+  font-size: 3rem;
+  font-weight: 700;
+  color:var(--brand-ambar);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .dashboard-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-dashboard span {
+    margin-left: 86px;
+    font-size: 2.5rem;
+  }
+}
+
+
+
+/* //serviços// */
 .servico-icon {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
+    flex-shrink: 0;
+    filter: var(--brand-ambar-filter);
+}
+.servico-header{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.servico-icon{
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.servico-header-info{
+    flex: 1;
+    min-height: 70px; 
+}
+
+.servico-header-info h4{
+    margin: 0;
+    line-height: 1.25;
+}
+
+.servico-header-info small{
     display: block;
-    margin: 0 auto 20px;
-    align-items: left;
-     filter: var(--brand-ambar-filter);
+    margin-top: 6px;
 }

@@ -4,6 +4,10 @@ import React, { useEffect, useState } from "react";
 import iconMissao from "../assets/images/Icons/Sobre/missões.png";
 import iconValores from "../assets/images/Icons/Sobre/valores.png";
 import iconVisão from "../assets/images/Icons/Sobre/visão.png";
+import iconClientes from "../assets/images/Icons/Sobre/iconusuarioscadastrados.png";
+import iconServicos from "../assets/images/Icons/Sobre/icon-servicos.png";
+import iconPortfolio from "../assets/images/Icons/Sobre/iconitensnoportifolio.png";
+import iconMensagens from "../assets/images/Icons/Sobre/iconmensagemnsrecebidas.png";
 
 /* Fotos */
 import daniel from "../assets/images/pessoas/Daniel.jpeg";
@@ -87,30 +91,75 @@ function Sobre() {
         </div>
       </section>
 
-      <section className="sobre-secao">
-        <div className="sobre-alinhamento">
-          <h2 className="h2-central titulo-secao-central sem-linha">Dados do Studio</h2>
+    <section className="sobre-secao">
+  <div className="sobre-alinhamento">
 
-          <div className="grid-auto">
-            <div className="card card-lg text-center">
-              <h3 className="card-titulo">Clientes cadastrados</h3>
-              <p>{estatisticas.clientes}</p>
+    <h2 className="h2-central titulo-secao-central sem-linha">
+      Dados do Studio
+    </h2>
+
+    <div className="grid-auto">
+
+      <div className="card card-dashboard">
+        <div className="dashboard-top">
+          <div className="dashboard-info">
+            <div className="dashboard-icon">
+              <img src={iconClientes} alt="Clientes" />
             </div>
-            <div className="card card-lg text-center">
-              <h3 className="card-titulo">Serviços disponíveis</h3>
-              <p>{estatisticas.servicos}</p>
-            </div>
-            <div className="card card-lg text-center">
-              <h3 className="card-titulo">Itens no portfólio</h3>
-              <p>{estatisticas.portfolio}</p>
-            </div>
-            <div className="card card-lg text-center">
-              <h3 className="card-titulo">Mensagens recebidas</h3>
-              <p>{estatisticas.contatos}</p>
-            </div>
+
+            <h3>Clientes cadastrados</h3>
           </div>
+
+          <span>{estatisticas.clientes}</span>
         </div>
-      </section>
+      </div>
+
+      <div className="card card-dashboard">
+        <div className="dashboard-top">
+          <div className="dashboard-info">
+            <div className="dashboard-icon">
+              <img src={iconServicos} alt="Serviços" />
+            </div>
+
+            <h3>Serviços disponíveis</h3>
+          </div>
+
+          <span>{estatisticas.servicos}</span>
+        </div>
+      </div>
+
+      <div className="card card-dashboard">
+        <div className="dashboard-top">
+          <div className="dashboard-info">
+            <div className="dashboard-icon">
+              <img src={iconPortfolio} alt="Portfólio" />
+            </div>
+
+            <h3>Itens no portfólio</h3>
+          </div>
+
+          <span>{estatisticas.portfolio}</span>
+        </div>
+      </div>
+
+      <div className="card card-dashboard">
+        <div className="dashboard-top">
+          <div className="dashboard-info">
+            <div className="dashboard-icon">
+              <img src={iconMensagens} alt="Mensagens" />
+            </div>
+
+            <h3>Mensagens recebidas</h3>
+          </div>
+
+          <span>{estatisticas.contatos}</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
       <section className="sobre-secao">
         <div className="sobre-alinhamento">

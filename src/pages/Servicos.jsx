@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useServicos } from "../admin/hooks/useServicos";
 
-/* Ícones das categorias */
+/* Ícones */
 import brandingIcon from "../assets/images/Icons/serviços/Branding e Identidade.png";
 import materiaisIcon from "../assets/images/Icons/serviços/Materiais Corporativos.png";
 import redesIcon from "../assets/images/Icons/serviços/Redes Sociais e Marketing.png";
@@ -128,6 +127,7 @@ function Servicos() {
 
   return (
     <main className="p-20 animacao-entrada">
+
       <section className="page-hero text-center">
         <div className="page-hero-container">
           <div className="page-hero-content">
@@ -159,27 +159,29 @@ function Servicos() {
         ))}
       </div>
 
-      {/* Serviços */}
+      {/* Cards */}
       <div className="grid-3x3 mb-20">
         {servicosFiltrados.map((servico, i) => (
-          <div className="card text-center" key={i}>
-            <img
-              src={iconesCategorias[servico.categoria]}
-              alt={servico.categoria}
-              className="servico-icon"
-            />
+          <div className="card servico-card" key={i}>
 
-            <h3>{servico.nome}</h3>
+         <div className="servico-header">
+    <img
+        src={iconesCategorias[servico.categoria]}
+        alt={servico.categoria}
+        className="servico-icon"
+    />
 
-            <p>
-              <small>{servico.categoria}</small>
-            </p>
-
+    <div className="servico-header-info">
+        <h4>{servico.nome}</h4>
+        <small>{servico.categoria}</small>
+    </div>
+</div>
             <p>{servico.desc}</p>
 
-            <h3>
+            <h3 className="servico-preco">
               <strong>A partir de {servico.valor}</strong>
             </h3>
+
           </div>
         ))}
       </div>
@@ -197,20 +199,33 @@ function Servicos() {
       <div className="grid-3x3">
         {servicosBanco.length > 0 ? (
           servicosBanco.map((servico) => (
-            <div className="card text-center" key={servico.id}>
-              <h3>{servico.tipo_servico}</h3>
+            <div className="card servico-card" key={servico.id}>
+
+              <div className="servico-header">
+               <img
+                src={iconesCategorias[servico.categoria]}
+                alt={servico.categoria}
+                className="servico-icon"
+              />
+
+                <div>
+                  <h3>{servico.tipo_servico}</h3>
+                </div>
+              </div>
 
               <p>{servico.descricao || "Descrição a definir"}</p>
 
-              <h3>
+              <h3 className="servico-preco">
                 <strong>R$ {servico.valor}</strong>
               </h3>
+
             </div>
           ))
         ) : (
           <p>Carregando serviços do banco...</p>
         )}
       </div>
+
     </main>
   );
 }
