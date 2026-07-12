@@ -81,11 +81,28 @@
     justify-content: center;
 }
 
+.card-title {
+    border-left: none;
+    padding-left: 0;
+    color: var(--brand-creme);
+    font-size: 1.5rem;
+}
+
+.card-divided {
+    margin-right: -10px;
+    margin-left: -10px;
+    padding: 0 10px;
+}
+
 @media (max-width: 768px) {
 
     .grid-3x3,
     .grid-4x4 {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-4x4>div:nth-child(2) {
+        border-right: none;
     }
 }
 
@@ -94,5 +111,9 @@
     .grid-3x3,
     .grid-4x4 {
         grid-template-columns: 1fr;
+    }
+
+    .grid-4x4>div {
+        border-right: none;
     }
 }

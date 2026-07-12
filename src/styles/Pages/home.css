@@ -17,34 +17,6 @@
     gap: 40px;
 }
 
-/* ========== TAGS ========== */
-.home-tag {
-    display: inline-block;
-    color: var(--brand-ambar);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    margin-bottom: 0px;
-}
-
-/* ========== TÍTULOS COM LINHA ÂMBAR ========== */
-.home-title {
-    font-size: 2.2rem;
-    color: var(--text-header);
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.home-title::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 3px;
-    background: var(--brand-ambar);
-    margin-top: 5px;
-}
-
 /* ========== LINHA ÂMBAR ========== */
 .home-linha {
     border-right: 3px solid var(--brand-ambar);
@@ -132,19 +104,6 @@
 }
 
 /* ========== CARDS DO HOME ========== */
-.home-card-titulo {
-    border-left: none;
-    padding-left: 0;
-    color: var(--brand-creme);
-    font-size: 1.5rem;
-}
-
-
-.home-card-portfolio {
-    margin-right: -10px;
-    margin-left: -10px;
-    padding: 0px 10px;
-}
 
 .home-card-texto {
     align-items: center;
@@ -152,11 +111,8 @@
 }
 
 /* ========== ALINHAMENTO CENTRALIZADO  ========== */
-.home-align-center {
-    width: 100%;
-}
 
-.home-align-center .home-tag {
+.section-center .tag {
     display: block;
     text-align: center;
 }
