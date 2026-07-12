@@ -1,17 +1,30 @@
 /* imagens exemplo (depois que pegar a imagem edita o caminho para "/portfolio/Doce1.png*/
 import Doce1 from "../../assets/images/blog/blog1.png";
+import Logotipo from "../../assets/images/PortifolioCases/logotipo_doce_sabor.jpg";
+import Mockup_Embalagem from "../../assets/images/PortifolioCases/mockup_embalagem_doce_sabor.jpg";
+
 
 export const projetos = [
-    {
-        id: '1',
-        nome: 'Doce Sabor Confeitaria',
-        categoria: 'Identidade Visual',
-        desc: 'Um projeto com aromas doces, embalagem artesanal e tipografia acolhedora.',
-        destaque: 'Crie aqui uma página para colocar imagens do logo, embalagens e layouts que combinam com o tema doce.',
-        conceito: 'Cores cremosas, formas arredondadas e textura delicada para transmitir sabor e carinho.',
-        elementos: 'Marca, embalagens, padrões e peças promocionais com presença acolhedora.',
-        foco: 'Comunicação visual doce e convidativa que desperta apetite e simpatia.',
-    },
+{
+  id: '1',
+  nome: 'Doce Sabor Confeitaria',
+  categoria: 'Identidade Visual',
+  chamada: 'Uma marca que tem gosto de carinho',
+  desc: 'Projeto completo de identidade visual para confeitaria artesanal, com foco em embalagens afetivas e comunicação doce e acolhedora.',
+  contexto: 'A Doce Sabor é uma confeitaria familiar especializada em bolos caseiros e doces para festas. Os proprietários queriam uma marca que transmitisse a mesma sensação de “comida de avó” que seus produtos carregavam.',
+  desafio: 'O desafio era criar uma identidade que fugisse do lugar-comum das confeitarias e transmitisse afeto, tradição e qualidade artesanal, atraindo um público que valoriza experiências memoráveis.',
+  solucao: 'Criamos uma paleta com tons de baunilha, caramelo e rosa antigo, combinando tipografia serifada delicada com elementos em aquarela e texturas de papel kraft. O logotipo foi desenhado à mão para reforçar a autenticidade.',
+  // Campos existentes mantidos:
+  destaque: 'A identidade visual se desdobrou em embalagens para doces, caixas de presente e modelos para redes sociais, criando um universo visual completo.',
+  conceito: 'Cores cremosas, formas arredondadas e textura delicada para transmitir sabor e carinho.',
+  elementos: 'Marca, embalagens, padrões e peças promocionais com presença acolhedora.',
+  foco: 'Comunicação visual doce e convidativa que desperta apetite e simpatia.',
+imagens: [
+      { src: Logotipo, alt: 'Logotipo principal' },
+      { src: Mockup_Embalagem, alt: 'Mockup de embalagem' },
+      // { src: Doce3, alt: 'Paleta de cores e texturas' }
+    ]
+},  
     {
         id: '2',
         nome: 'TechStart',

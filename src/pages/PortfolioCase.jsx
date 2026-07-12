@@ -105,69 +105,44 @@ function PortfolioCase() {
         </section>
       )}
 
-      <section>
-        <h2>Galeria de imagens</h2>
-        <p>Substitua esses espaços pelas fotos e layouts que representam melhor o projeto.</p>
-        <div className="portfolio-case-gallery grid-3x3">
-          {isTech ? (
-            <>
-              <div className="card image-placeholder">Logo & símbolo</div>
-              <div className="card image-placeholder">Dashboard UI / Mockup</div>
-              <div className="card image-placeholder">Paleta & ícones</div>
-              <div className="card image-placeholder">Guidelines / Tipografia</div>
-              <div className="card image-placeholder">Aplicação em website</div>
-              <div className="card image-placeholder">Mockups de apresentação</div>
-            </>
-          ) : isCafe ? (
-            <>
-              <div className="card image-placeholder">Rótulo do café</div>
-              <div className="card image-placeholder">Copo e embalagem térmica</div>
-              <div className="card image-placeholder">Cardápio / Tipografia</div>
-              <div className="card image-placeholder">Sinalização da loja</div>
-              <div className="card image-placeholder">Fotografia de produto</div>
-              <div className="card image-placeholder">Aplicações em merchandising</div>
-            </>
-          ) : isDoce ? (
-            <>
-              <div className="card image-placeholder">Logo & assinatura visual</div>
-              <div className="card image-placeholder">Mockup de embalagem doce</div>
-              <div className="card image-placeholder">Paleta de cores e texturas</div>
-              <div className="card image-placeholder">Aplicação em rótulos e sacolas</div>
-              <div className="card image-placeholder">Posts para redes sociais</div>
-              <div className="card image-placeholder">Displays e papelaria</div>
-            </>
-          ) : isBio ? (
-            <>
-              <div className="card image-placeholder">Equipamento & painel</div>
-              <div className="card image-placeholder">Mockup de embalagem isotérmica</div>
-              <div className="card image-placeholder">Selo e certificação</div>
-              <div className="card image-placeholder">Manual técnico / instruções</div>
-              <div className="card image-placeholder">Interface de monitoramento</div>
-              <div className="card image-placeholder">Aplicações em embalagens e rótulos</div>
-            </>
-          ) : isCoop ? (
-            <>
-              <div className="card image-placeholder">Marca & logotipo</div>
-              <div className="card image-placeholder">Sinalização para supermercados</div>
-              <div className="card image-placeholder">Adesivos e comunicação para postos</div>
-              <div className="card image-placeholder">Embalagens e rótulos para revenda</div>
-              <div className="card image-placeholder">Materiais promocionais e B2B</div>
-              <div className="card image-placeholder">Aplicação em frotas e uniformes</div>
-            </>
-          ) : (
-            <>
-              <div className="card image-placeholder">Imagem do logo</div>
-              <div className="card image-placeholder">Mockup de embalagem</div>
-              <div className="card image-placeholder">Paleta de cores</div>
-              <div className="card image-placeholder">Material de ponto de venda</div>
-              <div className="card image-placeholder">Arte de redes sociais</div>
-              <div className="card image-placeholder">Aplicação em papelaria</div>
-            </>
-          )}
+<section className="portfolio-case-contexto mb-20">
+  <div className="card">
+    <h2>O cliente</h2>
+    <p>{projeto.contexto}</p>
+  </div>
+  <div className="card mt-20">
+    <h2>Desafio</h2>
+    <p>{projeto.desafio}</p>
+  </div>
+  <div className="card mt-20">
+    <h2>Solução</h2>
+    <p>{projeto.solucao}</p>
+  </div>
+</section>
+
+<section>
+  <h2>Galeria de imagens</h2>
+  <p>Substitua esses espaços pelas fotos e layouts que representam melhor o projeto.</p>
+  <div className="portfolio-case-gallery grid-3x3">
+    {projeto.imagens?.length > 0 ? (
+      projeto.imagens.map((img, idx) => (
+        <div key={idx} className="card image-placeholder">
+          <img src={img.src} alt={img.alt} />
         </div>
-      </section>
-    </main>
-  );
+      ))
+    ) : (
+      // Fallback genérico caso não tenha imagens definidas
+      <>
+        <div className="card image-placeholder">Imagem 1</div>
+        <div className="card image-placeholder">Imagem 2</div>
+        <div className="card image-placeholder">Imagem 3</div>
+      </>
+    )}
+    
+  </div>
+</section>
+</main>
+    );
 }
 
 export default PortfolioCase;
