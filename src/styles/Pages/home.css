@@ -166,3 +166,8 @@
     line-height: 1.6;
     margin-bottom: 30px;
 }
+
+.home-secao2 .grid-4x4 .card h3,
+.home-secao2 .grid-4x4 .card p {
+    text-align: left;
+}

@@ -144,15 +144,15 @@ app.get('/api/servicos', async (req, res) => {
 
 app.post('/api/servicos', async (req, res) => {
   try {
-    const { tipo_servico, valor, descricao } = req.body;
+    const { tipo_servico, valor, descricao, categoria } = req.body;
     if (!tipo_servico || !tipo_servico.trim() || !valor) {
       return res.status(400).json({ erro: 'Tipo de serviço e valor são obrigatórios' });
     }
     const [result] = await pool.execute(
-      'INSERT INTO servicos (tipo_servico, valor, descricao) VALUES (?, ?, ?)',
-      [tipo_servico, valor, descricao || null]
+      'INSERT INTO servicos (tipo_servico, valor, descricao, categoria) VALUES (?, ?, ?, ?)',
+      [tipo_servico, valor, descricao || null, categoria || null]
     );
-    res.status(201).json({ id: result.insertId, tipo_servico, valor, descricao });
+    res.status(201).json({ id: result.insertId, tipo_servico, valor, descricao, categoria });
   } catch (error) {
     console.error(error);
     res.status(500).json({ erro: 'Erro ao criar serviço' });
@@ -162,13 +162,13 @@ app.post('/api/servicos', async (req, res) => {
 app.put('/api/servicos/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { tipo_servico, valor, descricao } = req.body;
+    const { tipo_servico, valor, descricao, categoria } = req.body;
     if (!tipo_servico || !tipo_servico.trim() || !valor) {
       return res.status(400).json({ erro: 'Tipo de serviço e valor são obrigatórios' });
     }
     const [result] = await pool.execute(
-      'UPDATE servicos SET tipo_servico = ?, valor = ?, descricao = ? WHERE id = ?',
-      [tipo_servico, valor, descricao || null, id]
+      'UPDATE servicos SET tipo_servico = ?, valor = ?, descricao = ?, categoria = ? WHERE id = ?',
+      [tipo_servico, valor, descricao || null, categoria || null, id]
     );
     if (result.affectedRows === 0) {
       return res.status(404).json({ erro: 'Serviço não encontrado' });

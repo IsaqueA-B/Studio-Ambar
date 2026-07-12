@@ -80,7 +80,7 @@ function Home() {
                                 <div className="icon-box icon-box--service">
                                     <img src={iconSocial} alt="Ícone Visão" />
                                 </div>
-                                <h3 className="card-title">Social Media</h3>
+                                <h3 className="card-title">Social Media e Redes</h3>
                                 <p>
                                     Desenvolvemos conteúdo visual para posts, stories e banners
                                     que engajam seu público e fortalecem sua presença no digital.

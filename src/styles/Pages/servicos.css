@@ -24,8 +24,7 @@
 
 .servico-header-info {
     flex: 1;
-    height: 70px;
-    overflow: hidden;
+    min-height: 0;
 }
 
 .servico-header-info h4 {
@@ -39,11 +38,11 @@
 .servico-header-info small {
     display: block;
     margin-top: 6px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 
 .servico-preco {
     margin-top: auto;
+    border-left: none;
 }
+
