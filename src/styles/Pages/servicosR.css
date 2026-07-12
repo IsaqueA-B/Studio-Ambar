@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+
+    /* ---------- HERO ---------- */
+    .servicos-page .title-desktop {
+        display: none !important;
+    }
+
+    .servicos-page .title-mobile {
+        display: block !important;
+    }
+}

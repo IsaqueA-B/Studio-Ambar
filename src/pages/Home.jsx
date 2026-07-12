@@ -156,7 +156,7 @@ function Home() {
                                 <div className="card-info">
                                     <h3 className="card-title centralizado">TechStart</h3>
                                     <p className="centralizado">
-                                        A TechStart é uma startup focada na crição de soluções em 
+                                        A TechStart é uma startup focada na criação de soluções em 
                                         nuvem que impulsiona a inovação e criatividade através de 
                                         tecnologia altamente escalável. 
                                     </p>

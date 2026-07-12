@@ -30,7 +30,7 @@ export const artigos = [
         concorrentes apostam em imagens genéricas e montagens apressadas, marcas desenhadas com intenção criam comunidades 
         engajadas e clientes fiéis. O design deixa de ser um gasto e se torna o investimento mais direto na percepção de valor do 
         seu produto. Cada detalhe visual trabalha silenciosamente a favor da sua margem de lucro, muitas vezes permitindo até que 
-        você pratique preços mais elevados, pois o público associa qualidade estética à qualidade do que é entregue.s
+        você pratique preços mais elevados, pois o público associa qualidade estética à qualidade do que é entregue.
 
         Na Studio Âmbar, acreditamos que todo pequeno empreendedor merece uma identidade visual que conte sua essência e converta 
         sem precisar gritar. Trabalhamos lado a lado para transformar ideias em marcas fortes, com presença digital organizada e 
@@ -60,12 +60,11 @@ export const artigos = [
         usar IA para acelerar testes de paletas, gerar variações de logotipos e criar mockups ultra realistas em segundos. Mas o 
         diferencial estará na curadoria humana: o olhar estratégico que seleciona, ajusta e injeta significado cultural naquilo que 
         a máquina produz. 
-    
 
         Pequenos negócios que dominarem essa parceria terão velocidade e consistência criativa de gente grande, 
         sem perder a assinatura única. É a eficiência da tecnologia a serviço da identidade, e não o contrário.
         A terceira tendência é a volta das tipografias com serifa e terminais expressivos. Depois de anos de fontes sem serifa 
-        ]dominando o digital, as serifas retornam revisadas, mais descontraídas e elegantes, trazendo uma sensação de tradição 
+        dominando o digital, as serifas retornam revisadas, mais descontraídas e elegantes, trazendo uma sensação de tradição 
         renovada. Elas serão combinadas com layouts assimétricos para criar um equilíbrio entre clássico e moderno, perfeito para 
         marcas que querem comunicar autoridade sem rigidez.
 
@@ -76,7 +75,7 @@ export const artigos = [
 
         Por fim, a quinta tendência é a identidade modular e viva. Logotipos estáticos dão lugar a sistemas visuais que se adaptam 
         a diferentes contextos — um ícone que ganha movimento no digital, uma versão reduzida que respira em embalagens pequenas, 
-        ]uma paleta que se expande sazonalmente sem perder a essência. Essa flexibilidade é o que permite uma marca crescer com 
+        uma paleta que se expande sazonalmente sem perder a essência. Essa flexibilidade é o que permite uma marca crescer com 
         consistência em múltiplas plataformas, do panfleto ao Stories.
 
         Na Studio Âmbar, já estamos mergulhados nessas possibilidades, ajudando empreendedores a traduzir tendências em 

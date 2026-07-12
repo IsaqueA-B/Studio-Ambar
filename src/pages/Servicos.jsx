@@ -7,6 +7,8 @@ import materiaisIcon from "../assets/images/Icons/serviços/Materiais Corporativ
 import redesIcon from "../assets/images/Icons/serviços/Redes Sociais e Marketing.png";
 import webIcon from "../assets/images/Icons/serviços/Web Design e Desenvolvimento.png";
 
+import '../styles/Pages/servicosR.css';
+
 const iconesCategorias = {
   "Branding e Identidade": brandingIcon,
   "Redes Sociais e Marketing": redesIcon,
@@ -126,14 +128,15 @@ function Servicos() {
       : servicos.filter((s) => s.categoria === filter);
 
   return (
-    <main className="p-20 animacao-entrada">
+    <main className="servicos-page p-20 animacao-entrada">
 
       <section className="page-hero text-center">
         <div className="page-hero-container">
           <div className="page-hero-content">
-            <h1 className="page-title">Nossos Serviços</h1>
+            <h1 className="page-title title-desktop">Nossos Serviços</h1>
+            <h1 className="page-title title-mobile">Serviços</h1>
             <p className="page-subtitle">
-              Identidade Visual • Web Design • E MAIS
+              Identidade Visual • Web • Branding
             </p>
           </div>
 
@@ -164,18 +167,18 @@ function Servicos() {
         {servicosFiltrados.map((servico, i) => (
           <div className="card servico-card" key={i}>
 
-         <div className="servico-header">
-    <img
-        src={iconesCategorias[servico.categoria]}
-        alt={servico.categoria}
-        className="servico-icon"
-    />
+            <div className="servico-header">
+              <img
+                src={iconesCategorias[servico.categoria]}
+                alt={servico.categoria}
+                className="servico-icon"
+              />
 
-    <div className="servico-header-info">
-        <h4>{servico.nome}</h4>
-        <small>{servico.categoria}</small>
-    </div>
-</div>
+              <div className="servico-header-info">
+                <h4>{servico.nome}</h4>
+                <small>{servico.categoria}</small>
+              </div>
+            </div>
             <p>{servico.desc}</p>
 
             <h3 className="servico-preco">
@@ -190,7 +193,7 @@ function Servicos() {
         <div className="page-hero-container">
           <div className="page-hero-content">
             <h2 className="page-title sem-linha">
-              Serviços vindos do banco de dados
+              Soluções Personalizadas
             </h2>
           </div>
         </div>
@@ -202,11 +205,11 @@ function Servicos() {
             <div className="card servico-card" key={servico.id}>
 
               <div className="servico-header">
-               <img
-                src={iconesCategorias[servico.categoria]}
-                alt={servico.categoria}
-                className="servico-icon"
-              />
+                <img
+                  src={iconesCategorias[servico.categoria]}
+                  alt={servico.categoria}
+                  className="servico-icon"
+                />
 
                 <div>
                   <h3>{servico.tipo_servico}</h3>

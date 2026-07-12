@@ -10,7 +10,7 @@ function Blog() {
                 <div className="page-hero-container">
                     <div className="page-hero-content">
                         <h1 className="page-title">Blog</h1>
-                        <p className="page-subtitle">Tendências • Noticias</p>
+                        <p className="page-subtitle">Tendências • Notícias</p>
                     </div>
                     <div className="slogan-box">
                         <span className="slogan fonte-titulo">

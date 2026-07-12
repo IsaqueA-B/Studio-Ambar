@@ -88,7 +88,6 @@
 /* ========== CARDS ESPECÍFICOS (apenas variações do .card global) ========== */
 
 .card-titulo {
-  /* Remove o estilo padrão do h3 global */
   border-left: none;
   padding-left: 0;
   color: var(--brand-creme);
@@ -96,15 +95,10 @@
   display: flex;
   justify-content: center;
   text-align: center;
-
-  /* pode ser sobrescrito se necessário */
 }
 
-/* Pequenas variações por tipo de card */
 .card-equipe {
-  /* Mantém a base do .card e ajusta apenas o necessário */
   padding: 35px 20px;
-  /* diferente do card-lg */
 }
 
 .card-equipe .card-titulo {
@@ -213,9 +207,7 @@
 
 }
 
-/* ==========================================
-   DADOS DO STUDIO
-========================================== */
+/* ========== DADOS DO STUDIO ========== */
 
 .card-dashboard {
   padding: 28px;
@@ -297,45 +289,4 @@
     margin-left: 86px;
     font-size: 2.5rem;
   }
-}
-
-
-
-/* //serviços// */
-.servico-icon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  flex-shrink: 0;
-  filter: var(--brand-ambar-filter);
-}
-
-.servico-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 18px;
-}
-
-.servico-icon {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  flex-shrink: 0;
-  margin-top: 4px;
-}
-
-.servico-header-info {
-  flex: 1;
-  min-height: 70px;
-}
-
-.servico-header-info h4 {
-  margin: 0;
-  line-height: 1.25;
-}
-
-.servico-header-info small {
-  display: block;
-  margin-top: 6px;
 }

@@ -9,9 +9,11 @@ import iconServicos from "../assets/images/Icons/Sobre/icon-servicos.png";
 import iconPortfolio from "../assets/images/Icons/Sobre/iconitensnoportifolio.png";
 import iconMensagens from "../assets/images/Icons/Sobre/iconmensagemnsrecebidas.png";
 
-/* Fotos */
+/* pessoas */
 import daniel from "../assets/images/pessoas/Daniel.jpeg";
 import isaque from "../assets/images/pessoas/Isaque.jpeg";
+import cassio from "../assets/images/pessoas/Cássio.jpeg";
+import guilherme from "../assets/images/pessoas/Guilherme.png";
 
 import { useClientes } from "../admin/hooks/useClientes";
 import { useContatos } from "../admin/hooks/useContatos";
@@ -206,7 +208,7 @@ function Sobre() {
                 <p>
                   <strong>Criatividade - </strong>
                   Desenvolvemos soluções únicas e modernas.
-                  
+
                 </p>
                 <p>
                   <strong>Compromisso - </strong>
@@ -214,7 +216,7 @@ function Sobre() {
                 </p>
                 <p>
                   <strong>Inovação - </strong>
-                  Buscamos novas ideias, tendências e ideias visuais criativas.
+                  Buscamos novas ideias, tendências e soluções visuais criativas.
                 </p>
                 <p>
                   <strong>Profissionalismo - </strong>
@@ -281,7 +283,7 @@ function Sobre() {
             </div>
             <div className="card card-equipe text-center">
               <div className="foto-wrapper">
-                <img src="https://via.placeholder.com/150" alt="Cássio" />
+                <img src={cassio} alt="Cássio" />
               </div>
               <h3 className="card-titulo">Cássio Schultz</h3>
               <span className="cargo">Desenvolvedor Front-end</span>
@@ -303,7 +305,7 @@ function Sobre() {
             </div>
             <div className="card card-equipe text-center">
               <div className="foto-wrapper">
-                <img src="https://via.placeholder.com/150" alt="Guilherme" />
+                <img src={guilherme} alt="Guilherme" />
               </div>
               <h3 className="card-titulo">Guilherme Thomas</h3>
               <span className="cargo">Desenvolvedor Front-end</span>
@@ -317,8 +319,8 @@ function Sobre() {
                 <img src={daniel} alt="Daniel" />
               </div>
               <h3 className="card-titulo">Daniel Buchholz</h3>
-              <span className="cargo">Chefe da Empresa</span>
-              <p>Dono do projeto, orientador geral e avaliador</p>
+              <span className="cargo">Chefe</span>
+              <p>Coordenador do projeto e orientador estratégico</p>
             </div>
           </div>
         </div>

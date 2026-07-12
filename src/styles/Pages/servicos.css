@@ -1,0 +1,49 @@
+.servico-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: var(--brand-ambar-filter);
+}
+
+.servico-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.servico-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.servico-header-info {
+    flex: 1;
+    height: 70px;
+    overflow: hidden;
+}
+
+.servico-header-info h4 {
+    margin: 0;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.servico-header-info small {
+    display: block;
+    margin-top: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.servico-preco {
+    margin-top: auto;
+}
