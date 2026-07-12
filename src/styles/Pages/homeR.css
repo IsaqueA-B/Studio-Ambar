@@ -43,7 +43,7 @@
         gap: 0;
     }
 
-    .home-page .home-card-portfolio.card {
+    .home-page .card-divided .card {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -70,21 +70,21 @@
     }
 
     /* Ícone da empresa */
-    .home-page .home-card-portfolio .icon-box--company {
+    .home-page .card-divided .icon-box--company {
         flex-shrink: 0;
         width: 48px;
         height: 48px;
     }
 
     /* Título e texto */
-    .home-page .home-card-portfolio .home-card-titulo,
-    .home-page .card-info p {
+    .home-page .card-divided .card-title,
+    .card-info p {
         text-align: left;
         margin: 0;
     }
 
     /* Botão */
-    .home-page .home-card-portfolio .btn {
+    .home-page .card-divided .btn {
         margin-top: 6px;
         margin-bottom: 0;
         padding: 6px 14px;
