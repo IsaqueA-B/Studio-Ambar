@@ -1,3 +1,14 @@
+/* ========== PARA DESKTOP ========== */
+.title-desktop,
+.subtitle-desktop {
+  display: block;
+}
+
+.title-mobile,
+.subtitle-mobile {
+  display: none;
+}
+
 /* ========== CONTAINER E SEÇÕES ========== */
 
 .sobre-alinhamento {
@@ -8,48 +19,6 @@
 
 .sobre-secao {
   padding: 40px 0;
-}
-
-/* ========== HERO ========== */
-.sobre-hero {
-  position: relative;
-  padding: 120px 0;
-  overflow: hidden;
-  clip-path: inset(0);
-}
-
-.sobre-hero::before {
-  content: '';
-  position: absolute;
-  top: -40%;
-  left: -10%;
-  width: 130%;
-  height: 180%;
-  background: radial-gradient(circle at bottom right, rgba(224, 164, 88, 0.05), transparent 55%),
-    radial-gradient(circle at top left, var(--bg-main), transparent 60%);
-  pointer-events: none;
-  transform: rotate(-10deg);
-}
-
-.sobre-hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-.sobre-titulo {
-  font-size: 3.4rem;
-  color: var(--brand-ambar);
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-}
-
-.sobre-subtitulo {
-  font-size: 1.1rem;
-  color: var(--brand-creme);
-  opacity: 0.8;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 35px;
 }
 
 /* ========== HISTÓRIA ========== */
@@ -153,9 +122,56 @@
   margin-bottom: 15px;
 }
 
-.card-diferencial .card-titulo {
-  font-size: 1.3rem;
+/* MISSÃO E VISÃO */
+
+.card-lg p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: left;
 }
+
+.card-valores {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+}
+
+.card-valores.card-titulo {
+  align-items: center;
+}
+
+.card-valores h3 {
+  margin-bottom: 20px;
+}
+
+.lista-valores {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  text-align: left;
+}
+
+.lista-valores p {
+  margin: 0;
+
+  line-height: 1.2;
+
+  text-align: left;
+}
+
+.lista-valores strong {
+  display: inline-block;
+
+  margin-bottom: 5px;
+
+  color: #ffffff;
+}
+
 
 /* ========== FOTO DA EQUIPE ========== */
 .foto-wrapper {
@@ -196,6 +212,7 @@
   filter: var(--brand-ambar-filter);
 
 }
+
 /* ==========================================
    DADOS DO STUDIO
 ========================================== */
@@ -263,7 +280,7 @@
 .card-dashboard span {
   font-size: 3rem;
   font-weight: 700;
-  color:var(--brand-ambar);
+  color: var(--brand-ambar);
   line-height: 1;
   flex-shrink: 0;
 }
@@ -286,38 +303,39 @@
 
 /* //serviços// */
 .servico-icon {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    flex-shrink: 0;
-    filter: var(--brand-ambar-filter);
-}
-.servico-header{
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 18px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: var(--brand-ambar-filter);
 }
 
-.servico-icon{
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    flex-shrink: 0;
-    margin-top: 4px;
+.servico-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
 }
 
-.servico-header-info{
-    flex: 1;
-    min-height: 70px; 
+.servico-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 4px;
 }
 
-.servico-header-info h4{
-    margin: 0;
-    line-height: 1.25;
+.servico-header-info {
+  flex: 1;
+  min-height: 70px;
 }
 
-.servico-header-info small{
-    display: block;
-    margin-top: 6px;
+.servico-header-info h4 {
+  margin: 0;
+  line-height: 1.25;
+}
+
+.servico-header-info small {
+  display: block;
+  margin-top: 6px;
 }
