@@ -94,55 +94,44 @@ function PortfolioCase() {
           <p>{projeto.foco}</p>
         </div>
       </section>
-
-      {portfolioItem && (
-        <section className="mb-20">
-          <div className="card">
-            <h3>Dados vindos do banco</h3>
-            <p><strong>Título:</strong> {portfolioItem.titulo}</p>
-            <p>{portfolioItem.descricao}</p>
-          </div>
-        </section>
-      )}
-
-<section className="portfolio-case-contexto mb-20">
-  <div className="card">
-    <h2>O cliente</h2>
-    <p>{projeto.contexto}</p>
-  </div>
-  <div className="card mt-20">
-    <h2>Desafio</h2>
-    <p>{projeto.desafio}</p>
-  </div>
-  <div className="card mt-20">
-    <h2>Solução</h2>
-    <p>{projeto.solucao}</p>
-  </div>
-</section>
-
-<section>
-  <h2>Galeria de imagens</h2>
-  <p>Substitua esses espaços pelas fotos e layouts que representam melhor o projeto.</p>
-  <div className="portfolio-case-gallery grid-3x3">
-    {projeto.imagens?.length > 0 ? (
-      projeto.imagens.map((img, idx) => (
-        <div key={idx} className="card image-placeholder">
-          <img src={img.src} alt={img.alt} />
+      <section className="portfolio-case-contexto mb-20">
+        <div className="card">
+          <h2>O cliente</h2>
+          <p>{projeto.contexto}</p>
         </div>
-      ))
-    ) : (
-      // Fallback genérico caso não tenha imagens definidas
-      <>
-        <div className="card image-placeholder">Imagem 1</div>
-        <div className="card image-placeholder">Imagem 2</div>
-        <div className="card image-placeholder">Imagem 3</div>
-      </>
-    )}
-    
-  </div>
-</section>
-</main>
-    );
+        <div className="card mt-20">
+          <h2>Desafio</h2>
+          <p>{projeto.desafio}</p>
+        </div>
+        <div className="card mt-20">
+          <h2>Solução</h2>
+          <p>{projeto.solucao}</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Galeria de imagens</h2>
+        <p>Substitua esses espaços pelas fotos e layouts que representam melhor o projeto.</p>
+        <div className="portfolio-case-gallery grid-3x3">
+          {projeto.imagens?.length > 0 ? (
+            projeto.imagens.map((img, idx) => (
+              <div key={idx} className="card image-placeholder">
+                <img src={img.src} alt={img.alt} />
+              </div>
+            ))
+          ) : (
+            // Fallback genérico caso não tenha imagens definidas
+            <>
+              <div className="card image-placeholder">Imagem 1</div>
+              <div className="card image-placeholder">Imagem 2</div>
+              <div className="card image-placeholder">Imagem 3</div>
+            </>
+          )}
+
+        </div>
+      </section>
+    </main>
+  );
 }
 
 export default PortfolioCase;
