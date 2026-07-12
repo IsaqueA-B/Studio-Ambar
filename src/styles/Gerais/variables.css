@@ -16,6 +16,10 @@
     --bg-elevated: #1a2129;
     /* elementos sobre o fundo secundário */
 
+    --bg-secondary-rgb: 17, 22, 28;
+    --brand-navy-rgb: 15, 27, 46;
+
+
     --text-main: #e4e7eb;
     /* texto principal claro */
     --text-muted: #8b95a1;

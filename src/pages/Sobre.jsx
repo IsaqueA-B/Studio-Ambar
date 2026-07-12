@@ -4,14 +4,23 @@ import React, { useEffect, useState } from "react";
 import iconMissao from "../assets/images/Icons/Sobre/missões.png";
 import iconValores from "../assets/images/Icons/Sobre/valores.png";
 import iconVisão from "../assets/images/Icons/Sobre/visão.png";
+import iconClientes from "../assets/images/Icons/Sobre/iconusuarioscadastrados.png";
+import iconServicos from "../assets/images/Icons/Sobre/icon-servicos.png";
+import iconPortfolio from "../assets/images/Icons/Sobre/iconitensnoportifolio.png";
+import iconMensagens from "../assets/images/Icons/Sobre/iconmensagemnsrecebidas.png";
 
-/* Fotos */
+/* pessoas */
 import daniel from "../assets/images/pessoas/Daniel.jpeg";
+import isaque from "../assets/images/pessoas/Isaque.jpeg";
+import cassio from "../assets/images/pessoas/Cássio.jpeg";
+import guilherme from "../assets/images/pessoas/Guilherme.png";
 
 import { useClientes } from "../admin/hooks/useClientes";
 import { useContatos } from "../admin/hooks/useContatos";
 import { usePortfolio } from "../admin/hooks/usePortfolio";
 import { useServicos } from "../admin/hooks/useServicos";
+
+import '../styles/Pages/sobreR.css';
 
 function Sobre() {
   const { obterClientes } = useClientes();
@@ -50,13 +59,15 @@ function Sobre() {
   }, []);
 
   return (
-    <main className="p-20 animacao-entrada">
+    <main className="sobre-page p-20 animacao-entrada">
 
       <section className="page-hero text-center">
         <div className="page-hero-container">
           <div className="page-hero-content">
-            <h1 className="page-title">Sobre o Studio Âmbar</h1>
-            <p className="page-subtitle">Identidade Visual • Criação de marcas • Redes Sociais</p>
+            <h1 className="page-title title-desktop">Sobre o Studio Âmbar</h1>
+            <h1 className="page-title title-mobile">Sobre Nós</h1>
+            <p className="page-subtitle subtitle-desktop">Identidade Visual • Criação de marcas • Redes Sociais</p>
+            <p className="page-subtitle subtitle-mobile">Identidade Visual • Criação de marcas </p>
           </div>
           <div className="slogan-box">
             <span className="slogan fonte-titulo">
@@ -89,26 +100,71 @@ function Sobre() {
 
       <section className="sobre-secao">
         <div className="sobre-alinhamento">
-          <h2 className="h2-central titulo-secao-central sem-linha">Dados do Studio</h2>
 
-          <div className="grid-auto">
-            <div className="card card-lg text-center">
-              <h3 className="card-titulo">Clientes cadastrados</h3>
-              <p>{estatisticas.clientes}</p>
+          <h2 className="h2-central titulo-secao-central sem-linha">
+            Dados do Studio
+          </h2>
+
+          <div className="grid-2x2">
+
+            <div className="card card-dashboard">
+              <div className="dashboard-top">
+                <div className="dashboard-info">
+                  <div className="dashboard-icon">
+                    <img src={iconClientes} alt="Clientes" />
+                  </div>
+
+                  <h3>Clientes cadastrados</h3>
+                </div>
+
+                <span>{estatisticas.clientes}</span>
+              </div>
             </div>
-            <div className="card card-lg text-center">
-              <h3 className="card-titulo">Serviços disponíveis</h3>
-              <p>{estatisticas.servicos}</p>
+
+            <div className="card card-dashboard">
+              <div className="dashboard-top">
+                <div className="dashboard-info">
+                  <div className="dashboard-icon">
+                    <img src={iconServicos} alt="Serviços" />
+                  </div>
+
+                  <h3>Serviços disponíveis</h3>
+                </div>
+
+                <span>{estatisticas.servicos}</span>
+              </div>
             </div>
-            <div className="card card-lg text-center">
-              <h3 className="card-titulo">Itens no portfólio</h3>
-              <p>{estatisticas.portfolio}</p>
+
+            <div className="card card-dashboard">
+              <div className="dashboard-top">
+                <div className="dashboard-info">
+                  <div className="dashboard-icon">
+                    <img src={iconPortfolio} alt="Portfólio" />
+                  </div>
+
+                  <h3>Itens no portfólio</h3>
+                </div>
+
+                <span>{estatisticas.portfolio}</span>
+              </div>
             </div>
-            <div className="card card-lg text-center">
-              <h3 className="card-titulo">Mensagens recebidas</h3>
-              <p>{estatisticas.contatos}</p>
+
+            <div className="card card-dashboard">
+              <div className="dashboard-top">
+                <div className="dashboard-info">
+                  <div className="dashboard-icon">
+                    <img src={iconMensagens} alt="Mensagens" />
+                  </div>
+
+                  <h3>Mensagens recebidas</h3>
+                </div>
+
+                <span>{estatisticas.contatos}</span>
+              </div>
             </div>
+
           </div>
+
         </div>
       </section>
 
@@ -116,7 +172,7 @@ function Sobre() {
         <div className="sobre-alinhamento">
           <h2 className="h2-central titulo-secao-central sem-linha">Propósito</h2>
 
-          <div className="grid-auto">
+          <div className="grid-3x3">
             <div className="card card-lg text-center">
               <div className="icon-card">
                 <img src={iconMissao} alt="Ícone Missão" />
@@ -152,18 +208,16 @@ function Sobre() {
                 <p>
                   <strong>Criatividade - </strong>
                   Desenvolvemos soluções únicas e modernas.
-                </p>
 
+                </p>
                 <p>
                   <strong>Compromisso - </strong>
                   Priorizamos qualidade, organização e responsabilidade.
                 </p>
-
                 <p>
                   <strong>Inovação - </strong>
-                  Buscamos novas ideias, tendências e ideias visuais criativas.
+                  Buscamos novas ideias, tendências e soluções visuais criativas.
                 </p>
-
                 <p>
                   <strong>Profissionalismo - </strong>
                   Trabalhamos com estratégia, dedicação e atenção aos detalhes.
@@ -206,11 +260,11 @@ function Sobre() {
             <div className="card card-equipe text-center">
               <div className="foto-wrapper">
                 <img
-                  src="https://via.placeholder.com/150"
+                  src={isaque}
                   alt="Isaque Emanuel"
                 />
               </div>
-              <h3 className="card-titulo">Isaque E. A. Bastos</h3>
+              <h3 className="card-titulo">Isaque Bastos</h3>
               <span className="cargo">Líder / Organizador</span>
               <p>
                 Organização do GitHub, cronograma, integração geral e suporte à
@@ -221,7 +275,7 @@ function Sobre() {
               <div className="foto-wrapper">
                 <img src="https://via.placeholder.com/150" alt="Emanuel" />
               </div>
-              <h3 className="card-titulo">Emanuel A. S. Hubner</h3>
+              <h3 className="card-titulo">Emanuel Hubner</h3>
               <span className="cargo">Banco de Dados</span>
               <p>
                 Modelagem e implementação do MySQL e desenvolvimento de APIs.
@@ -229,9 +283,9 @@ function Sobre() {
             </div>
             <div className="card card-equipe text-center">
               <div className="foto-wrapper">
-                <img src="https://via.placeholder.com/150" alt="Cássio" />
+                <img src={cassio} alt="Cássio" />
               </div>
-              <h3 className="card-titulo">Cássio R. Schultz</h3>
+              <h3 className="card-titulo">Cássio Schultz</h3>
               <span className="cargo">Desenvolvedor Front-end</span>
               <p>
                 Responsável pelo desenvolvimento e estruturação da página Sobre
@@ -242,8 +296,8 @@ function Sobre() {
               <div className="foto-wrapper">
                 <img src="https://via.placeholder.com/150" alt="Leonardo" />
               </div>
-              <h3 className="card-titulo">Leonardo A. Hemmilla</h3>
-              <span className="cargo">Front-end & Portfolio</span>
+              <h3 className="card-titulo">Leonardo Hemmilla</h3>
+              <span className="cargo">Desenvolvedor Front-end</span>
               <p>
                 Desenvolvimento das seções de Portfólio e detalhamento de Cases
                 de sucesso.
@@ -251,10 +305,10 @@ function Sobre() {
             </div>
             <div className="card card-equipe text-center">
               <div className="foto-wrapper">
-                <img src="https://via.placeholder.com/150" alt="Guilherme" />
+                <img src={guilherme} alt="Guilherme" />
               </div>
-              <h3 className="card-titulo">Guilherme Z. Thomas</h3>
-              <span className="cargo">Dev Blog & Contato</span>
+              <h3 className="card-titulo">Guilherme Thomas</h3>
+              <span className="cargo">Desenvolvedor Front-end</span>
               <p>
                 Responsável pela área de publicações do Blog e formulários de
                 atendimento.
@@ -264,9 +318,9 @@ function Sobre() {
               <div className="foto-wrapper">
                 <img src={daniel} alt="Daniel" />
               </div>
-              <h3 className="card-titulo">Daniel</h3>
-              <span className="cargo">Patrão da Empresa</span>
-              <p>Aquele que manda e nos da nota.</p>
+              <h3 className="card-titulo">Daniel Buchholz</h3>
+              <span className="cargo">Chefe</span>
+              <p>Coordenador do projeto e orientador estratégico</p>
             </div>
           </div>
         </div>

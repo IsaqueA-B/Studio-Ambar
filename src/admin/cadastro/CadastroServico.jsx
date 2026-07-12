@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Link, useParams } from 'react-router-dom';
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
-
+const CATEGORIAS = [
+  "Branding e Identidade",
+  "Redes Sociais e Marketing",
+  "Web Design e Desenvolvimento",
+  "Materiais Corporativos",
+];
 function CadastroServico() {
   const [tipo_servico, setTipoServico] = useState("");
   const [valor, setValor] = useState("");
   const [descricao, setDescricao] = useState("");
+  const [categoria, setCategoria] = useState("");
 
   const validarFormulario = () => {
     if (!tipo_servico.trim()) {
@@ -34,6 +40,7 @@ function CadastroServico() {
           tipo_servico: tipo_servico.trim(),
           valor: Number(valor),
           descricao: descricao.trim(),
+          categoria: categoria || null,
         }),
       });
 
@@ -74,6 +81,15 @@ function CadastroServico() {
             <div className="form-group">
               <label>Descrição *</label>
               <textarea rows="4" value={descricao} onChange={(e) => setDescricao(e.target.value)} required />
+            </div>
+            <div className="form-group">
+              <label>Categoria</label>
+              <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
+                <option value="">Selecione uma categoria</option>
+                {CATEGORIAS.map((cat) => (
+                  <option key={cat} value={cat}>{cat}</option>
+                ))}
+              </select>
             </div>
             <div className="text-right">
               <button className="btn" type="submit">Cadastrar Serviço</button>

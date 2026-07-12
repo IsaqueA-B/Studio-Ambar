@@ -49,9 +49,10 @@ export async function setupDatabase() {
         id INT AUTO_INCREMENT PRIMARY KEY,
         tipo_servico VARCHAR(100) NOT NULL,
         valor DECIMAL(10,2) NOT NULL,
-        descricao TEXT
-      )`,
-      `CREATE TABLE IF NOT EXISTS projetos (
+        descricao TEXT,
+        categoria VARCHAR(100) NULL DEFAULT NULL
+      )`
+        `CREATE TABLE IF NOT EXISTS projetos (
         id INT AUTO_INCREMENT PRIMARY KEY,
         id_cliente INT NOT NULL,
         id_servico INT NOT NULL,
@@ -98,6 +99,8 @@ export async function setupDatabase() {
     await ensureColumn(connection, 'contatos', 'telefone', 'VARCHAR(20) NULL DEFAULT NULL');
     await ensureColumn(connection, 'usuarios', 'email', 'VARCHAR(255) NOT NULL');
     await ensureColumn(connection, 'usuarios', 'cpf', 'VARCHAR(20) NULL DEFAULT NULL');
+    await ensureColumn(connection, 'servicos', 'categoria', 'VARCHAR(100) NULL DEFAULT NULL');
+
 
     const [clientesExistentes] = await connection.query('SELECT id FROM clientes LIMIT 1');
     if (clientesExistentes.length === 0) {

@@ -108,36 +108,36 @@ function AdminRegistros() {
     return (
         <>
             <section className="section section--flex">
-                <div className="home-align-center">
+                <div className="section-center">
                     <h2 className="h2-central sem-linha">Registros</h2>
                     <div className="grid-4x4">
                         {/* Card Clientes */}
-                        <div className="home-card-portfolio card SF grid-border-right">
-                            <h3 className="home-card-titulo centralizado">Clientes</h3>
+                        <div className="card-divided card SF grid-border-right">
+                            <h3 className="card-title centralizado">Clientes</h3>
                             <p className="centralizado">Veja os clientes cadastrados.</p>
                             <button className="btn btn-outline" onClick={() => abrirModal('clientes')}>
                                 Ver Registros
                             </button>
                         </div>
                         {/* Card Serviços */}
-                        <div className="home-card-portfolio card SF grid-border-right">
-                            <h3 className="home-card-titulo centralizado">Serviços</h3>
+                        <div className="card-divided card SF grid-border-right">
+                            <h3 className="card-title centralizado">Serviços</h3>
                             <p className="centralizado">Consulte os serviços disponíveis.</p>
                             <button className="btn btn-outline" onClick={() => abrirModal('servicos')}>
                                 Ver Registros
                             </button>
                         </div>
                         {/* Card Projetos */}
-                        <div className="home-card-portfolio card SF grid-border-right">
-                            <h3 className="home-card-titulo centralizado">Projetos</h3>
+                        <div className="card-divided card SF grid-border-right">
+                            <h3 className="card-title centralizado">Projetos</h3>
                             <p className="centralizado">Visualize os projetos existentes.</p>
                             <button className="btn btn-outline" onClick={() => abrirModal('projetos')}>
                                 Ver Registros
                             </button>
                         </div>
                         {/* Card Portfólio */}
-                        <div className="home-card-portfolio card SF">
-                            <h3 className="home-card-titulo centralizado">Portfólio</h3>
+                        <div className="card-divided card SF">
+                            <h3 className="card-title centralizado">Portfólio</h3>
                             <p className="centralizado">Itens publicados no portfólio.</p>
                             <button className="btn btn-outline" onClick={() => abrirModal('portfolio')}>
                                 Ver Registros

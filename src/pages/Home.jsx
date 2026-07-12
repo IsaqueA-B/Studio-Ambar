@@ -4,6 +4,7 @@ import WordMark from '../assets/images/Especificos/WordMark.png';
 import { useServicos } from '../admin/hooks/useServicos';
 
 import iconSlogan from "../assets/images/Especificos/Icon_Slogan.png";
+import iconSloganQuadrado from "../assets/images/Especificos/Icon_Slogan_Quadrado.png";
 
 import iconInstitucionais from "../assets/images/Icons/Home/Institucionais.png";
 import iconPersonalizacao from "../assets/images/Icons/Home/Personalizacao.png";
@@ -16,21 +17,23 @@ import iconTechStart from "../assets/images/Icons/Home/TechStart.png";
 
 import iconContato from "../assets/images/Icons/Home/icon-contato2.png";
 
+import '../styles/Pages/homeR.css';
+
 function Home() {
 
     return (
-        <div>
+        <div className="home-page">
             <div style={{ marginTop: '80px' }}>
                 <img src={WordMark} alt="WordMark" className="home-wordmark" />
             </div>
 
             <main className="p-20 animacao-entrada">
 
-                {/* SEÇÃO 1: QUEM SOMOS + SERVIÇOS EM DESTAQUE (dividida por linha) */}
+                {/* SEÇÃO 1: QUEM SOMOS + SERVIÇOS EM DESTAQUE */}
                 <section className="section section--flex home-secao1">
                     <div className="home-lado home-esquerda">
-                        <span className="home-tag">Como agimos?</span>
-                        <h2 className="home-title">Usamos a Criatividade</h2>
+                        <span className="tag">Como agimos?</span>
+                        <h2>Usamos a Criatividade</h2>
                         <p>
                             No Studio Âmbar, acreditamos que a criatividade é o ponto de partida
                             para construir marcas que realmente conectam. Transformamos ideias em
@@ -50,13 +53,16 @@ function Home() {
                     </div>
 
                     <div className="home-lado home-direita">
-                        <img src={iconSlogan} alt="Ícone Slogan" className="home-icone-slogan" />
+                        {/* Imagem para desktop */}
+                        <img src={iconSlogan} alt="Ícone Slogan" className="home-icone-slogan home-icone-slogan-desktop" />
+                        {/* Imagem para mobile */}
+                        <img src={iconSloganQuadrado} alt="Ícone Slogan" className="home-icone-slogan home-icone-slogan-mobile" />
                     </div>
                 </section>
 
                 <section className="section section--flex home-secao2">
-                    <div className="home-align-center">
-                        <span className="home-tag">Alguns serviços</span>
+                    <div className="section-center">
+                        <span className="tag">Alguns serviços</span>
                         <h2 className="h2-central sem-linha">O que fazemos</h2>
 
                         <div className="grid-4x4">
@@ -64,7 +70,7 @@ function Home() {
                                 <div className="icon-box icon-box--service">
                                     <img src={iconVisual} alt="Ícone Missão" />
                                 </div>
-                                <h3 className="home-card-titulo">Identidade Visual</h3>
+                                <h3 className="card-title">Identidade Visual</h3>
                                 <p>
                                     Criamos logotipos, paletas de cores e tipografias que
                                     representam a essência da sua marca.
@@ -74,7 +80,7 @@ function Home() {
                                 <div className="icon-box icon-box--service">
                                     <img src={iconSocial} alt="Ícone Visão" />
                                 </div>
-                                <h3 className="home-card-titulo">Social Media</h3>
+                                <h3 className="card-title">Social Media e Redes</h3>
                                 <p>
                                     Desenvolvemos conteúdo visual para posts, stories e banners
                                     que engajam seu público e fortalecem sua presença no digital.
@@ -84,7 +90,7 @@ function Home() {
                                 <div className="icon-box icon-box--service">
                                     <img src={iconPersonalizacao} alt="Ícone Visão" />
                                 </div>
-                                <h3 className="home-card-titulo">Personalização Visual</h3>
+                                <h3 className="card-title">Personalização Visual</h3>
                                 <p>
                                     Ajustes e adaptações de design para que cada detalhe reflita
                                     exatamente o estilo do seu negócio.
@@ -94,7 +100,7 @@ function Home() {
                                 <div className="icon-box icon-box--service">
                                     <img src={iconInstitucionais} alt="Ícone Visão" />
                                 </div>
-                                <h3 className="home-card-titulo">Sites Institucionais</h3>
+                                <h3 className="card-title">Sites Institucionais</h3>
                                 <p>
                                     Sites modernos, responsivos e otimizados para apresentar sua
                                     empresa com credibilidade.
@@ -105,60 +111,61 @@ function Home() {
                     </div>
                 </section>
 
-
                 <section className="section section--flex home-secao3">
-                    <div className="home-align-center">
-                        <span className="home-tag">Em destaque</span>
+                    <div className="section-center">
+                        <span className="tag">Em destaque</span>
                         <h2 className="h2-central sem-linha">Do Portfólio</h2>
 
                         <div className="grid-3x3">
-                            <div className="home-card-portfolio card SF grid-border-right">
+                            <div className="card-divided card SF grid-border-right">
                                 <div className="icon-box icon-box--company centralizado">
                                     <img src={iconBioTecno} alt="Ícone Missão" />
                                 </div>
-                                <h3 className="home-card-titulo centralizado">BioTecno</h3>
-                                <p className="centralizado">
-                                    A BioTecno atua com biotecnologia sustentável e precisava de
-                                    uma comunicação visual à altura de sua inovação científica.
-                                    Desenvolvemos materiais corporativos, apresentações
-                                    profissionais e posts para redes sociais.
-                                </p>
-                                <Link to="/portfolio/8" className="btn btn-outline btn-sm">
-                                    Conhecer BioTecno →
-                                </Link>
+                                <div className="card-info">
+                                    <h3 className="card-title centralizado">BioTecno</h3>
+                                    <p className="centralizado">
+                                        A BioTecno atua no setor de refrigeração médica, oferecendo 
+                                        soluções tecnológicas avançadas e confiáveis para a 
+                                        conservação de insumos.
+                                    </p>
+                                    <Link to="/portfolio/8" className="btn btn-outline btn-sm">
+                                        Conhecer BioTecno
+                                    </Link>
+                                </div>
                             </div>
-                            <div className="home-card-portfolio card SF grid-border-right">
+                            <div className="card-divided card SF grid-border-right">
                                 <div className="icon-box icon-box--company centralizado">
                                     <img src={iconCoopermil} alt="Ícone Coopermil" />
                                 </div>
-                                <h3 className="home-card-titulo centralizado">Coopermil</h3>
-                                <p className="centralizado">
-                                    Com décadas de tradição no agronegócio, a Coopermil precisava
-                                    modernizar sua imagem sem perder a essência cooperativista. O
-                                    Studio Âmbar criou um rebranding completo: novo logotipo,
-                                    embalagens padronizadas e presença digital estratégica.
-                                </p>
-                                <Link to="/portfolio/9" className="btn btn-outline btn-sm">
-                                    Conhecer Coopermil →
-                                </Link>
+                                <div className="card-info">
+                                    <h3 className="card-title centralizado">Coopermil</h3>
+                                    <p className="centralizado">
+                                        Com tradição no agronegócio, a cooperativa agropecuária 
+                                        Coopermil também expande sua sólida atuação para redes de 
+                                        supermercados, postos e lojas.
+                                    </p>
+                                    <Link to="/portfolio/9" className="btn btn-outline btn-sm">
+                                        Conhecer Coopermil
+                                    </Link>
+                                </div>
                             </div>
-                            <div className="home-card-portfolio card SF">
+                            <div className="card-divided card SF">
                                 <div className="icon-box icon-box--company centralizado">
                                     <img src={iconTechStart} alt="Ícone TechStart" />
                                 </div>
-                                <h3 className="home-card-titulo centralizado">TechStart</h3>
-                                <p className="centralizado">
-                                    A TechStart é uma startup de soluções em nuvem que buscava se
-                                    posicionar como referência em inovação. Desenvolvemos uma
-                                    identidade visual moderna, com logotipo, paleta de cores
-                                    vibrantes e um site institucional responsivo.
-                                </p>
-                                <Link to="/portfolio/2" className="btn btn-outline btn-sm">
-                                    Conhecer TechStart →
-                                </Link>
+                                <div className="card-info">
+                                    <h3 className="card-title centralizado">TechStart</h3>
+                                    <p className="centralizado">
+                                        A TechStart é uma startup focada na criação de soluções em 
+                                        nuvem que impulsiona a inovação e criatividade através de 
+                                        tecnologia altamente escalável. 
+                                    </p>
+                                    <Link to="/portfolio/2" className="btn btn-outline btn-sm">
+                                        Conhecer TechStart
+                                    </Link>
+                                </div>
                             </div>
-                        </div> <br></br>
-                        <Link to="/portfolio" className="btn btn-outline">Ver todos os projetos</Link>
+                        </div>
                     </div>
                 </section>
 
@@ -185,7 +192,7 @@ function Home() {
                 </section>
 
             </main>
-        </div>
+        </div >
     );
 }
 export default Home;

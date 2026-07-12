@@ -1,6 +1,12 @@
 .footer {
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border-light);
+    background: linear-gradient(90deg,
+            #11161c 0%,
+            #000000 30%,
+            #000000 70%,
+            #11161c 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--brand-ambar);
     padding: 50px 20px 30px;
     margin-top: 60px;
 }
@@ -112,9 +118,9 @@
     filter: brightness(0) invert(1);
 }
 
-.footer-contact-item a:hover ,
-.footer-contact-item:hover  .footer-icon {
-    filter:  var(--brand-ambar-filter);
+.footer-contact-item a:hover,
+.footer-contact-item:hover .footer-icon {
+    filter: var(--brand-ambar-filter);
 }
 
 /* ===== RESPONSIVO ===== */

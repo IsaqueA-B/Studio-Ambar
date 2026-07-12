@@ -20,8 +20,6 @@
     left: -10%;
     width: 130%;
     height: 180%;
-    background: radial-gradient(circle at bottom right, rgba(224, 164, 88, 0.05), transparent 55%),
-        radial-gradient(circle at top left, var(--bg-main), transparent 60%);
     pointer-events: none;
     transform: rotate(-10deg);
 }

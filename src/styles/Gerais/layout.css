@@ -15,7 +15,11 @@ html {
     display: flex;
     flex-direction: row;
     min-height: 100vh;
-    background: var(--bg-main);
+    background: linear-gradient(90deg,
+            #0b1119 0%,
+            #000000 30%,
+            #000000 70%,
+            #0b1119 100%);
     min-width: 0;
 }
 

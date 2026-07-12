@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 function Blog() {
 
     return (
-        <main className="blog-container animacao-entrada p-20">
+            <main className="p-20 animacao-entrada">
 
             <section className="page-hero text-center">
                 <div className="page-hero-container">
                     <div className="page-hero-content">
                         <h1 className="page-title">Blog</h1>
-                        <p className="page-subtitle">Tendências • Noticias</p>
+                        <p className="page-subtitle">Tendências • Notícias</p>
                     </div>
                     <div className="slogan-box">
                         <span className="slogan fonte-titulo">

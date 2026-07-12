@@ -65,7 +65,7 @@ const Footer = () => {
                         </li>
                         <li className="footer-contact-item">
                             <img src={iconEmail} alt="" className="footer-icon" />
-                            <a href="mailto:contato@studio.ambar">contato@studio.ambar</a>
+                            <a href="mailto:contato@studio.ambar">contato@studioambar.com.br</a>
                         </li>
                         <li className="footer-contact-item">
                             <img src={iconContato} alt="" className="footer-icon" />

@@ -36,13 +36,13 @@ function Contato() {
     };
 
     return (
-        <main className="contato-container animacao-entrada p-20">
+            <main className="p-20 animacao-entrada">
 
             <section className="page-hero text-center">
                 <div className="page-hero-container">
                     <div className="page-hero-content">
                         <h1 className="page-title">Contato</h1>
-                        <p className="page-subtitle">Nossas Redes • Como Contatar</p>
+                        <p className="page-subtitle">Nossas Redes • Fale Conosco</p>
                     </div>
                     <div className="slogan-box">
                         <span className="slogan fonte-titulo">
@@ -108,7 +108,7 @@ function Contato() {
 
                         <div className="contato-info-item">
                             <span className="cargo">E-mail profissional</span>
-                            <p className="contato-info-valor">contato@studio.ambar</p>
+                            <p className="contato-info-valor">contato@studioambar.com.br</p>
                         </div>
 
                         <div className="contato-info-item">

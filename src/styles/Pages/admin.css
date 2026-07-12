@@ -16,7 +16,6 @@
 }
 
 .tabela-admin th {
-    background-color: var(--bg-secondary);
     color: var(--brand-ambar);
     padding: 8px 10px;
     text-align: left;
@@ -32,14 +31,6 @@
     padding: 6px 10px;
 }
 
-.tabela-admin tbody tr:hover {
-    background-color: rgba(224, 164, 88, 0.05);
-}
-
-/* ========== AJUSTES DE SEÇÕES ========== */
-.admin-page .home-section {
-    margin-bottom: 60px;
-}
 
 /* ========== MODAL ========== */
 .modal-overlay {
@@ -48,7 +39,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(4px);
     z-index: 1000;
     padding: 20px;
