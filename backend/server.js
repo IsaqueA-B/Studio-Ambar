@@ -353,15 +353,15 @@ app.get('/api/contatos', async (req, res) => {
 
 app.post('/api/contatos', async (req, res) => {
   try {
-    const { nome, telefone, email } = req.body;
+    const { nome, telefone, email, tipo_projeto, mensagem } = req.body;
     if (!nome || !nome.trim()) {
       return res.status(400).json({ erro: 'Nome obrigatório' });
     }
     const [result] = await pool.execute(
-      'INSERT INTO contatos (nome, telefone, email) VALUES (?, ?, ?)',
-      [nome, telefone || null, email || null]
+      'INSERT INTO contatos (nome, telefone, email, tipo_projeto, mensagem) VALUES (?, ?, ?, ?, ?)',
+      [nome, telefone || null, email || null, tipo_projeto || null, mensagem || null]
     );
-    res.status(201).json({ id: result.insertId, nome, telefone, email });
+    res.status(201).json({ id: result.insertId, nome, telefone, email, tipo_projeto, mensagem });
   } catch (error) {
     console.error(error);
     res.status(500).json({ erro: 'Erro ao criar contato' });

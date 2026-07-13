@@ -139,12 +139,12 @@ export async function buscarContatos() {
  return await resposta.json();
 }
 
-export async function criarContato(nome, telefone, email) {
+export async function criarContato(nome, telefone, email, tipo_projeto, mensagem) {
  console.log('📡 API: Enviando para', `${API_BASE}/contatos`);
  const resposta = await fetch(`${API_BASE}/contatos`, {
  method: 'POST',
  headers: { 'Content-Type': 'application/json' },
- body: JSON.stringify({ nome, telefone, email })
+ body: JSON.stringify({ nome, telefone, email, tipo_projeto, mensagem })
  });
  const data = await resposta.json();
  console.log('📡 API: Status', resposta.status, 'Dados:', data);

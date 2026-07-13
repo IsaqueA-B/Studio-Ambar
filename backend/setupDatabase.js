@@ -11,14 +11,15 @@ dotenv.config({ path: envFile });
 const databaseName = process.env.DB_NAME || 'studio_ambar';
 
 async function ensureColumn(connection, table, column, definition) {
-  const [columns] = await connection.query(`SHOW COLUMNS FROM \`${table}\` LIKE ?`, [column]);
+  try {
+    const [columns] = await connection.query(`SHOW COLUMNS FROM \`${table}\` LIKE ?`, [column]);
 
-  if (columns.length === 0) {
-    await connection.query(`ALTER TABLE \`${table}\` ADD COLUMN ${definition}`);
-    return;
+    if (columns.length === 0) {
+      await connection.query(`ALTER TABLE \`${table}\` ADD COLUMN \`${column}\` ${definition}`);
+    }
+  } catch (error) {
+    console.error(`Erro ao adicionar/modificar coluna ${column} em ${table}:`, error.message);
   }
-
-  await connection.query(`ALTER TABLE \`${table}\` MODIFY COLUMN ${column} ${definition}`);
 }
 
 export async function setupDatabase() {
@@ -51,8 +52,8 @@ export async function setupDatabase() {
         valor DECIMAL(10,2) NOT NULL,
         descricao TEXT,
         categoria VARCHAR(100) NULL DEFAULT NULL
-      )`
-        `CREATE TABLE IF NOT EXISTS projetos (
+      )`,
+      `CREATE TABLE IF NOT EXISTS projetos (
         id INT AUTO_INCREMENT PRIMARY KEY,
         id_cliente INT NOT NULL,
         id_servico INT NOT NULL,
@@ -76,7 +77,10 @@ export async function setupDatabase() {
         id INT AUTO_INCREMENT PRIMARY KEY,
         nome VARCHAR(150) NOT NULL,
         telefone VARCHAR(20),
-        email VARCHAR(255)
+        email VARCHAR(255),
+        tipo_projeto VARCHAR(100),
+        mensagem TEXT,
+        data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
       )`,
       `CREATE TABLE IF NOT EXISTS usuarios (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -97,6 +101,9 @@ export async function setupDatabase() {
     await ensureColumn(connection, 'clientes', 'cnpj', 'VARCHAR(30) NULL DEFAULT NULL');
     await ensureColumn(connection, 'clientes', 'cep', 'VARCHAR(20) NULL DEFAULT NULL');
     await ensureColumn(connection, 'contatos', 'telefone', 'VARCHAR(20) NULL DEFAULT NULL');
+    await ensureColumn(connection, 'contatos', 'tipo_projeto', 'VARCHAR(100) NULL DEFAULT NULL');
+    await ensureColumn(connection, 'contatos', 'mensagem', 'TEXT NULL DEFAULT NULL');
+    await ensureColumn(connection, 'contatos', 'data_criacao', 'TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP');
     await ensureColumn(connection, 'usuarios', 'email', 'VARCHAR(255) NOT NULL');
     await ensureColumn(connection, 'usuarios', 'cpf', 'VARCHAR(20) NULL DEFAULT NULL');
     await ensureColumn(connection, 'servicos', 'categoria', 'VARCHAR(100) NULL DEFAULT NULL');

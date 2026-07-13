@@ -13,10 +13,10 @@ export function useContatos() {
     }
   };
 
-  const criarContato = async (nome, telefone, email) => {
+  const criarContato = async (nome, telefone, email, tipo_projeto, mensagem) => {
     try {
-      console.log('🚀 Tentando enviar para backend:', { nome, telefone, email });
-      const resultado = await criarContatoAPI(nome, telefone, email);
+      console.log('🚀 Tentando enviar para backend:', { nome, telefone, email, tipo_projeto, mensagem });
+      const resultado = await criarContatoAPI(nome, telefone, email, tipo_projeto, mensagem);
       console.log('✅ Resposta do backend:', resultado);
       
       if (!resultado) {

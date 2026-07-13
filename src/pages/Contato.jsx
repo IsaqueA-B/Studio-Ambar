@@ -24,7 +24,7 @@ function Contato() {
         setStatusMensagem('');
 
         try {
-            await criarContato(form.nome, form.telefone, form.email);
+            await criarContato(form.nome, form.telefone, form.email, form.tipoProjeto, form.mensagem);
             setStatusMensagem('Mensagem enviada com sucesso e registrada no banco.');
             setForm({ nome: '', email: '', telefone: '', tipoProjeto: '', mensagem: '' });
         } catch (error) {
