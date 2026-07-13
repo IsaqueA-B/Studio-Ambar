@@ -68,7 +68,10 @@ function PortfolioCase() {
         <Link to="/portfolio" className="btn-voltar">← Voltar ao portfólio</Link>
         <div className={`portfolio-case-hero card mt-20 ${isTech ? 'portfolio-tech-hero' : ''}`}>
           <span className="portfolio-case-tag">{projeto.categoria}</span>
-          <h1>{projeto.nome}</h1>
+          
+          {/* Aqui foi adicionada a classe dinâmica que puxa a fonte do portifolio-especificos.css */}
+          <h1 className={`projeto-id-${projeto.id}`}>{projeto.nome}</h1>
+          
           <p>
             {isTech
               ? 'Branding completo para startups — logotipo, guidelines e aplicações digitais.'
