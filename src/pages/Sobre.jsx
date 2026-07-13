@@ -15,6 +15,7 @@ import isaque from "../assets/images/pessoas/Isaque.jpeg";
 import cassio from "../assets/images/pessoas/Cássio.jpeg";
 import guilherme from "../assets/images/pessoas/Guilherme.png";
 import emanuel from "../assets/images/pessoas/Emanuel.png";
+import leonardo from "../assets/images/pessoas/Leonardo.jpeg";
 
 import { useClientes } from "../admin/hooks/useClientes";
 import { useContatos } from "../admin/hooks/useContatos";
@@ -295,7 +296,7 @@ function Sobre() {
             </div>
             <div className="card card-equipe text-center">
               <div className="foto-wrapper">
-                <img src="https://via.placeholder.com/150" alt="Leonardo" />
+                <img src={leonardo} alt="Leonardo" />
               </div>
               <h3 className="card-titulo">Leonardo Hemmilla</h3>
               <span className="cargo">Desenvolvedor Front-end</span>

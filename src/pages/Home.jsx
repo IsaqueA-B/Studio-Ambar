@@ -9,11 +9,11 @@ import iconSloganQuadrado from "../assets/images/Especificos/Icon_Slogan_Quadrad
 import iconInstitucionais from "../assets/images/Icons/Home/Institucionais.png";
 import iconPersonalizacao from "../assets/images/Icons/Home/Personalizacao.png";
 import iconSocial from "../assets/images/Icons/Home/Social.png";
-import iconVisual from "../assets/images/Icons/Home/Visual.png";
+import iconVisual from "../assets/images/Icons/Home/Visual.png";    
 
 import iconBioTecno from "../assets/images/Icons/Home/Biotecno.png";
 import iconCoopermil from "../assets/images/Icons/Home/Coopermil.png";
-import iconTechStart from "../assets/images/Icons/Home/TechStart.png";
+import iconTechStart from "../assets/images/Icons/Home/TechStart.jpg";
 
 import iconContato from "../assets/images/Icons/Home/icon-contato2.png";
 
