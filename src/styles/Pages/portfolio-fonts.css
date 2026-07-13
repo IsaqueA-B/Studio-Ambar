@@ -1,0 +1,107 @@
+/* Estilo base para os títulos nos cards (gradiente de texto) */
+.projeto-text {
+  font-family: inherit;
+  font-size: clamp(18px, 2.5vw, 24px);
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  line-height: 1.2;
+  background: var(--text-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* --- Doce Sabor Confeitaria --- */
+@font-face {
+  font-family: 'Mochi Boom';
+  src: url('../../assets/fonts/Portfolio/Mochi Boom DEMO.ttf') format('truetype');
+}
+
+.projeto-id-1 {
+  font-family: 'Mochi Boom', sans-serif;
+}
+
+/* --- TechStart --- */
+@font-face {
+  font-family: 'Super Charge';
+  src: url('../../assets/fonts/Portfolio/SuperchargeExpanded-z83aw.otf') format('opentype');
+}
+
+.projeto-id-2 {
+  font-family: 'Super Charge', sans-serif;
+}
+
+/* --- Café do Zé --- */
+@font-face {
+  font-family: 'Hankey Demo';
+  src: url('../../assets/fonts/Portfolio/Hanky Demo.otf') format('opentype');
+}
+
+.projeto-id-3 {
+  font-family: 'Hankey Demo', sans-serif;
+  font-size: clamp(22px, 3vw, 28px);
+}
+
+/* --- Oficina Rota Certa --- */
+@font-face {
+  font-family: 'Vipnagorgialla';
+  src: url('../../assets/fonts/Portfolio/Vipnagorgialla Bd.otf') format('opentype');
+}
+
+.projeto-id-4 {
+  font-family: 'Vipnagorgialla', sans-serif;
+}
+
+/* --- Sabor Raiz --- */
+@font-face {
+  font-family: 'Raizen Anthem';
+  src: url('../../assets/fonts/Portfolio/RaizenAnthem.otf') format('opentype');
+}
+
+.projeto-id-5 {
+  font-family: 'Raizen Anthem', sans-serif;
+  font-size: clamp(22px, 3vw, 28px);
+}
+
+/* --- Casa em Dia --- */
+@font-face {
+  font-family: 'Modern Romance';
+  src: url('../../assets/fonts/Portfolio/Modern Romance.otf') format('opentype');
+}
+
+.projeto-id-6 {
+  font-family: 'Modern Romance', sans-serif;
+  font-size: clamp(22px, 3vw, 28px);
+}
+
+/* --- Ilumina Decora --- */
+@font-face {
+  font-family: 'Original Salmon';
+  src: url('../../assets/fonts/Portfolio/Original Salmon.otf') format('opentype');
+}
+
+.projeto-id-7 {
+  font-family: 'Original Salmon', sans-serif;
+  font-size: clamp(22px, 3vw, 28px);
+}
+
+/* --- BioTECNO --- */
+@font-face {
+  font-family: 'Good Times';
+  src: url('../../assets/fonts/Portfolio/Good Times Rg.otf') format('opentype');
+}
+
+.projeto-id-8 {
+  font-family: 'Good Times', sans-serif;
+}
+
+/* --- Coopermil --- */
+@font-face {
+  font-family: 'Comfortaa Variable';
+  src: url('../../assets/fonts/Portfolio/Comfortaa-VariableFont_wght.ttf') format('truetype');
+}
+
+.projeto-id-9 {
+  font-family: 'Comfortaa Variable', sans-serif;
+}

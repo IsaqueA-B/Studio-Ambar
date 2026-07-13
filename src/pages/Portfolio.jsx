@@ -1,18 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { usePortfolio } from '../admin/hooks/usePortfolio';
+import { projetos } from '../componentes/data/portfolioData'
+import '../styles/Pages/portfolioR.css';
 
-const projetosEstaticos = [
-    { id: 1, nome: 'Doce Sabor Confeitaria', categoria: 'Identidade Visual', desc: 'Nova identidade e embalagens.' },
-    { id: 2, nome: 'TechStart', categoria: 'Branding & Web', desc: 'Marca e site institucional.' },
-    { id: 3, nome: 'Café do Zé', categoria: 'Logo & Social', desc: 'Logo e templates para redes sociais.' },
-    { id: 4, nome: 'Oficina Rota Certa', categoria: 'Identidade Visual', desc: 'Marca para oficina mecânica com foco em confiança e movimentação.' },
-    { id: 5, nome: 'Sabor Raiz', categoria: 'Branding & Embalagem', desc: 'Projeto para linha de alimentos artesanais com sabor caseiro.' },
-    { id: 6, nome: 'Casa em Dia', categoria: 'Interior & Social', desc: 'Identidade visual para serviços de organização e decoração residencial.' },
-    { id: 7, nome: 'Ilumina Decora', categoria: 'Design de Marca', desc: 'Branding para escritório de decoração com estilo elegante e contemporâneo.' },
-    { id: 8, nome: 'BioTECNO', categoria: 'Refrigeração Médica', desc: 'Soluções de refrigeração para equipamentos médicos.' },
-    { id: 9, nome: 'Coopermil', categoria: 'Cooperativa Agropecuária', desc: 'Atuação em supermercados, postos e lojas agropecuárias.' },
-];
 
 function Portfolio() {
     const { obterPortfolio } = usePortfolio();
@@ -47,10 +38,10 @@ function Portfolio() {
         return true;
     };
 
-    const projetosFiltrados = projetosEstaticos.filter(matchesFilter);
+    const projetosFiltrados = projetos.filter(matchesFilter);
 
     return (
-        <main className="p-20 animacao-entrada">
+        <main className="portfolio-page p-20 animacao-entrada">
 
             <section className="page-hero text-center">
                 <div className="page-hero-container">
@@ -83,12 +74,24 @@ function Portfolio() {
             <div className="grid-3x3 mb-20">
                 {projetosFiltrados.map((proj) => (
                     <Link to={`/portfolio/${proj.id}`} className="btn-card" key={proj.id}>
-                        <div className="card">
-                            <h3 className={`projeto-id-${proj.id} projeto-text`}>
-                                {proj.nome}
-                            </h3>
-                            <p><small>{proj.categoria}</small></p>
-                            <p>{proj.desc}</p>
+                        <div className="card portfolio-card">
+                            <div className="card-top">
+                                {proj.imagens && proj.imagens.length > 0 && (
+                                    <img
+                                        src={proj.imagens[0].src}
+                                        alt={proj.imagens[0].alt}
+                                        className="card-logo"
+                                    />
+                                )}
+                                <div className="card-title-group">
+                                    <h3 className={`projeto-text projeto-id-${proj.id}`}
+                                        style={{ fontFamily: proj.fonte }}>
+                                        {proj.nome}
+                                    </h3>
+                                    <p className="card-categoria"><small>{proj.categoria}</small></p>
+                                </div>
+                            </div>
+                            <p className="card-desc">{proj.desc}</p>
                         </div>
                     </Link>
                 ))}
@@ -96,16 +99,20 @@ function Portfolio() {
             <section className="page-hero text-center">
                 <div className="page-hero-container">
                     <div className="page-hero-content">
-                        <h2 className="page-title sem-linha">Itens recentes do banco de dados</h2>
+                        <h2 className="page-title sem-linha">Itens recentes</h2>
                     </div>
                 </div>
             </section>
             <div className="grid-3x3">
                 {portfolioBanco.length > 0 ? (
                     portfolioBanco.slice(0, 6).map((item) => (
-                        <div className="card" key={item.id}>
-                            <h3>{item.titulo}</h3>
-                            <p>{item.descricao}</p>
+                        <div className="card portfolio-card" key={item.id}>
+                            <div className="card-top">
+                                <div className="card-title-group">
+                                    <h3>{item.titulo}</h3>
+                                </div>
+                            </div>
+                            <p className="card-desc">{item.descricao}</p>
                         </div>
                     ))
                 ) : (

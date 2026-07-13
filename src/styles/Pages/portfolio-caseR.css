@@ -1,0 +1,36 @@
+/* ============================================
+   RESPONSIVO – PÁGINA DE CASE
+   ============================================ */
+
+/* Ajustes gerais para tablets/celulares */
+@media (max-width: 768px) {
+    .portfolio-case-page .portfolio-case-gallery .card {
+        min-height: auto;
+    }
+
+    /* Seção 3x3 (Direção de arte, Elementos, Foco) */
+    .portfolio-case-page .grid-3x3 {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-case-page .grid-3x3 .card {
+        text-align: left;
+        min-height: auto;
+        padding: 10px;
+    }
+
+    .portfolio-case-page .grid-3x3 .card .card-titulo {
+        text-align: left;
+        justify-content: flex-start;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .portfolio-case-page .grid-3x3 .card p {
+        text-align: left;
+    }
+
+    .portfolio-case-page .grid-border-right {
+        border-right: none;
+    }
+}

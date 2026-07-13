@@ -53,6 +53,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    align-items: stretch;
 }
 
 .grid-border-right {
@@ -60,7 +61,7 @@
 }
 
 .grid-3x3 .card {
-    min-height: 220px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

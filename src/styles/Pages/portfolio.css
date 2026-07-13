@@ -1,212 +1,70 @@
 /* ========================================
-   COMPANY-SPECIFIC TYPOGRAPHY STYLES - REDESIGNED
+   CARD DO PORTFÓLIO – ESTRUTURA BASE
    ======================================== */
-
-/* Doce Sabor Confeitaria - Cinzel Decorativo Aumentado */
-.empresa-doce-sabor .card h3 {
-  font-family: 'Cinzel', serif;
-  font-weight: 800;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  color: #a65f1f;
-  text-transform: capitalize;
-  word-spacing: 3px;
+.portfolio-card {
+  height: 225px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+  overflow: hidden;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.empresa-doce-sabor .card p {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
+/* Cabeçalho do card: logo + título + categoria */
+.portfolio-card .card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.empresa-doce-sabor .card {
-  border-left: 4px solid #d4a574;
+/* Logo da empresa (primeira imagem do projeto) */
+.card-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background: rgba(0, 0, 0, 0.03);
+  margin-top: 4px;
 }
 
-/* TechStart - Manrope Condensado Uppercase */
-.empresa-techstart .card h3 {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 800;
-  font-size: 1.28rem;
-  letter-spacing: -1.5px;
-  color: #6366f1;
-  text-transform: uppercase;
-  word-spacing: -2px;
-  font-variant: small-caps;
+/* Agrupamento do título e categoria */
+.card-title-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  min-width: 0;
 }
 
-.empresa-techstart .card p {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
+.card-title-group h3 {
+  margin: 0 0 4px 0;
+  padding-left: 0;
+  line-height: 1.2;
+  text-align: left;
 }
 
-.empresa-techstart .card {
-  border-left: 4px solid #6366f1;
+/* Categoria abaixo do título */
+.card-categoria {
+  margin: 0;
+  line-height: 1.2;
+  font-size: 0.8rem;
+  text-align: left;
 }
 
-/* Café do Zé - Cinzel Clássico Itálico */
-.empresa-cafe-do-ze .card h3 {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 0.3px;
-  color: #8b5a2b;
-  text-transform: capitalize;
-  font-style: italic;
-  font-weight: 400;
-}
-
-.empresa-cafe-do-ze .card p {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-}
-
-.empresa-cafe-do-ze .card {
-  border-left: 4px solid #d2691e;
-}
-
-/* Oficina Rota Certa - Manrope Pesado Blocado */
-.empresa-oficina-rota .card h3 {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 800;
-  font-size: 1.26rem;
-  letter-spacing: 1px;
-  color: #1e3a8a;
-  text-transform: uppercase;
-  word-spacing: 4px;
-}
-
-.empresa-oficina-rota .card p {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-}
-
-.empresa-oficina-rota .card {
-  border-left: 4px solid #1e40af;
-}
-
-/* Sabor Raiz - Cinzel Médio Espaçado */
-.empresa-sabor-raiz .card h3 {
-  font-family: 'Cinzel', serif;
-  font-weight: 500;
-  font-size: 1.38rem;
-  letter-spacing: 1px;
-  color: #92582c;
-  text-transform: capitalize;
-  word-spacing: 2px;
-}
-
-.empresa-sabor-raiz .card p {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-}
-
-.empresa-sabor-raiz .card {
-  border-left: 4px solid #c8b896;
-}
-
-/* Casa em Dia - Manrope Thin Moderno */
-.empresa-casa-em-dia .card h3 {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-size: 1.42rem;
-  letter-spacing: 1.2px;
-  color: #059669;
-  text-transform: uppercase;
-}
-
-.empresa-casa-em-dia .card p {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-}
-
-.empresa-casa-em-dia .card {
-  border-left: 4px solid #059669;
-}
-
-/* Ilumina Decora - Manrope Semi-Bold Elegante */
-.empresa-ilumina-decora .card h3 {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 1.36rem;
-  letter-spacing: 0.8px;
-  color: #7c3aed;
-  text-transform: capitalize;
-  word-spacing: 1px;
-}
-
-.empresa-ilumina-decora .card p {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-}
-
-.empresa-ilumina-decora .card {
-  border-left: 4px solid #7c3aed;
-}
-
-/* BioTECNO - Manrope Compacto Técnico */
-.empresa-biotecno .card h3 {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 700;
-  font-size: 1.12rem;
-  letter-spacing: -0.5px;
-  color: #0369a1;
-  text-transform: uppercase;
-  word-spacing: 1px;
-}
-
-.empresa-biotecno .card p {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-}
-
-.empresa-biotecno .card {
-  border-left: 4px solid #0369a1;
-}
-
-/* Coopermil - Cinzel Bold Corporativo */
-.empresa-coopermil .card h3 {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 1.42rem;
-  letter-spacing: 1.5px;
-  color: #16a34a;
-  text-transform: uppercase;
-  word-spacing: 2px;
-}
-
-.empresa-coopermil .card p {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-}
-
-.empresa-coopermil .card {
-  border-left: 4px solid #16a34a;
-}
-
-/* ========================================
-   RESPONSIVE ADJUSTMENTS
-   ======================================== */
-
-@media (max-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .empresa-doce-sabor .card h3,
-  .empresa-cafe-do-ze .card h3,
-  .empresa-sabor-raiz .card h3 {
-    font-size: 1.22rem;
-  }
-
-  .empresa-techstart .card h3,
-  .empresa-oficina-rota .card h3,
-  .empresa-casa-em-dia .card h3,
-  .empresa-ilumina-decora .card h3,
-  .empresa-coopermil .card h3 {
-    font-size: 1.2rem;
-  }
-
-  .empresa-biotecno .card h3 {
-    font-size: 1.08rem;
-  }
+/* Descrição do card */
+.portfolio-card .card-desc {
+  flex: 1;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+  text-align: left;
+  width: 100%;
 }

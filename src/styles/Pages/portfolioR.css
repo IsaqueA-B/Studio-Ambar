@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+    .portfolio-page .grid-3x3 {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-page .portfolio-card {
+        height: auto !important;
+        max-height: none;
+        min-height: 0 !important;
+        padding: 1rem;
+    }
+
+    .portfolio-page .card-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .portfolio-page .card-title-group h3 {
+        font-size: clamp(16px, 4vw, 20px);
+    }
+}
