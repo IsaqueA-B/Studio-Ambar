@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUser } from '../componentes/users/UserContext';
-import IconVer from "../assets/images/Icons/Register/icon-ver.png"; // mesmo ícone
+import IconVer from "../assets/images/Icons/Login-Register/icon-ver.png";
+import IconCapslock from "../assets/images/Icons/Login-Register/icon-capslock.png";
 
 function Login() {
     const { login } = useUser();
@@ -10,6 +11,7 @@ function Login() {
     const [senha, setSenha] = useState('');
     const [erro, setErro] = useState('');
     const [mostrarSenha, setMostrarSenha] = useState(false);
+    const [capsLockSenha, setCapsLockSenha] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -48,8 +50,18 @@ function Login() {
                                 type={mostrarSenha ? 'text' : 'password'}
                                 value={senha}
                                 onChange={(e) => setSenha(e.target.value)}
+                                onKeyDown={(e) => setCapsLockSenha(e.getModifierState('CapsLock'))}
+                                onBlur={() => setCapsLockSenha(false)}
+                                className={capsLockSenha ? 'capslock-active' : ''}
                                 required
                             />
+                            {capsLockSenha && (
+                                <img
+                                    src={IconCapslock}
+                                    alt="Caps Lock ativado"
+                                    className="input-capslock-icon"
+                                />
+                            )}
                             <button
                                 type="button"
                                 className="input-password-toggle"

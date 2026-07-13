@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUsuarios } from '../admin/hooks/useUsuarios';
 import { aplicarMascaraCPF } from '../componentes/users/Mascaras';
-import IconVer from "../assets/images/Icons/Register/icon-ver.png";
+import IconVer from "../assets/images/Icons/Login-Register/icon-ver.png";
+import IconCapslock from "../assets/images/Icons/Login-Register/icon-capslock.png";
 
 function Register() {
     const { criar } = useUsuarios();
@@ -15,6 +16,10 @@ function Register() {
     // Controle de visibilidade das senhas
     const [mostrarSenha, setMostrarSenha] = useState(false);
     const [mostrarConfirmacao, setMostrarConfirmacao] = useState(false);
+
+    // Estados para Caps Lock
+    const [capsLockSenha, setCapsLockSenha] = useState(false);
+    const [capsLockConfirmacao, setCapsLockConfirmacao] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -34,7 +39,6 @@ function Register() {
             return;
         }
 
-        // Validação de confirmação de senha (apenas front-end)
         if (form.senha !== confirmarSenha) {
             setErro('As senhas não coincidem.');
             return;
@@ -73,7 +77,7 @@ function Register() {
                         <input name="email" type="email" value={form.email} onChange={handleChange} required />
                     </div>
 
-                    {/* Campo Senha com ícone */}
+                    {/* Campo Senha com ícones */}
                     <div className="form-group">
                         <label>Senha</label>
                         <div className="input-password-wrapper">
@@ -82,8 +86,18 @@ function Register() {
                                 type={mostrarSenha ? 'text' : 'password'}
                                 value={form.senha}
                                 onChange={handleChange}
+                                onKeyDown={(e) => setCapsLockSenha(e.getModifierState('CapsLock'))}
+                                onBlur={() => setCapsLockSenha(false)}
+                                className={capsLockSenha ? 'capslock-active' : ''}
                                 required
                             />
+                            {capsLockSenha && (
+                                <img
+                                    src={IconCapslock}
+                                    alt="Caps Lock ativado"
+                                    className="input-capslock-icon"
+                                />
+                            )}
                             <button
                                 type="button"
                                 className="input-password-toggle"
@@ -99,7 +113,7 @@ function Register() {
                         </div>
                     </div>
 
-                    {/* Campo Confirmar Senha com ícone */}
+                    {/* Campo Confirmar Senha com ícones */}
                     <div className="form-group">
                         <label>Confirmar Senha</label>
                         <div className="input-password-wrapper">
@@ -107,8 +121,18 @@ function Register() {
                                 type={mostrarConfirmacao ? 'text' : 'password'}
                                 value={confirmarSenha}
                                 onChange={(e) => setConfirmarSenha(e.target.value)}
+                                onKeyDown={(e) => setCapsLockConfirmacao(e.getModifierState('CapsLock'))}
+                                onBlur={() => setCapsLockConfirmacao(false)}
+                                className={capsLockConfirmacao ? 'capslock-active' : ''}
                                 required
                             />
+                            {capsLockConfirmacao && (
+                                <img
+                                    src={IconCapslock}
+                                    alt="Caps Lock ativado"
+                                    className="input-capslock-icon"
+                                />
+                            )}
                             <button
                                 type="button"
                                 className="input-password-toggle"

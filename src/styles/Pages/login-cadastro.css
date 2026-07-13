@@ -34,3 +34,15 @@
     filter: var(--brand-ambar-filter);
     pointer-events: none;
 }
+
+.input-capslock-icon {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    filter: var(--brand-ambar-filter);
+    pointer-events: none;
+    z-index: 2;
+}
