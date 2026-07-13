@@ -2,13 +2,19 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUsuarios } from '../admin/hooks/useUsuarios';
 import { aplicarMascaraCPF } from '../componentes/users/Mascaras';
+import IconVer from "../assets/images/Icons/Register/icon-ver.png";
 
 function Register() {
     const { criar } = useUsuarios();
     const navigate = useNavigate();
     const [form, setForm] = useState({ nome: '', cpf: '', email: '', senha: '' });
+    const [confirmarSenha, setConfirmarSenha] = useState('');
     const [termos, setTermos] = useState(false);
     const [erro, setErro] = useState('');
+
+    // Controle de visibilidade das senhas
+    const [mostrarSenha, setMostrarSenha] = useState(false);
+    const [mostrarConfirmacao, setMostrarConfirmacao] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -25,6 +31,12 @@ function Register() {
 
         if (!termos) {
             setErro('Aceite os termos de uso.');
+            return;
+        }
+
+        // Validação de confirmação de senha (apenas front-end)
+        if (form.senha !== confirmarSenha) {
+            setErro('As senhas não coincidem.');
             return;
         }
 
@@ -60,10 +72,58 @@ function Register() {
                         <label>Email</label>
                         <input name="email" type="email" value={form.email} onChange={handleChange} required />
                     </div>
+
+                    {/* Campo Senha com ícone */}
                     <div className="form-group">
                         <label>Senha</label>
-                        <input name="senha" type="password" value={form.senha} onChange={handleChange} required />
+                        <div className="input-password-wrapper">
+                            <input
+                                name="senha"
+                                type={mostrarSenha ? 'text' : 'password'}
+                                value={form.senha}
+                                onChange={handleChange}
+                                required
+                            />
+                            <button
+                                type="button"
+                                className="input-password-toggle"
+                                onMouseDown={() => setMostrarSenha(true)}
+                                onMouseUp={() => setMostrarSenha(false)}
+                                onMouseLeave={() => setMostrarSenha(false)}
+                                onTouchStart={() => setMostrarSenha(true)}
+                                onTouchEnd={() => setMostrarSenha(false)}
+                                aria-label="Mostrar senha"
+                            >
+                                <img src={IconVer} alt="olho" className="input-password-icon" />
+                            </button>
+                        </div>
                     </div>
+
+                    {/* Campo Confirmar Senha com ícone */}
+                    <div className="form-group">
+                        <label>Confirmar Senha</label>
+                        <div className="input-password-wrapper">
+                            <input
+                                type={mostrarConfirmacao ? 'text' : 'password'}
+                                value={confirmarSenha}
+                                onChange={(e) => setConfirmarSenha(e.target.value)}
+                                required
+                            />
+                            <button
+                                type="button"
+                                className="input-password-toggle"
+                                onMouseDown={() => setMostrarConfirmacao(true)}
+                                onMouseUp={() => setMostrarConfirmacao(false)}
+                                onMouseLeave={() => setMostrarConfirmacao(false)}
+                                onTouchStart={() => setMostrarConfirmacao(true)}
+                                onTouchEnd={() => setMostrarConfirmacao(false)}
+                                aria-label="Mostrar confirmação de senha"
+                            >
+                                <img src={IconVer} alt="olho" className="input-password-icon" />
+                            </button>
+                        </div>
+                    </div>
+
                     <div className="form-group checkbox-group">
                         <input type="checkbox" id="termos" checked={termos} onChange={(e) => setTermos(e.target.checked)} />
                         <label htmlFor="termos">Aceito os termos de uso e política de privacidade</label>

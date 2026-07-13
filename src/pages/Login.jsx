@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUser } from '../componentes/users/UserContext';
+import IconVer from "../assets/images/Icons/Register/icon-ver.png"; // mesmo ícone
 
 function Login() {
     const { login } = useUser();
@@ -8,6 +9,7 @@ function Login() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [erro, setErro] = useState('');
+    const [mostrarSenha, setMostrarSenha] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -15,9 +17,9 @@ function Login() {
         try {
             const usuario = await login(email, senha);
             if (usuario && usuario.nivel_acesso === 'admin') {
-                navigate('/admin'); // Se for admin, vai para o painel
+                navigate('/admin');
             } else {
-                navigate('/'); // Se 'visualizador', vai para a Home
+                navigate('/');
             }
         } catch (error) {
             setErro(error.message);
@@ -41,12 +43,26 @@ function Login() {
                     </div>
                     <div className="form-group">
                         <label>Senha</label>
-                        <input
-                            type="password"
-                            value={senha}
-                            onChange={(e) => setSenha(e.target.value)}
-                            required
-                        />
+                        <div className="input-password-wrapper">
+                            <input
+                                type={mostrarSenha ? 'text' : 'password'}
+                                value={senha}
+                                onChange={(e) => setSenha(e.target.value)}
+                                required
+                            />
+                            <button
+                                type="button"
+                                className="input-password-toggle"
+                                onMouseDown={() => setMostrarSenha(true)}
+                                onMouseUp={() => setMostrarSenha(false)}
+                                onMouseLeave={() => setMostrarSenha(false)}
+                                onTouchStart={() => setMostrarSenha(true)}
+                                onTouchEnd={() => setMostrarSenha(false)}
+                                aria-label="Mostrar senha"
+                            >
+                                <img src={IconVer} alt="olho" className="input-password-icon" />
+                            </button>
+                        </div>
                     </div>
                     {erro && <p className="erro">{erro}</p>}
                     <button type="submit" className="btn w-100">Entrar</button>
