@@ -74,6 +74,13 @@
     gap: 24px;
 }
 
+.grid-5x5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+
 .grid-auto {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

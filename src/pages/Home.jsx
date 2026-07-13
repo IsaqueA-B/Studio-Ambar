@@ -90,7 +90,8 @@ function Home() {
                                 <div className="icon-box icon-box--service">
                                     <img src={iconPersonalizacao} alt="Ícone Visão" />
                                 </div>
-                                <h3 className="card-title">Personalização Visual</h3>
+                                <h3 className="card-title title-desktop">Personalização Visual</h3>
+                                <h3 className="card-title title-mobile">Personalização</h3>
                                 <p>
                                     Ajustes e adaptações de design para que cada detalhe reflita
                                     exatamente o estilo do seu negócio.
@@ -124,8 +125,8 @@ function Home() {
                                 <div className="card-info">
                                     <h3 className="card-title centralizado">BioTecno</h3>
                                     <p className="centralizado">
-                                        A BioTecno atua no setor de refrigeração médica, oferecendo 
-                                        soluções tecnológicas avançadas e confiáveis para a 
+                                        A BioTecno atua no setor de refrigeração médica, oferecendo
+                                        soluções tecnológicas avançadas e confiáveis para a
                                         conservação de insumos.
                                     </p>
                                     <Link to="/portfolio/8" className="btn btn-outline btn-sm">
@@ -140,8 +141,8 @@ function Home() {
                                 <div className="card-info">
                                     <h3 className="card-title centralizado">Coopermil</h3>
                                     <p className="centralizado">
-                                        Com tradição no agronegócio, a cooperativa agropecuária 
-                                        Coopermil também expande sua sólida atuação para redes de 
+                                        Com tradição no agronegócio, a cooperativa agropecuária
+                                        Coopermil também expande sua sólida atuação para redes de
                                         supermercados, postos e lojas.
                                     </p>
                                     <Link to="/portfolio/9" className="btn btn-outline btn-sm">
@@ -156,9 +157,9 @@ function Home() {
                                 <div className="card-info">
                                     <h3 className="card-title centralizado">TechStart</h3>
                                     <p className="centralizado">
-                                        A TechStart é uma startup focada na criação de soluções em 
-                                        nuvem que impulsiona a inovação e criatividade através de 
-                                        tecnologia altamente escalável. 
+                                        A TechStart é uma startup focada na criação de soluções em
+                                        nuvem que impulsiona a inovação e criatividade através de
+                                        tecnologia altamente escalável.
                                     </p>
                                     <Link to="/portfolio/2" className="btn btn-outline btn-sm">
                                         Conhecer TechStart

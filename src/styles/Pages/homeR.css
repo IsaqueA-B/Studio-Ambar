@@ -37,10 +37,19 @@
 
 /*Seção 3*/
 @media (max-width: 768px) {
+
+    .home-page .title-desktop {
+        display: none !important;
+    }
+
+    .home-page .title-mobile {
+        display: block !important;
+    }
+
     .home-page .home-secao3 .grid-3x3 {
         display: flex;
         flex-direction: column;
-        gap: 0;
+        gap: 24px; 
     }
 
     .home-page .card-divided .card {

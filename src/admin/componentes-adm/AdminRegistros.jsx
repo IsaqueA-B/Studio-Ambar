@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useClientes } from '../hooks/useClientes';
 import { useServicos } from '../hooks/useServicos';
+import { useContatos } from '../hooks/useContatos';
 import { usePortfolio } from '../hooks/usePortfolio';
 import { useProjetos } from '../hooks/useProjetos';
 import TabelaRegistros from './TabelaRegistros';
@@ -10,6 +11,7 @@ function AdminRegistros() {
     const { obterServicos } = useServicos();
     const { obterPortfolio } = usePortfolio();
     const { obterProjetos } = useProjetos();
+    const { obterContatos } = useContatos();
 
     // Controle do modal
     const [modalAberto, setModalAberto] = useState(null);
@@ -56,6 +58,11 @@ function AdminRegistros() {
                     setTabelaNomeModal('portfólio');
                     resultado = await obterPortfolio();
                     break;
+                case 'contatos':
+                    setColunasModal(colunasContatos);
+                    setTabelaNomeModal('contatos');
+                    resultado = await obterContatos();
+                    break;
                 default:
                     break;
             }
@@ -74,7 +81,7 @@ function AdminRegistros() {
         setDadosModal([]);
     };
 
-    // Colunas (inalteradas)
+    // Colunas
     const colunasClientes = [
         { key: 'id', label: 'ID' },
         { key: 'nome_pessoa', label: 'Pessoa' },
@@ -104,13 +111,26 @@ function AdminRegistros() {
         { key: 'descricao', label: 'Descrição' },
         { key: 'datacriacao', label: 'Data Criação', format: (v) => v?.split('T')[0] },
     ];
+    const colunasContatos = [
+        { key: 'id', label: 'ID' },
+        { key: 'nome', label: 'Nome' },
+        { key: 'telefone', label: 'Telefone' },
+        { key: 'email', label: 'Email' },
+        { key: 'tipo_projeto', label: 'Tipo de Projeto' },
+        { key: 'mensagem', label: 'Mensagem' },
+        {
+            key: 'data_criacao',
+            label: 'Data',
+            format: (v) => v ? new Date(v).toLocaleString('pt-BR') : '-'
+        },
+    ];
 
     return (
         <>
             <section className="section section--flex">
                 <div className="section-center">
                     <h2 className="h2-central sem-linha">Registros</h2>
-                    <div className="grid-4x4">
+                    <div className="grid-5x5">
                         {/* Card Clientes */}
                         <div className="card-divided card SF grid-border-right">
                             <h3 className="card-title centralizado">Clientes</h3>
@@ -136,10 +156,18 @@ function AdminRegistros() {
                             </button>
                         </div>
                         {/* Card Portfólio */}
-                        <div className="card-divided card SF">
+                        <div className="card-divided card SF grid-border-right">
                             <h3 className="card-title centralizado">Portfólio</h3>
                             <p className="centralizado">Itens publicados no portfólio.</p>
                             <button className="btn btn-outline" onClick={() => abrirModal('portfolio')}>
+                                Ver Registros
+                            </button>
+                        </div>
+                        {/* Card Contatos */}
+                        <div className="card-divided card SF">
+                            <h3 className="card-title centralizado">Contatos</h3>
+                            <p className="centralizado">Mensagens recebidas pelo site.</p>
+                            <button className="btn btn-outline" onClick={() => abrirModal('contatos')}>
                                 Ver Registros
                             </button>
                         </div>

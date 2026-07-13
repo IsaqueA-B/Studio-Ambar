@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useContatos } from '../admin/hooks/useContatos';
+import { aplicarMascaraTelefone } from '../componentes/users/Mascaras.js';
 
 function Contato() {
     const { criarContato } = useContatos();
@@ -18,6 +19,10 @@ function Contato() {
         setForm((prev) => ({ ...prev, [name]: value }));
     };
 
+    const handleTelefoneChange = (e) => {
+        const valorMascarado = aplicarMascaraTelefone(e.target.value);
+        setForm((prev) => ({ ...prev, telefone: valorMascarado }));
+    };
     const handleSubmit = async (e) => {
         e.preventDefault();
         setEnviando(true);
@@ -36,7 +41,7 @@ function Contato() {
     };
 
     return (
-            <main className="p-20 animacao-entrada">
+        <main className="p-20 animacao-entrada">
 
             <section className="page-hero text-center">
                 <div className="page-hero-container">
@@ -71,7 +76,7 @@ function Contato() {
 
                         <div className="form-group">
                             <label>Telefone</label>
-                            <input name="telefone" value={form.telefone} onChange={handleChange} type="tel" placeholder="(55) 99999-9999" />
+                            <input name="telefone" value={form.telefone} onChange={handleTelefoneChange} type="tel" placeholder="(55) 99999-9999" />
                         </div>
 
                         <div className="form-group">
